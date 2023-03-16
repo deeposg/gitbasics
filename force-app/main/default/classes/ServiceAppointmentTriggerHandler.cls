@@ -229,6 +229,7 @@ public without sharing class ServiceAppointmentTriggerHandler extends TriggerHan
             }
         }
         update attendees;
+        
     }
     
     public static void removeTBDAttendees(Set<Id> SAIds){
