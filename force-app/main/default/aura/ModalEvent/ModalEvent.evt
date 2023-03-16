@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="ProductId" type="String"/>
+    <aura:attribute name="SbqqQuoteLineId" type="String"/>
+    <aura:attribute name="ModalCheck" type="Boolean"/>
+    <aura:attribute name="courseLine" type="String"/>
+    <aura:attribute name="meDistanceLearning" type="Boolean"/>
+</aura:event>

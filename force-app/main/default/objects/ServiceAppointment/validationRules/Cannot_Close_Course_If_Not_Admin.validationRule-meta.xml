@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Close_Course_If_Not_Admin</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status , &apos;Completed&apos;),
+OR(
+Product__r.Id = &apos;01t4p000004SV5C&apos;,
+Product__r.Id = &apos;01t4p000004SV6A&apos;
+),
+$User.Alias != &apos;aivan&apos;,
+$User.Alias != &apos;bmath&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot close this course! Contact Ana.</errorMessage>
+</ValidationRule>

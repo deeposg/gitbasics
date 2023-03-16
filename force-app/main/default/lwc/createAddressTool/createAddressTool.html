@@ -1,0 +1,141 @@
+<template>
+  <template if:true={showSpinner}>
+    <lightning-spinner
+      alternative-text="Loading"
+      size="large"
+    ></lightning-spinner>
+  </template>
+
+  <lightning-quick-action-panel header="New Address">
+    <div class="slds-grid slds-gutters slds-align_absolute-center">
+      <div class="slds-col">
+        <lightning-input
+          class="slds-form-element__control"
+          data-id="toggle1"
+          type="toggle"
+          label="Country"
+          onchange={disableAddressFields}
+          message-toggle-active="USA"
+          message-toggle-inactive="Canada"
+          value={value}
+        ></lightning-input>
+      </div>
+      <div class="slds-col">
+        <lightning-input
+          class="slds-form-element__control"
+          data-id="toggle2"
+          type="toggle"
+          label="Is Primary"
+          onchange={setPrimary}
+          value={value}
+          message-toggle-active="Primary"
+          message-toggle-inactive="Not Primary"
+        ></lightning-input>
+      </div>
+      <div class="slds-col">
+        <lightning-input
+          class="slds-form-element__control"
+          data-id="toggle3"
+          type="toggle"
+          label="Address Type"
+          onchange={setAddressType}
+          message-toggle-active="Shipping"
+          message-toggle-inactive="Billing"
+          value={value}
+        ></lightning-input>
+      </div>
+    </div>
+
+    <div if:false={usaSelected}>
+      <c-searchable-combobox
+        label="Search Adddress"
+        options={options}
+        onchange={handleChange}
+        onclick={handleEvent}
+      ></c-searchable-combobox>
+    </div>
+    <div class="slds-grid_vertical slds-p-vertical_medium">
+      <div class="slds-p-vertical_medium slds-card">
+        <input
+          data-id="AddressLine1"
+          name="AddressLine1"
+          placeholder="Address Line 1"
+          class="slds-input"
+          value={AddressLine1}
+          disabled
+        />
+      </div>
+      <div>
+        <input
+          data-id="AddressLine2"
+          name="AddressLine2"
+          placeholder="Address Line 2"
+          class="slds-input"
+          value={AddressLine2}
+          disabled
+        />
+      </div>
+      <div class="slds-p-vertical_medium">
+        <input
+          data-id="City"
+          name="City"
+          placeholder="City"
+          class="slds-input"
+          value={City}
+          disabled
+        />
+      </div>
+      <div if:false={usaSelected}>
+        <input
+          data-id="Province"
+          name="Province"
+          placeholder="Province/State"
+          class="slds-input"
+          value={Province}
+          disabled
+        />
+      </div>
+      <div if:true={usaSelected}>
+        <lightning-combobox
+          name="progress"
+          value={value}
+          placeholder="Province/State"
+          options={stateList}
+          onchange={usStateLists}
+        ></lightning-combobox>
+      </div>
+      <div class="slds-p-vertical_medium">
+        <input
+          data-id="Country"
+          name="Country"
+          placeholder="Country"
+          class="slds-input"
+          value={Country}
+          disabled
+        />
+      </div>
+      <input
+        data-id="PostalCode"
+        name="PostalCode"
+        placeholder="Postal Code"
+        class="slds-input"
+        value={PostalCode}
+        disabled
+      />
+      <div class="slds-p-vertical_medium slds-align_absolute-center">
+        <lightning-button
+          label="Submit"
+          title="Non-primary action"
+          onclick={createAddress}
+          class="slds-align_absolute-center slds-form-element__control"
+        ></lightning-button>
+      </div>
+
+      <template if:true={errorMessage}>
+        <p>
+          <b style="color: red">{errorMessage}</b>
+        </p>
+      </template>
+    </div>
+  </lightning-quick-action-panel>
+</template>

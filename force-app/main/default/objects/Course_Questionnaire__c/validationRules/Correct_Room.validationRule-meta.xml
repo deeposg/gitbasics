@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Room</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ RecordType.Name = &apos;Toyota&apos;,
+ Provided_with_correct_room_location__c = FALSE,
+ ISBLANK(Room_Location_Incorrect_Details__c)
+)</errorConditionFormula>
+    <errorMessage>Provide details if correct room details weren&apos;t provided!</errorMessage>
+</ValidationRule>

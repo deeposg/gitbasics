@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Required_Field</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ ISBLANK(Scheduled_End__c),
+ ISBLANK(Scheduled_Start__c),
+ ISBLANK(ServiceResource__c),
+ ISBLANK(ServiceAppointment__c)
+)</errorConditionFormula>
+    <errorMessage>OSG Assigned Resource requires a scheduled start/end time, a trainer and a service appointment!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Duplicate_Review</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.Id != &apos;00546000000uP7f&apos;, /*Greg*/
+$User.Id != &apos;00546000000ufVc&apos;, /*Blessen*/
+ISCHANGED( Duplicate_Review__c )
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to set a record as duplicate review!</errorMessage>
+</ValidationRule>

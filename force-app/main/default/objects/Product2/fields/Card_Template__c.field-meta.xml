@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Template__c</fullName>
+    <description>Captures the card template used for this course product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the card template used for this course product.</inlineHelpText>
+    <label>Card Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Non-Eval Card</fullName>
+                <default>false</default>
+                <label>Standard Non-Eval Card</label>
+            </value>
+            <value>
+                <fullName>Standard Non-Eval No Expiry Card</fullName>
+                <default>false</default>
+                <label>Standard Non-Eval No Expiry Card</label>
+            </value>
+            <value>
+                <fullName>Standard Eval Card</fullName>
+                <default>false</default>
+                <label>Standard Eval Card</label>
+            </value>
+            <value>
+                <fullName>Standard Eval No Expiry Card</fullName>
+                <default>false</default>
+                <label>Standard Eval No Expiry Card</label>
+            </value>
+            <value>
+                <fullName>Standard Eval No Details Card</fullName>
+                <default>false</default>
+                <label>Standard Eval No Details Card</label>
+            </value>
+            <value>
+                <fullName>Standard Eval Aerial Card</fullName>
+                <default>false</default>
+                <label>Standard Eval Aerial Card</label>
+            </value>
+            <value>
+                <fullName>Standard Eval Aerial No Expiry Card</fullName>
+                <default>false</default>
+                <label>Standard Eval Aerial No Expiry Card</label>
+            </value>
+            <value>
+                <fullName>Respirator Awareness And Fitting Card</fullName>
+                <default>false</default>
+                <label>Respirator Awareness And Fitting Card</label>
+            </value>
+            <value>
+                <fullName>TDG Card Front</fullName>
+                <default>false</default>
+                <label>TDG Card Front</label>
+            </value>
+            <value>
+                <fullName>Arial Lift Eval Card No Expiry Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Arial Lift Eval Card No Expiry Date</label>
+            </value>
+            <value>
+                <fullName>Bucket Truck Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bucket Truck Card</label>
+            </value>
+            <value>
+                <fullName>Bucket Truck Eval Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bucket Truck Eval Card</label>
+            </value>
+            <value>
+                <fullName>ESA 2side card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ESA 2side card</label>
+            </value>
+            <value>
+                <fullName>Electric Pallet Truck Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Electric Pallet Truck Card</label>
+            </value>
+            <value>
+                <fullName>Eval Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eval Card</label>
+            </value>
+            <value>
+                <fullName>LO 2side Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LO 2side Card</label>
+            </value>
+            <value>
+                <fullName>Lift Truck Eval Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lift Truck Eval Card</label>
+            </value>
+            <value>
+                <fullName>Lift Truck Eval Card - No Theory Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lift Truck Eval Card - No Theory Date</label>
+            </value>
+            <value>
+                <fullName>Lift Truck Refresher Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lift Truck Refresher Card</label>
+            </value>
+            <value>
+                <fullName>Overhead Crane Eval Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overhead Crane Eval Card</label>
+            </value>
+            <value>
+                <fullName>Overhead Crane Eval Card - No Theory Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overhead Crane Eval Card - No Theory Date</label>
+            </value>
+            <value>
+                <fullName>Respirator Awareness And Fitting card - No Expiry Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Respirator Awareness And Fitting card - No Expiry Date</label>
+            </value>
+            <value>
+                <fullName>Skid Steer Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Skid Steer Card</label>
+            </value>
+            <value>
+                <fullName>Standard Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Card</label>
+            </value>
+            <value>
+                <fullName>Standard Card No Expiry Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Card No Expiry Date</label>
+            </value>
+            <value>
+                <fullName>Standard Card-Cable Control Systems Inc.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Card-Cable Control Systems Inc.</label>
+            </value>
+            <value>
+                <fullName>Standard Card-Genivar CSEA&amp;FPPR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Card-Genivar CSEA&amp;FPPR</label>
+            </value>
+            <value>
+                <fullName>Standard Wallet Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Wallet Card</label>
+            </value>
+            <value>
+                <fullName>THE Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>THE Card</label>
+            </value>
+            <value>
+                <fullName>WHMIS Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WHMIS Card</label>
+            </value>
+            <value>
+                <fullName>WHMIS Card No Expiry Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WHMIS Card No Expiry Date</label>
+            </value>
+            <value>
+                <fullName>WHMIS card-Cable Control Systems Inc.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WHMIS card-Cable Control Systems Inc.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

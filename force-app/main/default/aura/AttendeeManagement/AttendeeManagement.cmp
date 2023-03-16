@@ -1,0 +1,48 @@
+<aura:component controller="AttendeeMangementCmpApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    <aura:attribute name="AttList" type="Attendee__c[]"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="HasRecord" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    	<!--<section aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+    <div class="slds-modal slds-fade-in-open" style="max-width: 104%;" >
+        <div class="slds-modal__header" style="margin-top:10%;">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.closePress}" style="float:right;">
+          <lightning:icon iconName="utility:close" variant="close"/>
+                <span class="slds-assistive-text">Close</span>
+        </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium">Attendee Management</h2>
+        </div>
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="height:67%;">
+       
+    <aura:iteration items="{!v.AttList}" var="at">
+      
+       <c:AttendeeRecordsComponent AttendeeRec="{!at.Object}" Count="{!at.Count}" LastCount="{!at.LastCount}"/>
+       
+    </aura:iteration>
+  
+        <div style="margin:5%;">
+        	<lightning:spinner aura:id="busyIndicator"  variant="brand" size="large" class="slds-show"/>
+        </div>
+        
+
+        <div class="slds-notify_container" style="{!if(v.HasRecord !=false,'display:Block;position: inherit;','display:None;position: inherit;')}">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>
+                        There are no Attendees for this Quote.
+                    </h2>
+                </div>
+            </div>
+        
+        </div>
+    <div class="slds-modal__footer">
+        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" aura:id="btnCancel" onclick="{!c.closePress}">
+            Cancel
+        </button>
+        <button type="button" class="slds-button slds-button--brand" aura:id="btnSave" onclick="{!c.UpdateAttendees}" disabled="{!if(v.HasRecord!=false,true,false)}">
+            Save
+        </button>
+    </div>
+        </div>
+</aura:component>

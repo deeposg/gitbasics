@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checked_In_Seats__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Represents how many attendees are checked in</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Representation of how many attendees have been checked in successfully</inlineHelpText>
+    <label>Checked In Seats</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

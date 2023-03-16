@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Line</fullName>
+    <fields>Name</fields>
+    <fields>SBQQ__Product__c</fields>
+    <fields>Classroom_Course__c</fields>
+    <fields>SBQQ__Quantity__c</fields>
+    <fields>Total_Net_Price__c</fields>
+    <label>Quote Line</label>
+</CompactLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Resource__c</fullName>
+    <description>Captures the Service Resource submitting the time-off request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Service Resource  submitting the time-off request.</inlineHelpText>
+    <label>Service Resource</label>
+    <referenceTo>ServiceResource</referenceTo>
+    <relationshipLabel>Time-Off Requests</relationshipLabel>
+    <relationshipName>Time_Off_Requests</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

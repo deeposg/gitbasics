@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>google_name_match__c</fullName>
+    <externalId>false</externalId>
+    <formula>or (
+
+find(trim(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(google_name__c), &quot;ltd&quot;, &quot;&quot;),&quot;inc&quot;,&quot;&quot;), &quot;.&quot;,&quot;&quot;)), SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(Name), &quot;ltd&quot;, &quot;&quot;),&quot;inc&quot;,&quot;&quot;), &quot;.&quot;,&quot;&quot;)) &gt; 0,
+
+find(trim(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(Name), &quot;ltd&quot;, &quot;&quot;),&quot;inc&quot;,&quot;&quot;), &quot;.&quot;,&quot;&quot;)), SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOWER(google_name__c), &quot;ltd&quot;, &quot;&quot;),&quot;inc&quot;,&quot;&quot;), &quot;.&quot;,&quot;&quot;)) &gt; 0
+
+)</formula>
+    <label>google_name_match</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

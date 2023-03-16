@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Agenda__c</fullName>
+    <description>Captures the course agenda in the rich text field to allow for formatting and images.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the course agenda in the rich text field to allow for formatting and images.</inlineHelpText>
+    <label>Course Agenda</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

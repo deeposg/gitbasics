@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Train_the_Trainer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Captures whether the course Product is delivered as Train-the-Trainer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether the course Product is delivered as Train-the-Trainer.</inlineHelpText>
+    <label>Train-the-Trainer</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Details_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ ISPICKVAL(Wall_Certificate__c, &quot;Yes&quot;),
+ OR(
+  ISPICKVAL(Certificate_Template__c, &quot;&quot;),
+  Card_Cert_Product_Title__c = &quot;&quot;,
+  TEXT(Certificate_Length__c) = &quot;&quot;
+ )
+),
+
+AND(
+ ISPICKVAL(Wallet_Card__c, &quot;Yes&quot;),
+ OR(
+  ISPICKVAL(Card_Template__c, &quot;&quot;),
+  Card_Cert_Product_Title__c = &quot;&quot;
+ )
+)
+)</errorConditionFormula>
+    <errorMessage>Wall certificate/Wallet card is missing Template or Card/Cert Title or certificate length!</errorMessage>
+</ValidationRule>

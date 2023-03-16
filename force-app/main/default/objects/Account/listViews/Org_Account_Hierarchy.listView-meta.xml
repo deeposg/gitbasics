@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_Account_Hierarchy</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Client_ID__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LearningLogin_Id__c</columns>
+    <columns>OsgOnline_Id__c</columns>
+    <columns>Primary_Billing_Address__c</columns>
+    <columns>Primary_Shipping_Address__c</columns>
+    <columns>Lifetime_Sales__c</columns>
+    <columns>Sales_2020__c</columns>
+    <columns>Sales_2021__c</columns>
+    <columns>Sales_2022__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Org_Account_Hierarchy</label>
+</ListView>

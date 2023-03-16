@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Identified_As_Close_Contact_In_14_Days__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Have you been identified as a &quot;close contact&quot; of someone who has had COVID-19 in the last 14 days? If you are fully vaccinated and have not been advised by public health to self-isolate, select no.</description>
+    <externalId>false</externalId>
+    <label>Identified As Close Contact In 14 Days</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

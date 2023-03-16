@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tested_Positive_In_Last_10_Days__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>In the last 10 days, have you tested positive on a rapid antigen or home-based self-testing kit? If you have since tested negative on a lab-based PCR test, select no.</description>
+    <externalId>false</externalId>
+    <label>Tested Positive In Last 10 Days</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

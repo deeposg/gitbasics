@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Promotional_Discount__c),
+OR(
+Promotional_Discount__c = &apos;a1h46000002h3sU&apos;,
+Promotional_Discount__c = &apos;a1h46000000oT98&apos;,
+Promotional_Discount__c = &apos;a1h4p000003qC81&apos;,
+Promotional_Discount__c = &apos;a1h4p000002amaX&apos;,
+Promotional_Discount__c = &apos;a1h8Z000002q2ly&apos;,
+Promotional_Discount__c = &apos;a1h8Z000002q4vW&apos;
+),
+$User.Alias != &apos;aivan&apos;,
+$User.Alias != &apos;bmath&apos;
+)</errorConditionFormula>
+    <errorMessage>See Ana for applying this discount</errorMessage>
+</ValidationRule>

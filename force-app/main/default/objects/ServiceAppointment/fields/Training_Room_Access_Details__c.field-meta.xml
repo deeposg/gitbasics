@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Room_Access_Details__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Details of where to find the specific room the trainer is expected to be (Ex. 3rd floor, Room 301A, ...)</inlineHelpText>
+    <label>Training Room Access Details</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

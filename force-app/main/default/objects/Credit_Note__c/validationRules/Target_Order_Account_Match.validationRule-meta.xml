@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Order_Account_Match</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( Target_Order__c ),
+ Target_Order__r.AccountId !=  Account__c 
+)</errorConditionFormula>
+    <errorMessage>The account on the order must match the account on the credit note!</errorMessage>
+</ValidationRule>

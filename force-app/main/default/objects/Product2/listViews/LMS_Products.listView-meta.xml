@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Course_Product_Line__c</columns>
+    <columns>Certificate_Length__c</columns>
+    <columns>LearningLogin_Id__c</columns>
+    <columns>Standard_Price__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LearningLogin_Id__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>LMS Products</label>
+</ListView>

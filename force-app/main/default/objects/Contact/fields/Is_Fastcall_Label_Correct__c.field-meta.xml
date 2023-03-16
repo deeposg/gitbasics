@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Fastcall_Label_Correct__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(
+ FullName__c + &apos; - &apos; + LEFT(Account.Name, 90) + &apos;(&apos; + Account.Client_ID__c + &apos;)&apos; = Fastcall_Label__c,
+true,
+false)</formula>
+    <label>Is Fastcall Label Correct</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Sent_Quotes_Waiting_Approval</fullName>
+    <columns>SBQQ__Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Sent_By_User__c</columns>
+    <columns>Send_Date__c</columns>
+    <columns>Total_Net_Amount_Without_Tax__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Voided__c</columns>
+    <columns>Validated__c</columns>
+    <columns>SBQQ__Ordered__c</columns>
+    <columns>Send_Recipient_Result__c</columns>
+    <columns>SBQQ__DaysQuoteOpen__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sent_By_User__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Approved_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>SBQQ__Quote__c.Expired_Quote,SBQQ__Quote__c.Rejected_Quote</value>
+    </filters>
+    <filters>
+        <field>SBQQ__Ordered__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Send_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>8/16/2019 12:00 AM</value>
+    </filters>
+    <label>All Sent Quotes Waiting Approval</label>
+</ListView>

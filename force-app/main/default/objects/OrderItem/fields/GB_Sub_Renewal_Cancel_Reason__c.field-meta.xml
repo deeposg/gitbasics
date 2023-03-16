@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GB_Sub_Renewal_Cancel_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>GB Sub Renewal Cancel Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Renewal is too complicated</fullName>
+                <default>false</default>
+                <label>Renewal is too complicated</label>
+            </value>
+            <value>
+                <fullName>Delivery time is too long</fullName>
+                <default>false</default>
+                <label>Delivery time is too long</label>
+            </value>
+            <value>
+                <fullName>No longer needed due to change in business</fullName>
+                <default>false</default>
+                <label>No longer needed due to change in business</label>
+            </value>
+            <value>
+                <fullName>Found an alternative at a lesser price</fullName>
+                <default>false</default>
+                <label>Found an alternative at a lesser price</label>
+            </value>
+            <value>
+                <fullName>I didn&apos;t mean to subscribe</fullName>
+                <default>false</default>
+                <label>I didn&apos;t mean to subscribe</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

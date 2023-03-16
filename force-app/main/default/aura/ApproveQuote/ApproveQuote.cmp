@@ -1,0 +1,20 @@
+<aura:component controller="QuoteTriggerHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="ErrorCode" type="String" default=""/>
+    
+    <div class="slds-grid slds-wrap">
+        <lightning:spinner aura:id="busyIndicator" variant="brand" size="large"/>
+        
+        <aura:if isTrue="{!v.ErrorCode != ''}">
+            <br/><br/><br/>
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.ErrorCode}</span>
+                    <h2>
+                        {!v.ErrorCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

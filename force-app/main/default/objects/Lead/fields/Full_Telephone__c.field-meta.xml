@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Telephone__c</fullName>
+    <description>Concatenation of Telephone and Phone Ext # for this Lead.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Phone_Ext__c)),
+Phone &amp; &quot;-&quot; &amp; TEXT(Phone_Ext__c ),
+Phone
+)</formula>
+    <inlineHelpText>Concatenation of Telephone and Extention # for this Lead.</inlineHelpText>
+    <label>Full Telephone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

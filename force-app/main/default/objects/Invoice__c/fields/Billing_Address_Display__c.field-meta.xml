@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Address_Display__c</fullName>
+    <externalId>false</externalId>
+    <formula>upper(substitute(Billing_Address__r.Address__c + BR() + Billing_Address__r.City__c + &quot;, &quot; +  Billing_Address__r.Province_State_Code__c + BR() + Billing_Address__r.Postal_Code__c + BR() + Text(Billing_Address__r.Country__c), BR()+BR(), BR()))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Billing Address</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

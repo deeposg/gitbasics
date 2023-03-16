@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Embedded_Policy_Procedure__c</fullName>
+    <description>Captures whether the customized course requires an embedded policy and procedure.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether the customized course requires an embedded policy and procedure. You can attach to the record if it does.</inlineHelpText>
+    <label>Embedded Policy &amp; Procedure</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

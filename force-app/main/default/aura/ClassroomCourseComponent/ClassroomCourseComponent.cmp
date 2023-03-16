@@ -1,0 +1,58 @@
+<aura:component controller="ClassroomCourseCmpApexController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:handler name="UpdateModal" event="c:ModalEvent" action="{!c.UpdateModals}"/>
+    <aura:handler name="CloseModal" event="c:CloseModalEvent" action="{!c.CloseModals}"/>
+    <aura:handler name="UpdateRecord" event="c:CourseUpdateEvent" action="{!c.UpdateRecord}"/>
+    <aura:attribute name="values" type="ClassroomCourseCmpApexController.QuoteLine[]"/>
+    <aura:attribute name="ModalCheck" type="Boolean" default="false"/>
+    <aura:attribute name="SelectedQuoteId" type="String"/>
+    <aura:attribute name="SelectedProductId" type="String"/>
+    <aura:attribute name="SelectedCourseLine" type="String"/>
+    <aura:attribute name="cccDistanceLearning" type="Boolean"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="HasRecord" type="Boolean" default="false"/>
+
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="{!if(v.HasRecord ==false,'display:Block;','display:None;')}">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Line Name">Line Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Product">Product</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Quantity">Quantity</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Classroom Course">Classroom Course</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.values}" var="SbqqQuoteLine">     
+                <c:QuoteLineComponent SbqqQuoteLine="{!SbqqQuoteLine}"/>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+    <aura:if isTrue="{!v.ModalCheck}">
+        	<c:ModalBoxComponent ProductId="{!v.SelectedProductId}" QuoteId="{!v.SelectedQuoteId}" CProductLine="{!v.SelectedCourseLine}" mbcDistanceLearning="{!v.cccDistanceLearning}"/>
+	</aura:if>
+    <div style="position: fixed !important;">
+    	<lightning:spinner aura:id="busyIndicator"  variant="brand" size="large" class="slds-show slds-sfx_custom"/>
+    </div>
+    
+    <div class="slds-notify_container" style="{!if(v.HasRecord !=false,'display:Block;position: inherit;','display:None;position: inherit;')}">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>
+                        There are no Quote Lines matching your Filter criteria.
+                    </h2>
+                </div>
+     </div>
+    
+</aura:component>

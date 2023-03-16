@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Max_Capacity__c</fullName>
+    <description>***Adjust the formula to explicitly use the override if it exists otherwise consider the other max/min rules</description>
+    <externalId>false</externalId>
+    <formula>If(NOT(ISBLANK(Max_Capacity_Override__c)), Max_Capacity_Override__c,
+if( TEXT(IH3POS__c) = &apos;On-Site&apos;, Product_Max_Capacity__c,
+min(Product_Max_Capacity__c, Location_Max_Capacity__c)
+))
+
+/*
+If(Max_Capacity_Override__c &gt; 0, Max_Capacity_Override__c,
+max(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c )
+)
+*/
+
+/*
+if( TEXT(IH3POS__c) = &apos;On-Site&apos;,
+max(Product_Max_Capacity__c, Max_Capacity_Override__c),
+
+if(AND(Distance_Learning__c = true, Max_Capacity_Override__c &gt; 0),
+min(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c ),
+
+if( AND(Max_Capacity_Override__c &gt; 0 ),
+min(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c ),
+max(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c )
+)
+)
+)
+*/
+
+
+/*
+if(AND(Distance_Learning__c = true, NOT(ISBLANK(Max_Capacity_Override__c))),
+min(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c ),
+if( TEXT(IH3POS__c) = &apos;On-Site&apos;,
+max(Product_Max_Capacity__c,Max_Capacity_Override__c),
+max(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c )
+)
+)
+
+****
+if( TEXT(IH3POS__c) = &apos;On-Site&apos;,
+max(Product_Max_Capacity__c,Max_Capacity_Override__c),
+max(min(Product_Max_Capacity__c, Location_Max_Capacity__c), Max_Capacity_Override__c )
+)
+*/</formula>
+    <label>Course Maximum Capacity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

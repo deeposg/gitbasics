@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivate_Course_Reminder_Batch__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This check box will disabled the &quot;Service Appointment Weekly Batch&quot;</description>
+    <externalId>false</externalId>
+    <label>Deactivate Course Reminder Batch</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Learning_Objectives__c</fullName>
+    <description>Captures the learning objectives of the course. Pulled from Product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the learning objectives of the course. Pulled from Product.</inlineHelpText>
+    <label>Learning Objectives</label>
+    <length>500</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

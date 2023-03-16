@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_of_Physical_Goods__c</fullName>
+    <description>Count the Order Products where product 
+family is Physical Goods</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Count the Order Products where product 
+family is Physical Goods</inlineHelpText>
+    <label>Count of Physical Goods</label>
+    <summaryFilterItems>
+        <field>OrderItem.Product_Family__c</field>
+        <operation>equals</operation>
+        <value>Physical Goods</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

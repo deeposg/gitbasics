@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A_Primary_Shipping_Address_Already_Exist</fullName>
+    <active>true</active>
+    <errorConditionFormula>Primary_Shipping_Address_Count__c &gt;= 2</errorConditionFormula>
+    <errorMessage>A Primary Shipping Address Already Exists For This Account. You Can&apos;t Have Two Primary Addresses of The Same Type.</errorMessage>
+</ValidationRule>

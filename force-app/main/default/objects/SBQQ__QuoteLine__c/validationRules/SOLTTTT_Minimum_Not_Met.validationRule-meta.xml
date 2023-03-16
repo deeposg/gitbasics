@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOLTTTT_Minimum_Not_Met</fullName>
+    <active>false</active>
+    <errorConditionFormula>and(
+SBQQ__Product__r.Id = &apos;01t4p000004SV6y&apos;,
+ISCHANGED(SBQQ__Quantity__c),
+SBQQ__Quantity__c &lt; 4
+)</errorConditionFormula>
+    <errorMessage>DLOS-SOLTTTT requires a minimum quantity of 4!</errorMessage>
+</ValidationRule>

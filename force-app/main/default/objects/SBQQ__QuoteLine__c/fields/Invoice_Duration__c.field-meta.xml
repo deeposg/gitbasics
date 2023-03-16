@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( SBQQ__ProductCode__c = &apos;AE-AA&apos;, &apos;See Above&apos;,
+
+  if (Duration__c = 4, &apos;Half Day&apos;,
+
+    If (  Duration__c &gt; 10 , 
+
+      Text(Round( Duration__c /8,0)) + &apos; Days&apos;,
+      
+      if (Duration__c = 8,
+        &apos;One Day&apos;,
+
+        if (Duration__c = 1,
+          &apos;One Hour&apos;,
+
+          if (Duration__c &lt; 1,
+            Text(round(Duration__c*60,0)) + &apos; Minutes&apos;,
+            Text(Duration__c) + &apos; Hours&apos;
+            )
+        )
+      )
+
+    )
+  
+  )
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Course Duration</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

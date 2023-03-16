@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_close_without_contact</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISBLANK(ContactId),
+ ISPICKVAL(Status, &apos;Closed&apos;),
+ ISCHANGED(Status),
+ AND(
+ NOT(ISPICKVAL(Secondary_Type__c, &apos;Demo / Account Code&apos;)),
+ NOT(ISPICKVAL(Type, &apos;Spam&apos;)),
+ NOT(ISPICKVAL(Type, &apos;Product Inquiry&apos;)),
+ NOT(ISPICKVAL(Type, &apos;New Client&apos;))
+ )
+)</errorConditionFormula>
+    <errorMessage>The case requires a contact to close!</errorMessage>
+</ValidationRule>

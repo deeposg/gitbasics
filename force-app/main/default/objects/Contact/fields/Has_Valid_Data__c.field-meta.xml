@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Valid_Data__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+UPPER(FirstName) = &quot;TBA&quot;,
+UPPER(LastName) = &quot;TBA&quot;,
+UPPER(FirstName) = &quot;TBD&quot;,
+UPPER(LastName) = &quot;TBD&quot;,
+UPPER(FirstName) = &quot;ZZ&quot;,
+UPPER(LastName) = &quot;ZZ&quot;,
+LEN(FirstName) = 1, 
+LEN(LastName) = 1
+
+,
+and(
+OR(
+ISBLANK(Email),
+ISBLANK(Phone),
+LEN(Phone) &lt; 10
+),
+OR(
+Is_Primary__c = true,
+Is_Invoice__c = true
+)
+)
+
+),
+FALSE,
+TRUE
+)</formula>
+    <label>Has Valid Data</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

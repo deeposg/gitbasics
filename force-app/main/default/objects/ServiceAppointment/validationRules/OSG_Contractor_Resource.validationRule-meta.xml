@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSG_Contractor_Resource</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Assigned_Service_Resource__c = &apos;00546000000u1No&apos;,
+ ISBLANK(Text(Contractor__c)),
+ ISCHANGED(Status),
+ ISPICKVAL(Status , &apos;Completed&apos;)
+)</errorConditionFormula>
+    <errorMessage>Need to set a contractor before closing course!</errorMessage>
+</ValidationRule>

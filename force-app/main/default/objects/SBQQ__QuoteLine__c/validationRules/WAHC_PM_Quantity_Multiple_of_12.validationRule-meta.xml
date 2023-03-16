@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WAHC_PM_Quantity_Multiple_of_12</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+ SBQQ__Product__r.Id = &apos;01t46000000aMFQ&apos;,
+ SBQQ__Product__r.Id = &apos;01t46000002IILm&apos;
+),
+MOD(SBQQ__Quantity__c,12) != 0,
+$User.Alias != &apos;amccr&apos;
+)</errorConditionFormula>
+    <errorMessage>Quantity for WAHC(R) Manuals must be multiple of 12! Contact Anthony for questions</errorMessage>
+</ValidationRule>

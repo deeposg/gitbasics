@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PhoneExtGreaterThanOne</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Phone_Ext__c)),
+Phone_Ext__c &lt;=0
+)</errorConditionFormula>
+    <errorMessage>Invalid Phone Extension. Use only numbers.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Phone__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(find(&apos;+&apos;,From_Name__c)&gt;0,
+
+mid( From_Name__c, find(&apos;_&apos;,From_Name__c,15)+3 ,3) + &quot;-&quot; + mid( From_Name__c, find(&apos;_&apos;,From_Name__c,15)+6 ,3) + &quot;-&quot; + mid( From_Name__c, find(&apos;_&apos;,From_Name__c,15)+9 ,4),
+
+mid( From_Name__c, find(&apos;_&apos;,From_Name__c,15)+1 ,3)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>To Phone</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

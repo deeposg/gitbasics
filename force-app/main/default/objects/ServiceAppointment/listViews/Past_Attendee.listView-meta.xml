@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Past_Attendee</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+    <columns>Name</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <columns>Course_Max_Capacity__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>Contractor__c</columns>
+    <columns>Location_Code__c</columns>
+    <columns>Location_Name__c</columns>
+    <columns>Product__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>IH3POS__c</field>
+        <operation>equals</operation>
+        <value>In-House,3rd Party</value>
+    </filters>
+    <filters>
+        <field>Status</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2018 12:00 AM</value>
+    </filters>
+    <label>Past Attendee #</label>
+</ListView>

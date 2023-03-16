@@ -1,0 +1,65 @@
+<aura:component controller="OnSiteCourseQuestionApexController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:attribute name="selected" type="string"/>
+    <aura:attribute name="SBQQ__QuoteLine__c" type="SBQQ__QuoteLine__c[]"/>
+    <aura:attribute name="evaluations" type="SBQQ__QuoteLine__c[]"/>
+    <aura:attribute name="quoteRecordId" type="Id" />
+    <aura:attribute name="prevRecId" type="String"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="HasRecord" type="integer" default="0"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!--<section aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+    <div class="slds-modal slds-fade-in-open" style="max-width: 104%;" >
+        <div class="slds-modal__header" style="margin-top:10%;">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.closePress}" style="float:right;">
+          <lightning:icon iconName="utility:close" variant="close"/>
+                <span class="slds-assistive-text">Close</span>
+        </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium">Capture Onsite Course Question</h2>
+        </div>
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="height:67%;">
+       
+            
+        
+    <aura:iteration items="{!v.SBQQ__QuoteLine__c}" var="ql">
+        <br/>
+        <div style="border:1px; background-color: lightslategrey;padding: 1%; ">
+        <a style="color:white;" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="{!ql.Id}">Quote Line:{!ql.Name} | {!ql.SBQQ__Product__r.Name}<aura:if isTrue="{!ql.Service_Appointments__r[0].SchedStartTime != null}"> | <ui:outputDateTime value="{!ql.Service_Appointments__r[0].SchedStartTime}"/></aura:if> <aura:if isTrue="{!ql.Service_Appointments__r[0].City != null}">| {!ql.Service_Appointments__r[0].City},{!ql.Service_Appointments__r[0].StateCode}</aura:if> </a>
+        </div>
+        <br/>
+        <c:CoursesOSCQuestions SBQQ__QuoteLine__c="{!ql}" />
+    </aura:iteration>
+    <aura:iteration items="{!v.evaluations}" var="ql">
+        <br/>
+        <div style="border:1px; background-color: lightslategrey;padding: 1%; ">
+        	<a style="color:white;" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="{!ql.Id}">Quote Line:{!ql.Name} | {!ql.SBQQ__Product__r.Name}<aura:if isTrue="{!ql.Service_Appointments__r[0].SchedStartTime != null}"> | <ui:outputDateTime value="{!ql.Service_Appointments__r[0].SchedStartTime}"/></aura:if> <aura:if isTrue="{!ql.Service_Appointments__r[0].City != null}">| {!ql.Service_Appointments__r[0].City},{!ql.Service_Appointments__r[0].StateCode}</aura:if> </a>
+        </div>
+            <c:EvaluationsOSCQuestions SBQQ__QuoteLine__c="{!ql}"/>
+        <br/>
+    </aura:iteration>
+        <div style="margin:5%;">
+        	<lightning:spinner aura:id="busyIndicator"  variant="brand" size="large" class="slds-show"/>
+        </div>
+        
+
+        <div class="slds-notify_container" style="{!if(v.HasRecord == 0,'display:Block;position: inherit;','display:None;position: inherit;')}">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>
+                        There are no Quote Lines on this Quote.
+                    </h2>
+                </div>
+            </div>
+        
+        </div>
+    <div class="slds-modal__footer">
+        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" aura:id="btnCancel" onclick="{!c.closePress}">
+            Cancel
+        </button>
+        <button type="button" class="slds-button slds-button--brand" aura:id="btnSave" onclick="{!c.saveQuoteLines}" disabled="{!if(v.HasRecord==0,true,false)}">
+            Save
+        </button>
+    </div>
+        </div>
+</aura:component>

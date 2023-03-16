@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFTE_Minimum_Quantity</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+or(
+SBQQ__Product__r.Id = &apos;01t4p000004SV6y&apos;,
+SBQQ__Product__r.Id = &apos;01t46000003YGUQ&apos;
+),
+ISCHANGED(SBQQ__Quantity__c),
+SBQQ__Quantity__c &lt; 12
+)</errorConditionFormula>
+    <errorMessage>RFTE requires a minimum quantity of 12!</errorMessage>
+</ValidationRule>

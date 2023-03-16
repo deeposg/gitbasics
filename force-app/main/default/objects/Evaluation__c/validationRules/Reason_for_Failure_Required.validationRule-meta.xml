@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Failure_Required</fullName>
+    <active>true</active>
+    <description>Reason for Failure required if status is Fail</description>
+    <errorConditionFormula>IF( AND(ISBLANK(Reason_for_Failure__c), ISPICKVAL( Status__c, &apos;Fail&apos;) ) , true, false)</errorConditionFormula>
+    <errorMessage>Reason for Failure required if status is Fail</errorMessage>
+</ValidationRule>

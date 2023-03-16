@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Commission__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (
+
+or (
+and(DateValue(CreatedDate) &gt;= Date(2020,05,01) , contains(Course_Product_Line__c,&quot;COVID&quot;)),
+and(DateValue(CreatedDate) &gt;= Date(2020,05,01) , contains(Course_Product_Line__c,&quot;RFTE&quot;)),
+and(DateValue(CreatedDate) &gt;= Date(2022,04,28) , Course_Product_Line__c = &quot;CCD&quot;)
+)
+,
+
+
+if(
+AND( SBQQ__Product__r.Pay_Commission__c ,Not(Promotional_Discount__r.No_Commission__c)),
+max(0, Calculated_Gross_Margin__c * SBQQ__Product__r.Commission_Rate__c) ,
+0
+),
+
+
+if(
+ Commission_Percentage_Override__c &gt; 0,
+  Total_Amount_Without_Tax__c * Commission_Percentage_Override__c,
+  Total_Amount_Without_Tax__c * SBQQ__Product__r.Commission_Rate__c 
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Estimated Commission</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

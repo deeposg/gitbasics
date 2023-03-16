@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JHSCII_R_Cert_Expiration__c</fullName>
+    <externalId>false</externalId>
+    <label>JHSCII/R Cert Expiration</label>
+    <summarizedField>Attendee__c.RU_Cert_Expiration_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Attendee__c.Status__c</field>
+        <operation>contains</operation>
+        <value>Attended Entire Course, Confirmed, Confirmed - Walk-In</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Attendee__c.Course_Product_Line__c</field>
+        <operation>contains</operation>
+        <value>JHSCII,JHSCR,JHSC2,JHSCII2</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Attendee__c.Contact__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

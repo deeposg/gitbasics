@@ -1,0 +1,111 @@
+<aura:component controller="RecordMergeTool" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <!--Used to make the modal wider-->
+    <aura:html tag="style">
+        .slds-modal__container {
+             width : 60% !important;
+             max-width : 60% !important;
+         }
+    </aura:html>
+    
+    <aura:attribute name="secondaryContact" type="Id"/>
+    <aura:attribute name="primaryContact" type="Id"/>
+    <aura:attribute name="ErrorCode" type="String" default=""/>
+    <aura:attribute name="SuccessCode" type="String" default=""/>
+    <aura:attribute name="CanMerge" type="Boolean" default="true"/>
+    <aura:attribute name="Contacts" type="Contact[]"/>
+    <aura:handler name="init" action="{!c.contactsInit}" value="{!this}"/>
+
+    <lightning:spinner aura:id="busyIndicator" variant="brand" size="large" class="slds-hide"/>
+    
+    <!--If the contact doesn't have an AccountId, block merge-->
+    <aura:if isTrue="{!v.CanMerge}">
+        
+        <aura:if isTrue="{!v.secondaryContact == null}">
+            <div>
+                <!--Holds list of all available contacts to merge into (Notes about limiting number)-->
+                <table class="slds-table slds-table_bordered">
+                    <thead>
+                        <!--The rows with the field titles and add the fields below-->
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Name</div>                                    
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Email">Email</div>                                    
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Phone">Phone</div>                                    
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="EvalCount">Evaluation Count</div>                                    
+                            </th>
+                            <th scope="col">
+                            	<div class="slds-truncate" title="SimonDate">Simon Sync Date</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.Contacts}" var="contact">
+                            <tr>
+                                <td data-label="Name">
+                                    <a id="{!contact.Id}" onclick="{!c.setSecondaryContactClick}">{!contact.Name}</a>
+                                </td>
+                                <td data-label="Email">
+                                    <ui:outputText value="{!contact.Email}"/>
+                                </td>
+                                <td data-label="Phone">
+                                    <ui:outputText value="{!contact.Full_Telephone__c}"/>
+                                </td>
+                                <td data-label="Eval">
+                                    <ui:outputText value="{!contact.Evaluation_Count__c}"/>
+                                </td>
+                                <td data-label="Simon">
+                                    <ui:outputDateTime value="{!contact.LastSimonSyncSuccess__c}"/> 
+                                </td>
+                            </tr>
+                        </aura:iteration> 
+                    </tbody>
+                </table> 
+            </div>
+        </aura:if>
+      
+        <aura:if isTrue="{!v.secondaryContact != null}">
+            <div class="slds-col slds-size_12-of-12" align="center">
+                <ui:outputText value="Are you sure you want to merge these contacts? \n Note: THIS ACTION CANNOT BE REVERSED!"/>
+                <br/><br/>
+                <button onclick="{!c.cancelMergeClick}" class="slds-button slds-button_destructive">Cancel</button>
+                <button onclick="{!c.mergeContactsClick}" class="slds-button slds-button_brand">Merge Contacts</button> 
+            </div>
+        </aura:if>
+
+        <aura:set attribute="else">
+            <div class="slds-col slds-size_12-of-12" align="center">
+                You cannot merge this contact until it is related to an account.
+            </div>
+        </aura:set>
+    </aura:if>
+
+    <aura:if isTrue="{!v.ErrorCode != ''}">
+        <br/><br/><br/>
+        <div class="slds-notify_container" Style="position: inherit;">
+            <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                <span class="slds-assistive-text">{!v.ErrorCode}</span>
+                <h2>
+                    {!v.ErrorCode}
+                </h2>
+            </div>
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.SuccessCode != ''}">
+        <br/><br/><br/>
+        <div class="slds-notify_container" Style="position: inherit;">
+            <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+                <span class="slds-assistive-text">{!v.SuccessCode}</span>
+                <h2>
+                    {!v.SuccessCode}
+                </h2>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalTransactionTooBig</fullName>
+    <active>true</active>
+    <errorConditionFormula>ABS(Total_Adjustment_Amount__c) &gt;  Amount__c</errorConditionFormula>
+    <errorMessage>Total Transactions Can&apos;t Be Greater Than Amount</errorMessage>
+</ValidationRule>

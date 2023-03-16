@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Future_Attendees</fullName>
+    <columns>NAME</columns>
+    <columns>Contact_s_Account_Name__c</columns>
+    <columns>Quote_Account__c</columns>
+    <columns>Contact_Is_Valid__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Service_Appointment__c</columns>
+    <columns>Scheduled_Start__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Order_Product__c</columns>
+    <columns>Status__c</columns>
+    <columns>Certificate_Card_Expiration_Date__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contact_Is_Valid__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Contact__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <filters>
+        <field>Scheduled_Start__c</field>
+        <operation>greaterThan</operation>
+        <value>9/13/2019 12:00 AM</value>
+    </filters>
+    <label>All Future Attendees W Invalid Contact</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Appointment_Type__c</fullName>
+    <description>Set to the IH3POS of the Service Appointment</description>
+    <externalId>false</externalId>
+    <formula>TEXT(ServiceAppointment.IH3POS__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Set to the IH3POS of the Service Appointment</inlineHelpText>
+    <label>Service Appointment Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

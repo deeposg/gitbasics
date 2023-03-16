@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Order_Owner_Change</fullName>
+    <active>true</active>
+    <description>Prevents Order Owner from being changed</description>
+    <errorConditionFormula>AND( 
+ISCHANGED( Owner_Name__c ),
+AND( 
+$Profile.Name!= &apos;OSG Sys Admin&apos;,
+$Profile.Name!= &apos;Management User&apos;,
+$User.Id != &apos;0054p000002c047&apos;, /*Ryan M*/
+$User.Id != &apos;00546000002vwC9&apos; /*Jacob M*/
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot change the order owner. Please contact your system administrator.</errorMessage>
+</ValidationRule>

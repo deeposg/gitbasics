@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Contact_Needs_to_be_Updated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISNEW(),
+ OR(
+ CONTAINS(RecordType.DeveloperName, &apos;Quote_Payment_Term_Invoice&apos;), 
+ CONTAINS(RecordType.DeveloperName, &apos;Account_Payment_Term&apos;)
+ ),
+ Invoice_Contact_Updated__c = false
+)</errorConditionFormula>
+    <errorMessage>Invoice Contact information must be reviewed/updated before sending request!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ran_according_to_expectations</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ RecordType.Name = &apos;Toyota&apos;,
+ Ran_according_to_expectations__c = FALSE,
+ ISBLANK(Expectations_Incorrect_Details__c)
+)</errorConditionFormula>
+    <errorMessage>Provide details and variations if course/eval did not run according to expectations!</errorMessage>
+</ValidationRule>

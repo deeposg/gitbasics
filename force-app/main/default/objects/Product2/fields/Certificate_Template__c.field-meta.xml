@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Template__c</fullName>
+    <description>Captures the certificate template used for this course product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the certificate template used for this course product.</inlineHelpText>
+    <label>Certificate Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lift Device TTT Wall Certificate</fullName>
+                <default>false</default>
+                <label>Lift Device TTT Wall Certificate</label>
+            </value>
+            <value>
+                <fullName>Basic Wall Certificate</fullName>
+                <default>false</default>
+                <label>Basic Wall Certificate</label>
+            </value>
+            <value>
+                <fullName>Theory Only</fullName>
+                <default>false</default>
+                <label>Theory Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

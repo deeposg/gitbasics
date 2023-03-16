@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Canceled_SA</fullName>
+    <columns>Name</columns>
+    <columns>ParentRecord</columns>
+    <columns>ParentRecordType</columns>
+    <columns>Status</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <columns>Location_Code__c</columns>
+    <columns>ArrivalWindowStartTime</columns>
+    <columns>ArrivalWindowEndTime</columns>
+    <columns>WorkType</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>greaterThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>Future Canceled SA</label>
+</ListView>

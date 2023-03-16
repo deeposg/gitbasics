@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Contact_s_Mailing_Province__c</fullName>
+    <description>Captures the Primary Contact&apos;s Mailing Province listed on the Order record. Used for tax calculation for online products.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Primary Contact&apos;s Mailing Province listed on the Order record. Used for tax calculation for online products.</inlineHelpText>
+    <label>Primary Contact&apos;s Mailing Province</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

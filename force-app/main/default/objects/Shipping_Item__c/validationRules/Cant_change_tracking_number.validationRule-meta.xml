@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_change_tracking_number</fullName>
+    <active>true</active>
+    <errorConditionFormula>and( 
+Shipped__c , 
+PRIORVALUE(Shipped__c), 
+NOT(Fulfilled_By_Amazon__c),
+ischanged(Tracking_Number__c ) 
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t change tracking number after item is shipped.</errorMessage>
+</ValidationRule>

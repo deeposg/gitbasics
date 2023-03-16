@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Course_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>Duration__c</columns>
+    <columns>MaxOSCapacity_AdditionalChargeThreshold__c</columns>
+    <columns>Maximum_Capacity_Maximum_Attendees__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Courses</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Delivery_Method__c</field>
+        <operation>notEqual</operation>
+        <value>Online</value>
+    </filters>
+    <label>Active Course Products</label>
+</ListView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Payment_Terms__c</fullName>
+    <externalId>false</externalId>
+    <label>Quote Payment Terms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Force Card Under Threshold</fullName>
+                <default>true</default>
+                <label>Force Card Under Threshold</label>
+            </value>
+            <value>
+                <fullName>Default Invoice</fullName>
+                <default>false</default>
+                <label>Default Invoice</label>
+            </value>
+            <value>
+                <fullName>Force Credit Card</fullName>
+                <default>false</default>
+                <label>Force Credit Card</label>
+            </value>
+            <value>
+                <fullName>Force Invoice</fullName>
+                <default>false</default>
+                <label>Force Invoice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

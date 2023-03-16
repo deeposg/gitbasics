@@ -1,0 +1,8 @@
+<!-- 
+* Course Reminder-Public VF Component
+* Created By : Shiva Sharma
+* Created Date : 07/12/2017
+* Description :  This component will be used in Course Reminder - Public template -->
+<apex:component controller="courseReminderSiteController" access="global">
+
+</apex:component>

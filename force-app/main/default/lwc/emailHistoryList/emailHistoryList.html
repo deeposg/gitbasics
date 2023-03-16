@@ -1,0 +1,113 @@
+<template>
+  <div class="slds-card slds-card_boundary">
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media">
+            <lightning-icon
+              class="slds-m-right_small"
+              icon-name="standard:email"
+              title="email"
+            ></lightning-icon>
+
+            <div class="slds-media__body slds-align-middle">
+              <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                  <h1>
+                    <span class="slds-card__header-title slds-truncate"
+                      >Automated Emails:&nbsp;<span style="font-weight: 400"
+                        >{email}</span
+                      ></span
+                    >
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-page-header__col-actions_x">
+          <div class="slds-page-header__controls">
+            <div class="slds-page-header__control">
+              <div class={searchInputClass} onkeyup={handleKeyUp}>
+                <lightning-input
+                  name="enter-search"
+                  placeholder="Search emails..."
+                  label="Search emails..."
+                  variant="label-hidden"
+                  type="search"
+                  onfocus={handleInputFocus}
+                  onblur={handleInputBlur}
+                  onchange={handleInputChange}
+                ></lightning-input>
+              </div>
+            </div>
+            <div class="slds-page-header__control">
+              <ul class="slds-button-group-list">
+                <li>
+                  <lightning-button-icon-stateful
+                    icon-name="utility:user"
+                    selected={strictState}
+                    onclick={handleStrictButtonClick}
+                    alternative-text="Strict"
+                  ></lightning-button-icon-stateful>
+                </li>
+                <li>
+                  <lightning-button-icon-stateful
+                    icon-name="utility:advertising"
+                    selected={fuzzyState}
+                    onclick={handleFuzzyButtonClick}
+                    alternative-text="Fuzzy"
+                  ></lightning-button-icon-stateful>
+                </li>
+                <li>
+                  <lightning-button-icon-stateful
+                    icon-name="utility:people"
+                    selected={domainState}
+                    onclick={handleDomainButtonClick}
+                    alternative-text="Domain"
+                  ></lightning-button-icon-stateful>
+                </li>
+                <li>
+                  <lightning-button-icon-stateful
+                    icon-name="utility:groups"
+                    selected={allState}
+                    onclick={handleAllButtonClick}
+                    alternative-text="All"
+                  ></lightning-button-icon-stateful>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #c9c9c9">
+      <template if:true={busy}>
+        <div class="slds-spinner_container">
+          <div
+            role="status"
+            class="slds-spinner slds-spinner_medium"
+            style="top: 30px"
+          >
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </template>
+
+      <lightning-datatable
+        key-field="id"
+        hide-checkbox-column
+        resize-column-disabled
+        data={data}
+        columns={columns}
+        onrowaction={handleRowAction}
+        onsort={updateColumnSorting}
+        sorted-by={sortedBy}
+        sorted-direction={sortedDirection}
+      >
+      </lightning-datatable>
+    </div>
+  </div>
+</template>

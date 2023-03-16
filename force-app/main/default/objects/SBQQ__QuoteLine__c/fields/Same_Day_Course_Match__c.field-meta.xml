@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Same_Day_Course_Match__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Captures if the Quote Line has a matching Quote Line with the same Preferred Date and Time. Only applicable to &quot;On-site&quot; &quot;Course&quot; Products. Set via trigger and used with price rule to provide multi-course same day discounts.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if the Quote Line has a matching Quote Line with the same Preferred Date and Time. Only applicable to &quot;On-site&quot; &quot;Course&quot; Products. Set via trigger and used with price rule to provide multi-course same day discounts.</inlineHelpText>
+    <label>Same Day Course Match</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

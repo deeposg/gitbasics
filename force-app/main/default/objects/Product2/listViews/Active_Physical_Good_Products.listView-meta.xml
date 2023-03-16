@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Physical_Good_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Standard_Price__c</columns>
+    <columns>Base_Cost__c</columns>
+    <columns>Amazon_Sku__c</columns>
+    <columns>ShipStation_Sku__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Physical Goods</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Physical Good Products</label>
+</ListView>

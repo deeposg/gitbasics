@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Investigate_Attendees</fullName>
+    <columns>NAME</columns>
+    <columns>Attendee__c</columns>
+    <columns>Close_Contact_With_Symptomatic_Person__c</columns>
+    <columns>Contact_with_Person_Outside_of_Canada__c</columns>
+    <columns>Experiencing_Chest_Tightening_Discomfort__c</columns>
+    <columns>Experiencing_Fatigue__c</columns>
+    <columns>Experiencing_Fever__c</columns>
+    <columns>Experiencing_Headache__c</columns>
+    <columns>Experiencing_Cough__c</columns>
+    <columns>Experiencing_Shortness_of_Breath__c</columns>
+    <columns>Experiencing_Sore_Throat__c</columns>
+    <columns>Travelled_Outside_Canada_In_Last_14_Days__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Trainer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Proof_of_Vaccination_Provided__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Investigate Attendees</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Unit_Price_and_Surchage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ SBQQ__NetPrice__c = 0,
+ Surcharge__c &gt; 0
+)</errorConditionFormula>
+    <errorMessage>Cannot set a surcharge when net price is 0. Contact your administrator!</errorMessage>
+</ValidationRule>

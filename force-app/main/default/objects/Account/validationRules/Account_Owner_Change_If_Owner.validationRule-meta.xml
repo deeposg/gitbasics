@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Change_If_Owner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(OwnerId),
+$User.Id != PRIORVALUE(OwnerId),
+not( $User.Alias = &apos;aivan&apos;), 
+not( $User.Alias = &apos;gthom&apos;), 
+not ($User.Alias = &apos;slam&apos;), 
+not ($User.Alias = &apos;bmath&apos;),
+not ($User.Alias = &apos;lcruz&apos;),
+not ($User.Alias = &apos;rmoll&apos;),
+not ($User.Alias = &apos;JMorr&apos;)
+)</errorConditionFormula>
+    <errorMessage>You cannot change ownership of accounts that belong to another rep!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_SA_on_Order_Product_for_OS_SA</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED(Status), 
+ ISPICKVAL(Status , &apos;Completed&apos;), 
+ ISPICKVAL(IH3POS__c, &apos;On-Site&apos;),
+ Id !=  Order_Product__r.Classroom_Course__r.Id
+)</errorConditionFormula>
+    <errorMessage>The associated order product is misconfigured! Contact your administrator.</errorMessage>
+</ValidationRule>

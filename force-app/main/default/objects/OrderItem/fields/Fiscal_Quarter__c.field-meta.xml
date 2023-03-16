@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Quarter__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+OR(MONTH(Datevalue(CreatedDate)) = 9, MONTH(Datevalue(CreatedDate)) = 10, MONTH(Datevalue(CreatedDate)) = 11),
+1,
+ IF(
+ OR(MONTH(Datevalue(CreatedDate)) = 12, MONTH(Datevalue(CreatedDate)) = 1, MONTH(Datevalue(CreatedDate)) = 2),
+ 2,
+  IF(
+  OR(MONTH(Datevalue(CreatedDate)) = 3, MONTH(Datevalue(CreatedDate)) = 4, MONTH(Datevalue(CreatedDate)) = 5),
+  3,
+   IF(
+   OR(MONTH(Datevalue(CreatedDate)) = 6, MONTH(Datevalue(CreatedDate)) = 7, MONTH(Datevalue(CreatedDate)) = 8),
+   4,
+    0
+   )
+  )
+ )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fiscal Quarter</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Eval_Data_Populated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( IsActive ),
+IsActive = true,
+ISPICKVAL(Family, &quot;Evaluations&quot;),
+OR(
+ISPICKVAL( Evaluation_Record_Type__c, &quot;&quot;),
+ISBLANK( Devices__c)
+)
+)</errorConditionFormula>
+    <errorMessage>Evaluation Record Type and Devices are required for an evaluation product!</errorMessage>
+</ValidationRule>

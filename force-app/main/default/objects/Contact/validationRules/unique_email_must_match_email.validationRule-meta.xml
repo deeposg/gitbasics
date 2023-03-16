@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>unique_email_must_match_email</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( unique_email__c ) &amp;&amp; !isblank(unique_email__c) &amp;&amp; (unique_email__c != Email)</errorConditionFormula>
+    <errorMessage>Unique Email must match email</errorMessage>
+</ValidationRule>

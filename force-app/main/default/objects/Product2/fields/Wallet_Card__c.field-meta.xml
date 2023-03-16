@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wallet_Card__c</fullName>
+    <description>Captures whether a course product provides a wallet card to attendees who meet all requirements.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether a course product provides a wallet card to attendees who meet all requirements.</inlineHelpText>
+    <label>Wallet Card</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

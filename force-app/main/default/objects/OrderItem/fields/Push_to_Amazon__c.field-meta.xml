@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Push_to_Amazon__c</fullName>
+    <description>TEMPORARY FIELD (DO NOT USE)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>TEMPORARY FIELD (DO NOT USE)</inlineHelpText>
+    <label>Push to Amazon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Push</fullName>
+                <default>false</default>
+                <label>Push</label>
+            </value>
+            <value>
+                <fullName>Finished</fullName>
+                <default>false</default>
+                <label>Finished</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

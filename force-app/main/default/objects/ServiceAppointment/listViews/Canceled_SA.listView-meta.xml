@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Canceled_SA</fullName>
+    <columns>Name</columns>
+    <columns>ArrivalWindowStartTime</columns>
+    <columns>ArrivalWindowEndTime</columns>
+    <columns>Status</columns>
+    <columns>IH3POS__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Training_Address1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Canceled</value>
+    </filters>
+    <filters>
+        <field>EarliestStartTime</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2019 12:00 AM</value>
+    </filters>
+    <label>Canceled SA</label>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Reason_for_No_Opportunity</fullName>
+    <active>true</active>
+    <description>When the Status = Lead Qualified, Reason for No Opportunity is required.</description>
+    <errorConditionFormula>AND( ISPICKVAL( Status , &quot;Lead Qualified&quot;),  ISBLANK( Reason_for_No_Opportunity__c ) )</errorConditionFormula>
+    <errorMessage>You must provide a reason why there is no sales opportunity for this Lead at this time.</errorMessage>
+</ValidationRule>

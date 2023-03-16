@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Devices_Cost__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( 
+ and(CONTAINS(Course_Product_Line__c, &apos;TTT&apos;), SBQQ__ProductFamily__c = &apos;Evaluations&apos;), 0, 
+
+if(INCLUDES( Additional_Devices__c, &quot;Counterbalance&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Narrow Aisle&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Order Picker&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Pallet Truck&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Scissor Lift&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Articulated Boom Lift&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Telehandler&quot;), 50, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Overhead Bridge&quot;), 50, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Cab Operated&quot;), 50, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Jib Crane&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Gantry Crane&quot;), 50, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Single Beam&quot;), 50, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Articulated&quot;), 25, 0) + 
+if(INCLUDES( Additional_Devices__c, &quot;Cable Boom&quot;), 50, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Additional Devices Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSG_Booked_Order_Layout</fullName>
+    <fields>OrderNumber</fields>
+    <fields>AccountId</fields>
+    <fields>Total_Net_Amount__c</fields>
+    <fields>Total_Invoiced_Amount__c</fields>
+    <fields>Pending_Invoice_Balance__c</fields>
+    <fields>Sales_User__c</fields>
+    <fields>Purchase_Order_Number__c</fields>
+    <label>OSG_Booked Order Layout</label>
+</CompactLayout>

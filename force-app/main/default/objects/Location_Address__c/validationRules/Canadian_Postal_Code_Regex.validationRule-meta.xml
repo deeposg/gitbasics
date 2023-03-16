@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Canadian_Postal_Code_Regex</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Country__c, &apos;Canada&apos;),
+NOT(ISBLANK( Postal_Code__c )),
+/*NOT(REGEX( Postal_Code__c ,&quot;^(?!.*[DFIOQU])[A-VXY][0-9][A-Z][ -]?[0-9][A-Z][0-9]$&quot;))*/
+NOT(REGEX( Postal_Code__c ,&quot;^[A-Z][0-9][A-Z][ -]?[0-9][A-Z][0-9]$&quot;))
+)</errorConditionFormula>
+    <errorMessage>Enter a valid Canadian postal code! (ex. N6E 3W8)</errorMessage>
+</ValidationRule>

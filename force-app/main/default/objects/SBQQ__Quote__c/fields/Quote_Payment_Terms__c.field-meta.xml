@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Payment_Terms__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Force_Credit_Card_Override__c = true, &quot;Force Credit Card&quot;,
+if ( Force_Invoice_Override__c = true, &quot;Force Invoice&quot;,
+if (ispickval(SBQQ__Account__r.Quote_Payment_Terms__c, &apos;&apos;), &quot;Force Card Under Threshold&quot;, 
+Text(SBQQ__Account__r.Quote_Payment_Terms__c)
+)
+)
+)</formula>
+    <label>Quote Payment Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

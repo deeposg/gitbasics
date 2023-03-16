@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Staus_In_Review</fullName>
+    <active>false</active>
+    <errorConditionFormula>and (Text(SBQQ__Status__c) = &apos;In Review&apos;,
+not(RecordType.Name = &apos;Pre-Approved Quote&apos;)
+)</errorConditionFormula>
+    <errorMessage>Quote Must Have Record Type Pre-Approved To Be Marked In Review</errorMessage>
+</ValidationRule>

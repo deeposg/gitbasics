@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surcharge_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (
+Surcharge__c &lt; 0,
+ SBQQ__SpecialPriceDescription__c != &apos;GREG DISCOUNT&apos;
+)</errorConditionFormula>
+    <errorMessage>Surcharge can&apos;t be negative</errorMessage>
+</ValidationRule>

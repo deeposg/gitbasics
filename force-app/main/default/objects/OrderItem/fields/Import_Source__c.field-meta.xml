@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Import_Source__c</fullName>
+    <description>Captures the import source of the record. From data migration source.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the import source of the record. From data migration source.</inlineHelpText>
+    <label>Import Source</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

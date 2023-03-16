@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Contact_Selection</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Contact__c ),
+NOT(ISBLANK( Contact__c )),
+Contact_Is_Valid__c = false,
+Contact__c != &apos;0038Z00002wEyIz&apos;
+/*,$User.Id != &apos;00546000000ufVc&apos;*/
+)</errorConditionFormula>
+    <errorMessage>You have selected an incorrect contact! Ensure the account the contact belongs to is the same as the orders account</errorMessage>
+</ValidationRule>

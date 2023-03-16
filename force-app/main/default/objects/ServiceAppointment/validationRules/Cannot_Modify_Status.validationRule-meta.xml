@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Modify_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(
+ISCHANGED(Status),
+OR(
+ISPICKVAL(PRIORVALUE(Status), &apos;Canceled&apos;),
+/*ISPICKVAL(PRIORVALUE(Status), &apos;Cannot Complete&apos;),*/
+ISPICKVAL(PRIORVALUE(Status), &apos;Complete&apos;)
+),
+$User.Alias != &apos;aivan&apos;
+,$User.Alias != &apos;bmath&apos;
+)</errorConditionFormula>
+    <errorMessage>Service Appointment status can no longer be modified once status is finalized! Contact Ana</errorMessage>
+</ValidationRule>

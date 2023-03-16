@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tertiary_Type__c</fullName>
+    <description>Captures the tertiary level of type for the case</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the tertiary type</inlineHelpText>
+    <label>Tertiary Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Secondary_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consulting - Excellence Program</fullName>
+                <default>false</default>
+                <label>Consulting - Excellence Program</label>
+            </value>
+            <value>
+                <fullName>Consulting - General</fullName>
+                <default>false</default>
+                <label>Consulting - General</label>
+            </value>
+            <value>
+                <fullName>Devices</fullName>
+                <default>false</default>
+                <label>Devices</label>
+            </value>
+            <value>
+                <fullName>Distributors</fullName>
+                <default>false</default>
+                <label>Distributors</label>
+            </value>
+            <value>
+                <fullName>Green Book</fullName>
+                <default>false</default>
+                <label>Green Book</label>
+            </value>
+            <value>
+                <fullName>JHSC</fullName>
+                <default>false</default>
+                <label>JHSC</label>
+            </value>
+            <value>
+                <fullName>JHSC1 DL</fullName>
+                <default>false</default>
+                <label>JHSC1 DL</label>
+            </value>
+            <value>
+                <fullName>JHSC Blended</fullName>
+                <default>false</default>
+                <label>JHSC Blended</label>
+            </value>
+            <value>
+                <fullName>JHSC DL</fullName>
+                <default>false</default>
+                <label>JHSC DL</label>
+            </value>
+            <value>
+                <fullName>JHSC Part 1 Online</fullName>
+                <default>false</default>
+                <label>JHSC Part 1 Online</label>
+            </value>
+            <value>
+                <fullName>LMS</fullName>
+                <default>false</default>
+                <label>LMS</label>
+            </value>
+            <value>
+                <fullName>LMS - A la carte</fullName>
+                <default>false</default>
+                <label>LMS - A la carte</label>
+            </value>
+            <value>
+                <fullName>LMS - Membership</fullName>
+                <default>false</default>
+                <label>LMS - Membership</label>
+            </value>
+            <value>
+                <fullName>LMS - SCORM</fullName>
+                <default>false</default>
+                <label>LMS - SCORM</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Supplies</fullName>
+                <default>false</default>
+                <label>Supplies</label>
+            </value>
+            <value>
+                <fullName>TTT</fullName>
+                <default>false</default>
+                <label>TTT</label>
+            </value>
+            <value>
+                <fullName>TTT PMs</fullName>
+                <default>false</default>
+                <label>TTT PMs</label>
+            </value>
+            <value>
+                <fullName>TTT Portal</fullName>
+                <default>false</default>
+                <label>TTT Portal</label>
+            </value>
+            <value>
+                <fullName>WAHC</fullName>
+                <default>false</default>
+                <label>WAHC</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Evaluation Requests</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>Devices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Evaluation Requests</controllingFieldValue>
+            <controllingFieldValue>Consent Forms</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Re-ship/Lost</controllingFieldValue>
+            <controllingFieldValue>Address Change</controllingFieldValue>
+            <controllingFieldValue>Incorrect Items / Qty</controllingFieldValue>
+            <controllingFieldValue>Freight Forward Request</controllingFieldValue>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Course Reset</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Shipping Update</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Evaluation Requests</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>TTT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consent Forms</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Re-ship/Lost</controllingFieldValue>
+            <controllingFieldValue>Address Change</controllingFieldValue>
+            <controllingFieldValue>Incorrect Items / Qty</controllingFieldValue>
+            <controllingFieldValue>Freight Forward Request</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Shipping Update</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>JHSC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consent Forms</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>JHSC Blended</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consent Forms</controllingFieldValue>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>WAHC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Course Fail</controllingFieldValue>
+            <valueName>JHSC1 DL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>How-Tos</controllingFieldValue>
+            <controllingFieldValue>Demo / Account Code</controllingFieldValue>
+            <controllingFieldValue>Contract Set-up</controllingFieldValue>
+            <valueName>LMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Re-ship/Lost</controllingFieldValue>
+            <controllingFieldValue>Address Change</controllingFieldValue>
+            <controllingFieldValue>Incorrect Items / Qty</controllingFieldValue>
+            <controllingFieldValue>Freight Forward Request</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Shipping Update</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <valueName>Green Book</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Course Reset</controllingFieldValue>
+            <controllingFieldValue>Distributors</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>LMS - A la carte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Course Reset</controllingFieldValue>
+            <controllingFieldValue>Distributors</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>LMS - Membership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <controllingFieldValue>Certificate Inquiries</controllingFieldValue>
+            <valueName>LMS - SCORM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reschedules / Cancellations</controllingFieldValue>
+            <controllingFieldValue>Re-ship/Lost</controllingFieldValue>
+            <controllingFieldValue>Address Change</controllingFieldValue>
+            <controllingFieldValue>Incorrect Items / Qty</controllingFieldValue>
+            <controllingFieldValue>Freight Forward Request</controllingFieldValue>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Shipping Update</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <valueName>Supplies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Re-ship/Lost</controllingFieldValue>
+            <controllingFieldValue>Address Change</controllingFieldValue>
+            <controllingFieldValue>Incorrect Items / Qty</controllingFieldValue>
+            <controllingFieldValue>Freight Forward Request</controllingFieldValue>
+            <controllingFieldValue>Shipping Update</controllingFieldValue>
+            <valueName>TTT PMs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <valueName>JHSC DL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Course Reset</controllingFieldValue>
+            <valueName>JHSC Part 1 Online</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unable to Access / Login</controllingFieldValue>
+            <controllingFieldValue>Course Reset</controllingFieldValue>
+            <valueName>TTT Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <valueName>Consulting - Excellence Program</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Cancellation / Refunds</controllingFieldValue>
+            <controllingFieldValue>Price</controllingFieldValue>
+            <controllingFieldValue>Schedule</controllingFieldValue>
+            <controllingFieldValue>Requirements</controllingFieldValue>
+            <controllingFieldValue>Receipt / Invoice Inquiries</controllingFieldValue>
+            <valueName>Consulting - General</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

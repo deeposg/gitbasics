@@ -1,0 +1,65 @@
+<template>
+  <lightning-quick-action-panel header="Attendee Management">
+    <template if:true={showSpinner}>
+      <lightning-spinner
+        alternative-text="Loading"
+        size="large"
+      ></lightning-spinner>
+    </template>
+
+    <template if:true={errorMessage}>
+      <p>
+        <b style="color: red">{errorMessage}</b>
+      </p>
+    </template>
+
+    <div
+      class={formElementClasses}
+      for:each={tempAttendees}
+      for:index="index"
+      for:item="attendee"
+      key={attendee.Id}
+    >
+      <div
+        for:each={attendee}
+        for:index="ind"
+        for:item="attdopt"
+        key={attdopt.Id}
+      >
+        <div class="slds-align_absolute-center">
+          <label
+            if:true={attdopt.Quote_Line__c}
+            class="slds-form-element__label"
+            for="combobox-id-2"
+            id="combobox-label-id-130"
+          >
+            <br />
+            <div
+              class="slds-border_top slds-border_bottom"
+              style="padding: 3px 0"
+            >
+              <strong
+                >Quote Line: {attdopt.Quote_Line__r.Name} || Product:
+                {attdopt.Quote_Line__r.SBQQ__Product__r.Name} || Attendees:
+                {attendee.length}
+              </strong>
+            </div>
+          </label>
+        </div>
+        <div style="padding: 0px 75px 0px 75px">
+          <c-searchable-combobox
+            required="true"
+            options={_options}
+            id={attdopt.Name}
+            data-id={attdopt.Id}
+            onchange={handleKeyChange}
+            onclick={handleClick}
+            label="Attendee Name"
+            value={attdopt.Name}
+          >
+          </c-searchable-combobox>
+        </div>
+      </div>
+    </div>
+  </lightning-quick-action-panel>
+</template>

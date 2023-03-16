@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Low_Score_With_Feedback</fullName>
+    <booleanFilter>1 or 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Submitted_At__c</columns>
+    <columns>Assigned_Resource__c</columns>
+    <columns>Instructor__c</columns>
+    <columns>Overall_Experience__c</columns>
+    <columns>Additional_Feedback__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Instructor__c</field>
+        <operation>lessOrEqual</operation>
+        <value>3</value>
+    </filters>
+    <filters>
+        <field>Overall_Experience__c</field>
+        <operation>lessOrEqual</operation>
+        <value>3</value>
+    </filters>
+    <label>Low Score With Feedback</label>
+</ListView>

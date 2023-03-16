@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Credit_Balance__c</fullName>
+    <externalId>false</externalId>
+    <label>LMS Credit Balance</label>
+    <summarizedField>Credit_Note__c.Balance__c</summarizedField>
+    <summaryFilterItems>
+        <field>Credit_Note__c.From_LMS__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Credit_Note__c.Balance__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Credit_Note__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

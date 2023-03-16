@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Date_and_Time__c</fullName>
+    <description>Captures the Scheduled Start date and time of the related Service Appointment (for on-site Service Appointments). Populated once Service Appointment is created via Process Builder rule.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Scheduled Start date and time of the related Service Appointment (for on-site Service Appointments). Populated once Service Appointment is created via Process Builder rule.</inlineHelpText>
+    <label>Scheduled Date and Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

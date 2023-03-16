@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Train_the_Trainer_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>Wallet_Card__c</columns>
+    <columns>Wall_Certificate__c</columns>
+    <columns>MaxOSCapacity_AdditionalChargeThreshold__c</columns>
+    <columns>Maximum_Capacity_Maximum_Attendees__c</columns>
+    <columns>Extra_Seat_Price__c</columns>
+    <columns>Train_the_Trainer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Train_the_Trainer__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Train-the-Trainer Products</label>
+</ListView>

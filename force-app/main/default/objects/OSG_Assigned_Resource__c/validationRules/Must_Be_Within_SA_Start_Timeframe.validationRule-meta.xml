@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Be_Within_SA_Start_Timeframe</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ Scheduled_Start__c &lt; ServiceAppointment__r.SchedStartTime,
+ Scheduled_Start__c &gt; ServiceAppointment__r.SchedEndTime
+)</errorConditionFormula>
+    <errorMessage>Scheduled Start Time must be within the SA timeframe!</errorMessage>
+</ValidationRule>

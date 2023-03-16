@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Force_Invoice_Override</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Force_Invoice_Override__c  ),
+Force_Invoice_Override__c = false,
+$User.Id != &apos;00546000000uiEZ&apos;,
+$User.Id != &apos;00546000002EH62&apos;,
+$User.Id != &apos;00546000000urMD&apos;,
+$User.Id != &apos;00546000000ufVc&apos;,
+$User.Id != &apos;0054p000002c4Ad&apos;
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to un-force invoice! Speak to accounting.</errorMessage>
+</ValidationRule>

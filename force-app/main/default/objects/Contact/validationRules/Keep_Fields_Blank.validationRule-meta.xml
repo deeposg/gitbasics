@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Keep_Fields_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+ ISCHANGED(Salutation),
+ NOT(ISBLANK(TEXT(Salutation)))
+)
+)</errorConditionFormula>
+    <errorMessage>Salutation must be kept blank!</errorMessage>
+</ValidationRule>

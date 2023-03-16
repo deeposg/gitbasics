@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distance_Learning_Mailing_Info_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $User.Id != &apos;00546000000ufVc&apos;,
+ ISCHANGED(Contact__c),
+ CONTAINS(Product__c  , &quot;Distance Learning&quot;),
+ CONTAINS(Product__c  , &quot;Joint Health &amp; Safety Committee Certification&quot;),
+/*NOT(ISBLANK( Service_Appointment__c )),*/
+ OR(
+  ISBLANK(Contact__r.MailingStreet),
+  ISBLANK(Contact__r.MailingCity),
+  ISBLANK(Contact__r.MailingPostalCode),
+  ISBLANK(Contact__r.MailingState),
+  ISBLANK(Contact__r.MailingCountry ),
+  ISBLANK(Contact__r.Email )
+ )
+)</errorConditionFormula>
+    <errorMessage>Distance Learning courses require a valid mailing address and email on the contact!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ended_On_Time</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ RecordType.Name = &apos;Toyota&apos;,
+ Ended_On_Time__c = FALSE,
+ ISBLANK(Actual_End_Time__c)
+)</errorConditionFormula>
+    <errorMessage>Need to specify actual end time if did not finish at scheduled end time!</errorMessage>
+</ValidationRule>

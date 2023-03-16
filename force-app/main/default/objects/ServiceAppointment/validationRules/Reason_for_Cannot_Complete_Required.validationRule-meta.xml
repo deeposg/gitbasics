@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Cannot_Complete_Required</fullName>
+    <active>true</active>
+    <description>Reason for Cannot Complete is required when Status of SA is Cannot Complete</description>
+    <errorConditionFormula>IF( AND(ISBLANK(  Reason_for_Cannot_Complete__c ), ISPICKVAL( Status , &apos;Cannot Complete&apos;) ) , true, false)</errorConditionFormula>
+    <errorMessage>Reason for Cannot Complete is required when status is Cannot Complete</errorMessage>
+</ValidationRule>

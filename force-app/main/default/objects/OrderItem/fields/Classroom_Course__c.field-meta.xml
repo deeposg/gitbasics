@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classroom_Course__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Connection to scheduled &quot;Classroom&quot; Service Appointment records (IH or 3P). Establishes the booked seats for a given classroom course.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Connection to scheduled &quot;Classroom&quot; Service Appointment records (IH or 3P). Establishes the booked seats for a given classroom course.</inlineHelpText>
+    <label>Classroom Course</label>
+    <referenceTo>ServiceAppointment</referenceTo>
+    <relationshipLabel>Classroom Ordered Seats</relationshipLabel>
+    <relationshipName>Classroom_Ordered_Seats</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

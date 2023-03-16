@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Toyota_Questionnaire_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ ISCHANGED(Status), 
+ ISPICKVAL(Status , &apos;Completed&apos;), 
+ Number_of_Toyota_Questionnaires__c &lt; 1,
+ CONTAINS(  Training_Address1__r.Account__r.Name , &apos;Toyota Motor&apos;),
+ NOT(Assigned_Service_Resource__c = &apos;00546000000u1No&apos;) 
+)</errorConditionFormula>
+    <errorMessage>Need to complete a Toyota Course Questionnaire to complete course!</errorMessage>
+</ValidationRule>

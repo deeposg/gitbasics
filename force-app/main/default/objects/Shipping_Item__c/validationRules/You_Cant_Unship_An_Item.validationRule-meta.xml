@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>You_Cant_Unship_An_Item</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+not(Shipped__c),
+PRIORVALUE(Shipped__c),
+$Profile.Name!= &apos;OSG Sys Admin&apos;
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t unship items!</errorMessage>
+</ValidationRule>

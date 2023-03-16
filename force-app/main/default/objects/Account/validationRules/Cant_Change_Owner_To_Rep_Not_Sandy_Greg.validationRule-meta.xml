@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Change_Owner_To_Rep_Not_Sandy_Greg</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (ischanged( OwnerId ) ,  
+or (
+PRIORVALUE(OwnerId) = &apos;00546000000uYF6&apos;, /*Trevor*/
+PRIORVALUE(OwnerId) = &apos;00546000000u1Pz&apos;, /*OSG Integration*/
+PRIORVALUE(OwnerId) = &apos;00546000000uP7f&apos;  /*Greg*/
+),
+
+$User.Id != &apos;00546000000uP7f&apos;, /*Greg*/
+$User.Id != &apos;00546000001efkf&apos;, /*Sandy*/
+$User.Id != &apos;00546000000urMD&apos;, /*Ana*/
+$User.Id != &apos;00546000000ufVc&apos;, /*Blessen*/
+$User.Id != &apos;0054p00000326w7&apos;, /*Chris M*/
+$User.Id != &apos;0054p000002c047&apos;, /*Ryan M*/
+$User.Id != &apos;00546000002vwC9&apos;, /*Jacob M*/
+$User.Id != &apos;0054p000003QvvE&apos;  /*Lissbeth*/
+)</errorConditionFormula>
+    <errorMessage>You don&apos;t have permission to change Owner</errorMessage>
+</ValidationRule>

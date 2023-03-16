@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Address__c</fullName>
+    <description>Captures the relationship to the Location Address. Secondary relationship. Contains a lookup filter to the Location: Location Status = Active.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the relationship to the Location Address. Secondary relationship. Filter to only display &quot;Active&quot; Location Addresses.</inlineHelpText>
+    <label>Location Address</label>
+    <lookupFilter>
+        <active>false</active>
+        <errorMessage>No &quot;Active&quot; Location Addresses meets the search criteria. Please search for an alternate &quot;Active&quot; Location Address record or create a new one.</errorMessage>
+        <filterItems>
+            <field>Location_Address__c.Location_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filterItems>
+        <infoMessage>Select from &quot;Active&quot; Location Addresses.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Location_Address__c</referenceTo>
+    <relationshipLabel>Account Addresses</relationshipLabel>
+    <relationshipName>Account_Addresses</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

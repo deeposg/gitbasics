@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Populate_Primary_Contact</fullName>
+    <active>true</active>
+    <description>Requires user to set the Primary Contact when trying to &quot;book&quot;</description>
+    <errorConditionFormula>AND( 
+SBQQ__PrimaryContact__c =&apos;&apos;, 
+Owner:User.Profile.Name != &apos;Integration User&apos;,
+Text(SBQQ__Status__c) != &apos;Expired&apos;,
+Text(SBQQ__Status__c) != &apos;Rejected&apos;
+)</errorConditionFormula>
+    <errorMessage>Please populate the Primary Contact.</errorMessage>
+</ValidationRule>

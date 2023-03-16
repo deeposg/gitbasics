@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Commission_Adjustments</fullName>
+    <columns>NAME</columns>
+    <columns>Amount__c</columns>
+    <columns>Credit_Note__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Sales_User__c</columns>
+    <columns>Date_Paid__c</columns>
+    <columns>Payout__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>From_LMS__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>LMS Commission Adjustments</label>
+</ListView>

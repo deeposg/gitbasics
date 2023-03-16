@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Length_Other_Required</fullName>
+    <active>true</active>
+    <description>Course Length Other must be populated when Course Length = &quot;Other&quot;</description>
+    <errorConditionFormula>AND( ISPICKVAL( Course_Length__c , &quot;Other&quot;),
+     ISBLANK( Course_Length_Other__c ) 
+ )</errorConditionFormula>
+    <errorMessage>You must indicate the other course length.</errorMessage>
+</ValidationRule>

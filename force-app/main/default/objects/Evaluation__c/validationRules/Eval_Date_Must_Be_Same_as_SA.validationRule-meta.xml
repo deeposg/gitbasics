@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eval_Date_Must_Be_Same_as_SA</fullName>
+    <active>false</active>
+    <errorConditionFormula>DATEVALUE( Text(Evaluation_Date__c)) !=  DATEVALUE(Text(Service_Appointment__r.EarliestStartTime) )</errorConditionFormula>
+    <errorMessage>Evaluation Date Must Be The Same As The Service Appointment</errorMessage>
+</ValidationRule>

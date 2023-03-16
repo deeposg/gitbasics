@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Billing_Address__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Connects the Order to the Account Address record to indicate the billing address. If selected, overrides the written down fields.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Connects the Order to the Account Address record to indicate the billing address. If selected, overrides the written down fields.</inlineHelpText>
+    <label>Order Billing Address</label>
+    <referenceTo>Account_Address__c</referenceTo>
+    <relationshipLabel>Quotes (Billing Address)</relationshipLabel>
+    <relationshipName>Orders</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

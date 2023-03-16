@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Captures the corresponding classroom, on-site, consulting service or evaluation Product record to pull down information into the Service Appointment (Course).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the corresponding classroom, on-site, consulting service or evaluation Product record to pull down information into the Service Appointment (Course).</inlineHelpText>
+    <label>Product</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Service Appointments</relationshipLabel>
+    <relationshipName>Service_Appointments</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

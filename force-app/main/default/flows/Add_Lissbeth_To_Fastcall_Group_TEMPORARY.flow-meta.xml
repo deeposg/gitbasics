@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Is_Weekday_And_Not_Friday</name>
+        <label>Is Weekday And Not Friday</label>
+        <locationX>182</locationX>
+        <locationY>636</locationY>
+        <defaultConnectorLabel>Not Working Day</defaultConnectorLabel>
+        <rules>
+            <name>Working_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Lissbeth_To_Group</targetReference>
+            </connector>
+            <label>Working Day</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lissbeth_Already_In_Group</name>
+        <label>Check If Lissbeth In Group</label>
+        <locationX>380</locationX>
+        <locationY>516</locationY>
+        <defaultConnectorLabel>In Group</defaultConnectorLabel>
+        <rules>
+            <name>In_Group</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Find_Lissbeth_In_Customer_Service_Group.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Weekday_And_Not_Friday</targetReference>
+            </connector>
+            <label>Not In Group</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>Weekday</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+AND(
+WEEKDAY({!$Flow.CurrentDate}) != 6,
+WEEKDAY({!$Flow.CurrentDate}) != 7,
+WEEKDAY({!$Flow.CurrentDate}) != 1
+),
+true,
+false
+)</expression>
+    </formulas>
+    <interviewLabel>Add Lissbeth To Fastcall Group (TEMPORARY) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Add Lissbeth To Fastcall Group (TEMPORARY)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Add_Lissbeth_To_Group</name>
+        <label>Add Lissbeth To Group</label>
+        <locationX>50</locationX>
+        <locationY>756</locationY>
+        <inputAssignments>
+            <field>GroupId</field>
+            <value>
+                <stringValue>00G4p000001j3bs</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>Get_Lissbeth_User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Find_Lissbeth_In_Customer_Service_Group</name>
+        <label>Find Lissbeth In Customer Service Group</label>
+        <locationX>380</locationX>
+        <locationY>396</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Lissbeth_Already_In_Group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00G4p000001j3bs</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Lissbeth_User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Lissbeth_User</name>
+        <label>Get Lissbeth User</label>
+        <locationX>380</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Find_Lissbeth_In_Customer_Service_Group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FirstName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lissbeth</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Lissbeth_User</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-06-09</startDate>
+            <startTime>10:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

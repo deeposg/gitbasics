@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Populate_Invoice_Contact</fullName>
+    <active>true</active>
+    <description>Requires user to set the Invoice Contact when trying to &quot;book&quot;</description>
+    <errorConditionFormula>AND(
+
+ SBQQ__Ordered__c  = true,
+
+Invoice_Contact__c =&apos;&apos;,
+Owner:User.Profile.Name != &apos;Integration User&apos;
+
+)</errorConditionFormula>
+    <errorMessage>Please populate the Invoice Contact.</errorMessage>
+</ValidationRule>

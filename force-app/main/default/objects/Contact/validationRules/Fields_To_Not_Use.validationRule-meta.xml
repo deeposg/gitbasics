@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields_To_Not_Use</fullName>
+    <active>true</active>
+    <errorConditionFormula>or (
+!isblank(text(Salutation) )
+)</errorConditionFormula>
+    <errorMessage>Do not use Salutation.</errorMessage>
+</ValidationRule>

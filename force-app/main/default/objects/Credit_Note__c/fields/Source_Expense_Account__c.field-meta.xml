@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Expense_Account__c</fullName>
+    <externalId>false</externalId>
+    <label>Source Expense Account</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2008</fullName>
+                <default>false</default>
+                <label>2008 - Refund Clearing</label>
+            </value>
+            <value>
+                <fullName>2030</fullName>
+                <default>false</default>
+                <label>2030 - HST</label>
+            </value>
+            <value>
+                <fullName>4000</fullName>
+                <default>false</default>
+                <label>4000 - Revenue</label>
+            </value>
+            <value>
+                <fullName>4005</fullName>
+                <default>false</default>
+                <label>4005 - JHSC 1 Online</label>
+            </value>
+            <value>
+                <fullName>4010</fullName>
+                <default>false</default>
+                <label>4010 - IH JHSC Part I</label>
+            </value>
+            <value>
+                <fullName>4011</fullName>
+                <default>false</default>
+                <label>4011 - IH JHSC Part II</label>
+            </value>
+            <value>
+                <fullName>4013</fullName>
+                <default>false</default>
+                <label>4013 - IH Train-the-Trainer</label>
+            </value>
+            <value>
+                <fullName>4015</fullName>
+                <default>false</default>
+                <label>4015 - IH Other Training</label>
+            </value>
+            <value>
+                <fullName>4017</fullName>
+                <default>false</default>
+                <label>4017 - 3P JHSC Part I</label>
+            </value>
+            <value>
+                <fullName>4018</fullName>
+                <default>false</default>
+                <label>4018 - 3P JHSC Part II</label>
+            </value>
+            <value>
+                <fullName>4020</fullName>
+                <default>false</default>
+                <label>4020 - 3P Train-the-Trainer</label>
+            </value>
+            <value>
+                <fullName>4022</fullName>
+                <default>false</default>
+                <label>4022 - 3P Other Training</label>
+            </value>
+            <value>
+                <fullName>4024</fullName>
+                <default>false</default>
+                <label>4024 - On-Site Training</label>
+            </value>
+            <value>
+                <fullName>4026</fullName>
+                <default>false</default>
+                <label>4026 - Testing and Evaluations</label>
+            </value>
+            <value>
+                <fullName>4028</fullName>
+                <default>false</default>
+                <label>4028 - WSIB</label>
+            </value>
+            <value>
+                <fullName>4030</fullName>
+                <default>false</default>
+                <label>4030 - Other Consulting</label>
+            </value>
+            <value>
+                <fullName>4032</fullName>
+                <default>false</default>
+                <label>4032 - Contract</label>
+            </value>
+            <value>
+                <fullName>4034</fullName>
+                <default>false</default>
+                <label>4034 - Virtual Classroom Training</label>
+            </value>
+            <value>
+                <fullName>4036</fullName>
+                <default>false</default>
+                <label>4036 - Manual, Video &amp; Other Sales</label>
+            </value>
+            <value>
+                <fullName>4038</fullName>
+                <default>false</default>
+                <label>4038 - Green Books</label>
+            </value>
+            <value>
+                <fullName>4040</fullName>
+                <default>false</default>
+                <label>4040 - Participant Manuals</label>
+            </value>
+            <value>
+                <fullName>4041</fullName>
+                <default>false</default>
+                <label>4041 - EAD Sales</label>
+            </value>
+            <value>
+                <fullName>4042</fullName>
+                <default>false</default>
+                <label>4042 - Administrative Fees</label>
+            </value>
+            <value>
+                <fullName>4044</fullName>
+                <default>false</default>
+                <label>4044 - Shipping &amp; Handling Fees</label>
+            </value>
+            <value>
+                <fullName>4062</fullName>
+                <default>false</default>
+                <label>4062 - Safety Supplies</label>
+            </value>
+            <value>
+                <fullName>4998</fullName>
+                <default>false</default>
+                <label>4998 - Promotional Account Credits</label>
+            </value>
+            <value>
+                <fullName>4999</fullName>
+                <default>false</default>
+                <label>4999 - Bad Debt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

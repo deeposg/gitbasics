@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Location__c</fullName>
+    <description>Captures the location the materials need to be available at.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the location the materials need to be available at.</inlineHelpText>
+    <label>Material Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LON</fullName>
+                <default>false</default>
+                <label>LON</label>
+            </value>
+            <value>
+                <fullName>CMB</fullName>
+                <default>false</default>
+                <label>CMB</label>
+            </value>
+            <value>
+                <fullName>MIS</fullName>
+                <default>false</default>
+                <label>MIS</label>
+            </value>
+            <value>
+                <fullName>COU</fullName>
+                <default>false</default>
+                <label>COU</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Summary__c</fullName>
+    <description>Captures the high-level product summary. Pulled from Product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the high-level product summary. Pulled from Product.</inlineHelpText>
+    <label>Course Summary</label>
+    <length>32000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

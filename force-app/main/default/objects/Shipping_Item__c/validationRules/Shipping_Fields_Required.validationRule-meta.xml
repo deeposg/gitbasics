@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Fields_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>and( 
+Shipped__c , 
+ISPICKVAL(Shipping_Method__c, &apos;Standard Courier&apos;), 
+NOT(ISPICKVAL(Shipping_Courrier__c,&apos;Amazon&apos;)),
+NOT(ISPICKVAL(Shipping_Courrier__c,&apos;OSS Supplier&apos;)), 
+OR( 
+ISPICKVAL(Shipping_Courrier__c,&apos;&apos;), 
+ISBLANK(Tracking_Number__c) 
+)
+)</errorConditionFormula>
+    <errorMessage>Shipping courrier and tracking number required to mark shipped.</errorMessage>
+</ValidationRule>

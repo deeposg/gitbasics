@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Added_To_Intacct__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>OsgOnline_Id__c</columns>
+    <columns>LearningLogin_Id__c</columns>
+    <columns>Account_Status__c</columns>
+    <columns>Reclaimed_Date__c</columns>
+    <columns>Reclaimed_From__c</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>PARENT_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Duplicate_Account__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Duplicate Accounts</label>
+</ListView>

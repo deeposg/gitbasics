@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Primary</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Is_Primary__c ),
+Is_Primary__c = true,
+ Has_Valid_Data__c = false
+)</errorConditionFormula>
+    <errorMessage>Contact cannot be primary until all data is valid! (Name, Email, Phone)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Payable__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (
+
+or (
+/*DateValue(CreatedDate) &gt;= Date(2026,12,01),*/
+and(DateValue(CreatedDate) &gt;= Date(2020,05,01) , contains(Course_Product_Line__c,&quot;COVID&quot;)),
+and(DateValue(CreatedDate) &gt;= Date(2020,05,01) , contains(Course_Product_Line__c,&quot;RFTE&quot;)),
+and(DateValue(CreatedDate) &gt;= Date(2022,04,28) , Course_Product_Line__c=&quot;CCD&quot;)
+)
+,
+
+
+if(
+AND(PricebookEntry.Product2.Pay_Commission__c,Not(Promotional_Discount__r.No_Commission__c)),
+max(0, Calculated_Gross_Margin__c * PricebookEntry.Product2.Commission_Rate__c),
+0),
+
+
+if(
+OR(
+AND(
+PricebookEntry.Product2.Pay_Commission__c,
+Not(Promotional_Discount__r.No_Commission__c),
+Not(From_LMS__c)
+),
+AND(
+From_LMS__c,
+PricebookEntry.Product2Id = &apos;01t46000003jClO&apos;, /* LMS SUBSCRIPTION */
+Not(Account__r.Do_Not_Pay_LMS_Commission__c)
+),
+AND(
+From_LMS__c,
+PricebookEntry.Product2Id != &apos;01t46000003jClO&apos; /* LMS SUBSCRIPTION */
+)
+),
+if(
+Commission_Percentage_Override__c &gt; 0,
+Total_Amount_Without_Tax__c * Commission_Percentage_Override__c,
+Total_Amount_Without_Tax__c * PricebookEntry.Product2.Commission_Rate__c
+),
+0)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Commission Payable</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

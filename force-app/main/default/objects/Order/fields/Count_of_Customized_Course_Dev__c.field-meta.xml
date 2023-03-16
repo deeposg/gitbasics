@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_of_Customized_Course_Dev__c</fullName>
+    <description>Counts the number of Order Products where Product = Count of Customized Course Development</description>
+    <externalId>false</externalId>
+    <label>Count of Customized Course Dev</label>
+    <summaryFilterItems>
+        <field>OrderItem.Product_Name__c</field>
+        <operation>equals</operation>
+        <value>Customized On-Site Course</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

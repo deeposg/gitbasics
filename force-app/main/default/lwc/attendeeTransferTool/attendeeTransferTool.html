@@ -1,0 +1,68 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Batch Attendee Moving Tool" icon-name="custom:custom15">
+      <div class="slds-m-around_medium">
+        <template if:true={showSpinner}>
+          <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+      
+        <lightning-button-icon icon-name="utility:refresh" alternative-text="Reset" class="slds-var-m-left_xx-small" title="Reset" onclick={resetComponent}></lightning-button-icon>
+
+        <template if:false={serviceAppointments}>
+          <lightning-input 
+            type="number"
+            label="Number of Attendees to move"
+            value={numberOfAttendees}
+            min="1"
+            onchange={handleNumberChange}
+          >
+          </lightning-input>
+      
+          <template if:true={showButton}>
+            <lightning-button variant="brand" label="Get Service Appointments" title="Get SAs" onclick={getServiceAppointments}></lightning-button>
+          </template>
+      
+        </template>
+      
+        <template if:true={serviceAppointments}>
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th scope="col">
+                  <div title="Service Appointment">Service Appointment</div>
+                </th>
+                <th scope="col">
+                  <div title="Start Time">Start Time</div>
+                </th>
+                <th scope="col">
+                  <div title="Instructor">Instructor</div>
+                </th>             
+              </tr>
+            </thead>
+      
+            <tbody>
+              <template for:each={serviceAppointments} for:item="sa">
+                <tr key={sa.Id} class="slds-hint-parent">
+                  <td data-label="Service Appointment">
+                    <a href="#" name={sa.Id} onclick={selectAppointment}>{sa.AppointmentNumber}</a>
+                  </td>
+                  <td data-label="Start Time">
+                    <lightning-formatted-date-time value={sa.SchedStartTime} year="numeric" day="2-digit" month="long" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                  </td>
+                  <td data-label="Instructor">
+                    <div class="slds-truncate" title="Instructor">{sa.Service_Resource_Name__c}</div>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>      
+        </template>
+          
+        <template if:true={errorMessage}>
+          <p>
+            <b style="color: red;">{errorMessage}</b>
+          </p>
+        </template>
+      </div>
+    </lightning-card>
+    </template>

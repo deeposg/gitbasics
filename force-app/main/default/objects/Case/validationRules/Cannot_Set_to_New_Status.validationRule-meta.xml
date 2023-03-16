@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Set_to_New_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( Status, &apos;New&apos;),
+ISCHANGED(Status),
+NOT(ISPICKVAL(PRIORVALUE(Status), &apos;New&apos;)),
+NOT(ISNEW())
+)</errorConditionFormula>
+    <errorMessage>Cannot set a ticket to new!</errorMessage>
+</ValidationRule>

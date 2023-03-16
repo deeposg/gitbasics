@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recipient_Email_Is_Sales_Rep</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ SBQQ__Account__r.Allow_Quote_To_Sales_Rep__c = false,
+ ISCHANGED(Recipient_Email__c),
+OR(
+ Recipient_Email__c = &apos;tdutrizac@osg.ca&apos;,
+ Recipient_Email__c = &apos;kgates@osg.ca&apos;,
+ Recipient_Email__c = &apos;jason@osg.ca&apos;,
+ Recipient_Email__c = &apos;jmalcolm@osg.ca&apos;,
+ Recipient_Email__c = &apos;mitchell@osg.ca&apos;,
+ Recipient_Email__c = &apos;trizzo@osg.ca&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot send quote to OSG sales rep! Please contact Accounting</errorMessage>
+</ValidationRule>

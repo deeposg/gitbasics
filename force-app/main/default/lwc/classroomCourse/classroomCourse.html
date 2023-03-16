@@ -1,0 +1,232 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <template if:true={showSpinner}>
+    <lightning-spinner alternative-text="Loading" size="large">
+    </lightning-spinner>
+  </template>
+  <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+    <thead>
+      <tr class="slds-text-title_caps">
+        <th scope="col">
+          <div class="slds-truncate" title="Line Name">Line Name</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Product">Product</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Quantity">Quantity</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Classroom Course">
+            Classroom Course
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <template for:each={values} for:item="SbqqQuoteLine">
+        <tr key={SbqqQuoteLine.CirseProductLine}>
+          <td data-id={SbqqQuoteLine.RecordId}>
+            <a href="#" data-id={SbqqQuoteLine.RecordId} onclick={handleClick}
+              >{SbqqQuoteLine.LineName}</a
+            >
+          </td>
+          <td>{SbqqQuoteLine.ProductName}</td>
+          <td>{SbqqQuoteLine.Quantity}</td>
+          <td
+            data-id={SbqqQuoteLine.CourseProductLine}
+            onclick={showClassroomTableHandler}
+            data-label={SbqqQuoteLine.RecordId}
+            data-record={SbqqQuoteLine.apexDistanceLearning}
+          >
+            {SbqqQuoteLine.ClassroomName}
+            <lightning-icon
+              icon-name="utility:search"
+              alternative-text="search"
+              size="xx-small"
+              title="search"
+            ></lightning-icon>
+          </td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+
+  <template if:true={showClassroomTable}>
+    <div class="secondTable">
+      <lightning-quick-action-panel header="Classroom Course Search">
+        <button
+          onclick={goBackHandler}
+          style="display: block; margin: 0 auto 0 0"
+        >
+          Go back to the main table
+        </button>
+        <br />
+        <div class="container" style="overflow: auto">
+          <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+              <tr class="slds-text-title_caps">
+                <th scope="col">
+                  <div class="slds-truncate" title="Appointment Number">
+                    Appointment Number
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Training Address">
+                    Training Address
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="IH3POS">IH3POS</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Scheduled Start">
+                    Scheduled Start
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Scheduled End">
+                    Scheduled End
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Spaces Left">
+                    Spaces Left
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Address">Address</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Product">Product</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Course Maximum">
+                    Course Maximum
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Confirmed Seats">
+                    Confirmed Seats
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Current Quoted Seats">
+                    Current Quoted Seats
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={serviceAppointments} for:item="serviceAptmnt">
+                <tr key={serviceAptmnt.Id}>
+                  <td data-label="AppointmentNumber">
+                    <div class="slds-truncate" title="Appointment Number">
+                      <a
+                        data-record={serviceAptmnt.AppointmentNumber}
+                        id={serviceAptmnt.Id}
+                        data-id={serviceAptmnt.Id}
+                        onclick={saveAptNumber}
+                        >{serviceAptmnt.AppointmentNumber}</a
+                      >
+                    </div>
+                  </td>
+                  <td data-label="Training Address">
+                    <div class="slds-truncate" title="Training Address">
+                      {serviceAptmnt.Training_Address1__r.Location_Address__r.Name}
+                    </div>
+                  </td>
+                  <td data-label="IH3POS">
+                    <div class="slds-truncate" title="IH3POS">
+                      {serviceAptmnt.IH3POS__c}
+                    </div>
+                  </td>
+                  <td data-label="SchedStartTime">
+                    <div class="slds-truncate" title="SchedStartTime">
+                      <lightning-formatted-date-time
+                        value={serviceAptmnt.SchedStartTime}
+                        format="MMM dd, yyyy hh:mm a"
+                      ></lightning-formatted-date-time>
+                    </div>
+                  </td>
+                  <td data-label="SchedEndTime">
+                    <div class="slds-truncate" title="SchedEndTime">
+                      <lightning-formatted-date-time
+                        value={serviceAptmnt.SchedEndTime}
+                        format="MMM dd, yyyy hh:mm a"
+                      ></lightning-formatted-date-time>
+                    </div>
+                  </td>
+                  <td data-label="SpacesLeft">
+                    <div class="slds-truncate" title="Spaces Left">
+                      {serviceAptmnt.Spaces_Left__c}
+                    </div>
+                  </td>
+                  <td data-label="Address">
+                    <div class="slds-truncate" title="Address">
+                      {serviceAptmnt.Address.street}<template
+                        if:true={serviceAptmnt.Address.street}
+                      >
+                        <b>,</b>
+                      </template>
+                      {serviceAptmnt.Address.state}<template
+                        if:true={serviceAptmnt.Address.state}
+                      >
+                        <b>,</b>
+                      </template>
+                      {serviceAptmnt.Address.countryCode}
+                    </div>
+                  </td>
+                  <td data-label="Product">
+                    <div class="slds-truncate" title="Product">
+                      {serviceAptmnt.Product_Name__c}
+                    </div>
+                  </td>
+                  <td data-label="CourseMaximum">
+                    <div class="slds-truncate" title="Course Maximum">
+                      {serviceAptmnt.Course_Maximum_Capacity__c}
+                    </div>
+                  </td>
+                  <td data-label="ConfirmedSeats">
+                    <div class="slds-truncate" title="Confirmed Seats">
+                      {serviceAptmnt.Confirmed_Seats__c}
+                    </div>
+                  </td>
+                  <td data-label="CurrentQuotedSeats">
+                    <div class="slds-truncate" title="Current Quoted Seats">
+                      {serviceAptmnt.Current_Quoted_Seats__c}
+                    </div>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </lightning-quick-action-panel>
+    </div>
+  </template>
+  <template if:true={hasRecords}>
+    <div style="position: fixed !important"></div>
+
+    <div class="slds-notify_container">
+      <div
+        class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Error</span>
+        <h2>There are no Quote Lines matching your Filter criteria.</h2>
+      </div>
+    </div>
+  </template>
+  <template if:true={hasNoRecord}>
+    <div class="slds-notify_container" style="position: relative">
+      <div
+        class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Error</span>
+        <h2>No Appointments available for this Product.</h2>
+      </div>
+    </div>
+  </template>
+</template>

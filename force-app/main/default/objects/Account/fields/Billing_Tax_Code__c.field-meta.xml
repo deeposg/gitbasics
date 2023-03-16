@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Tax_Code__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Tax code is based on the Shipping address province</description>
+    <externalId>false</externalId>
+    <label>Account Tax Code</label>
+    <referenceTo>Tax_Rate__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

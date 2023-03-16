@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_Expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (Text(SBQQ__Status__c) = &apos;Expired&apos;,
+not(RecordType.Name = &apos;Expired Quote&apos;)
+)</errorConditionFormula>
+    <errorMessage>Quote Must Have Record Type Expired To Be Marked As Expired</errorMessage>
+</ValidationRule>

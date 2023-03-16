@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parking_Notes__c</fullName>
+    <description>Captures details about parking needs at a location. Pulled from Location Address.</description>
+    <externalId>false</externalId>
+    <formula>Location_Address__r.Parking_Notes__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates details about parking needs at this location. Pulled from Location Address.</inlineHelpText>
+    <label>Parking Notes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

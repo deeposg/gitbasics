@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_course_once_completed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(PRIORVALUE(Date_Time_Completed__c))),
+ $User.Alias != &apos;bmath&apos;,
+ $User.Alias != &apos;gthom&apos;
+)</errorConditionFormula>
+    <errorMessage>A Service Appointment can no longer be modified once completed. Contact your administrator to make changes.</errorMessage>
+</ValidationRule>

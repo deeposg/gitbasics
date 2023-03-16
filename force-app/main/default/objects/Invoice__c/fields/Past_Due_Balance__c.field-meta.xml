@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Past_Due_Balance__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+
+ Balance__c &gt; 1,
+
+or (
+and(ISPICKVAL(Payment_Terms__c,&apos;&apos;), Days_Since_Invoice__c &gt; 30),
+and(ISPICKVAL(Payment_Terms__c,&apos;Due on Receipt&apos;), Days_Since_Invoice__c &gt; 30),
+and(ISPICKVAL(Payment_Terms__c,&apos;Net 30 Days&apos;), Days_Since_Invoice__c &gt; 30),
+and(ISPICKVAL(Payment_Terms__c,&apos;Net 45 Days&apos;), Days_Since_Invoice__c &gt; 45),
+and(ISPICKVAL(Payment_Terms__c,&apos;Net 60 Days&apos;), Days_Since_Invoice__c &gt; 60),
+and(ISPICKVAL(Payment_Terms__c,&apos;Net 90 Days&apos;), Days_Since_Invoice__c &gt; 90)
+)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Past Due Balance</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

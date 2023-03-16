@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_CreditCard_Reference</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Payment_Method__c, &apos;Credit Card&apos;),
+  NOT(BEGINS(Reference__c, &apos;ch_&apos;))
+)</errorConditionFormula>
+    <errorMessage>Credit card payment requires a valid stripe charge reference!</errorMessage>
+</ValidationRule>

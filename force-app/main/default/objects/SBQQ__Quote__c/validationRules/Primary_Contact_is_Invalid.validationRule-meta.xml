@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Contact_is_Invalid</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( SBQQ__PrimaryContact__c ),
+ SBQQ__PrimaryContact__r.Account.Id != SBQQ__Account__r.Id 
+)</errorConditionFormula>
+    <errorMessage>Primary Contact doesn&apos;t belong to the account the quote belongs to!</errorMessage>
+</ValidationRule>

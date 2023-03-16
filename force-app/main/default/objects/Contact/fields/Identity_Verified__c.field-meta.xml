@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Identity_Verified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines if a contact has had their identity verified by a person (Required for DLIH JHSC courses)</description>
+    <externalId>false</externalId>
+    <label>Identity Verified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

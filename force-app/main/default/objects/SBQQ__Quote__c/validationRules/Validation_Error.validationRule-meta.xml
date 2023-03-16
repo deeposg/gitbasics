@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Error</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+and(Validated__c
+,AND(
+$Profile.Name!= &apos;OSG Sys Admin&apos;,
+$Profile.Name!= &apos;Sales User&apos;,
+$Profile.Name!= &apos;Management User&apos;,
+$User.Alias!= &apos;kcros&apos;
+)
+)
+*/
+
+and(
+Validated__c,
+$UserRole.Name != &apos;System Admin&apos;,
+$UserRole.Name != &apos;Accounting&apos;,
+$UserRole.Name != &apos;Accounting and Operations Manager&apos;,
+$UserRole.Name != &apos;General Management&apos;,
+$UserRole.Name != &apos;Sales Rep&apos;,
+$UserRole.Name != &apos;Client Success Specialist&apos;,
+$UserRole.Name != &apos;Sales Management&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot modify a validated quote. Contact your administrator if you need to make changes to your quote.</errorMessage>
+</ValidationRule>

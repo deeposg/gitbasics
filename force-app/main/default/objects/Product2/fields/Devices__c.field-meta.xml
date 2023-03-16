@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Devices__c</fullName>
+    <externalId>false</externalId>
+    <label>Devices</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Articulated</fullName>
+                <default>false</default>
+                <label>Articulated</label>
+            </value>
+            <value>
+                <fullName>Articulated Boom Lift</fullName>
+                <default>false</default>
+                <label>Articulated Boom Lift</label>
+            </value>
+            <value>
+                <fullName>Bucket Truck</fullName>
+                <default>false</default>
+                <label>Bucket Truck</label>
+            </value>
+            <value>
+                <fullName>Burden Carrier</fullName>
+                <default>false</default>
+                <label>Burden Carrier</label>
+            </value>
+            <value>
+                <fullName>Cable Boom</fullName>
+                <default>false</default>
+                <label>Cable Boom</label>
+            </value>
+            <value>
+                <fullName>Cab Operated</fullName>
+                <default>false</default>
+                <label>Cab Operated</label>
+            </value>
+            <value>
+                <fullName>Carry Deck</fullName>
+                <default>false</default>
+                <label>Carry Deck</label>
+            </value>
+            <value>
+                <fullName>Combi Lift</fullName>
+                <default>false</default>
+                <label>Combi Lift</label>
+            </value>
+            <value>
+                <fullName>Counterbalance</fullName>
+                <default>false</default>
+                <label>Counterbalance</label>
+            </value>
+            <value>
+                <fullName>Elastomeric Full Facepiece</fullName>
+                <default>false</default>
+                <label>Elastomeric Full Facepiece</label>
+            </value>
+            <value>
+                <fullName>Elastomeric Half Facepiece</fullName>
+                <default>false</default>
+                <label>Elastomeric Half Facepiece</label>
+            </value>
+            <value>
+                <fullName>Electric Pallet</fullName>
+                <default>false</default>
+                <label>Electric Pallet</label>
+            </value>
+            <value>
+                <fullName>Filtering Facepiece</fullName>
+                <default>false</default>
+                <label>Filtering Facepiece</label>
+            </value>
+            <value>
+                <fullName>Gantry Crane</fullName>
+                <default>false</default>
+                <label>Gantry Crane</label>
+            </value>
+            <value>
+                <fullName>Half Gantry Crane</fullName>
+                <default>false</default>
+                <label>Half Gantry Crane</label>
+            </value>
+            <value>
+                <fullName>Harness Inspection</fullName>
+                <default>false</default>
+                <label>Harness Inspection</label>
+            </value>
+            <value>
+                <fullName>High Stacker</fullName>
+                <default>false</default>
+                <label>High Stacker</label>
+            </value>
+            <value>
+                <fullName>Jib Crane</fullName>
+                <default>false</default>
+                <label>Jib Crane</label>
+            </value>
+            <value>
+                <fullName>Ladder Truck</fullName>
+                <default>false</default>
+                <label>Ladder Truck</label>
+            </value>
+            <value>
+                <fullName>Lanyard Inspection</fullName>
+                <default>false</default>
+                <label>Lanyard Inspection</label>
+            </value>
+            <value>
+                <fullName>Moffett</fullName>
+                <default>false</default>
+                <label>Moffett</label>
+            </value>
+            <value>
+                <fullName>Monorail</fullName>
+                <default>false</default>
+                <label>Monorail</label>
+            </value>
+            <value>
+                <fullName>Narrow Aisle</fullName>
+                <default>false</default>
+                <label>Narrow Aisle</label>
+            </value>
+            <value>
+                <fullName>Order Picker</fullName>
+                <default>false</default>
+                <label>Order Picker</label>
+            </value>
+            <value>
+                <fullName>Overhead Bridge</fullName>
+                <default>false</default>
+                <label>Overhead Bridge</label>
+            </value>
+            <value>
+                <fullName>Pallet Truck</fullName>
+                <default>false</default>
+                <label>Pallet Truck</label>
+            </value>
+            <value>
+                <fullName>Pneumatic Powered Crane</fullName>
+                <default>false</default>
+                <label>Pneumatic Powered Crane</label>
+            </value>
+            <value>
+                <fullName>Powered Air Purifying Respirator</fullName>
+                <default>false</default>
+                <label>Powered Air Purifying Respirator</label>
+            </value>
+            <value>
+                <fullName>Rough Terrain</fullName>
+                <default>false</default>
+                <label>Rough Terrain</label>
+            </value>
+            <value>
+                <fullName>Scissor Lift</fullName>
+                <default>false</default>
+                <label>Scissor Lift</label>
+            </value>
+            <value>
+                <fullName>Self-Contained Breathing Apparatus</fullName>
+                <default>false</default>
+                <label>Self-Contained Breathing Apparatus</label>
+            </value>
+            <value>
+                <fullName>Single Beam</fullName>
+                <default>false</default>
+                <label>Single Beam</label>
+            </value>
+            <value>
+                <fullName>Supplied Air Respirator</fullName>
+                <default>false</default>
+                <label>Supplied Air Respirator</label>
+            </value>
+            <value>
+                <fullName>Telehandler</fullName>
+                <default>false</default>
+                <label>Telehandler</label>
+            </value>
+            <value>
+                <fullName>Telescopic Boom</fullName>
+                <default>false</default>
+                <label>Telescopic Boom</label>
+            </value>
+            <value>
+                <fullName>Tow Tractor/Tugger</fullName>
+                <default>false</default>
+                <label>Tow Tractor/Tugger</label>
+            </value>
+            <value>
+                <fullName>Walkie Rider</fullName>
+                <default>false</default>
+                <label>Walkie Rider</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

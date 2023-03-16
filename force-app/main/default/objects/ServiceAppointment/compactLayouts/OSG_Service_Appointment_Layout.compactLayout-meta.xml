@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSG_Service_Appointment_Layout</fullName>
+    <fields>AppointmentNumber</fields>
+    <fields>Account__c</fields>
+    <fields>Product__c</fields>
+    <fields>SchedStartTime</fields>
+    <fields>SchedEndTime</fields>
+    <fields>Status</fields>
+    <fields>Confirmed_Seats__c</fields>
+    <fields>IH3POS__c</fields>
+    <label>OSG_Service Appointment Layout</label>
+</CompactLayout>

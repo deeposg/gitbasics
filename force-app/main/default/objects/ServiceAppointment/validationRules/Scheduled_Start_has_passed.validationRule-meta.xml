@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Start_has_passed</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+  ISCHANGED( Status ),
+  OR(
+  ISPICKVAL(Status , &apos;Completed&apos;)
+  /*,ISPICKVAL(Status , &apos;Cannot Complete&apos;)*/
+  ),
+  SchedStartTime &gt; NOW(),
+  $Profile.Name!= &apos;OSG Sys Admin&apos;,
+  $User.Id != &apos;00546000000u1OS&apos;,
+  $User.Id != &apos;00546000001ehDJ&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot change the Status to &quot;Completed&quot; or &quot;Cannot Complete&quot; until the Scheduled Start has passed.</errorMessage>
+</ValidationRule>

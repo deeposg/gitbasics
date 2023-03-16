@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Type_of_Request_Required</fullName>
+    <active>true</active>
+    <description>The Other Type of Absence Requested is required when &quot;Other&quot; is selected.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Type_of_Absence_Requested__c , &quot;Other&quot;), 
+ISBLANK( Other_Type_of_Absense_Requested__c )
+)</errorConditionFormula>
+    <errorMessage>You must indicate the other type of absence request.</errorMessage>
+</ValidationRule>

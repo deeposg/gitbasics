@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Online_Orders_To_Be_Processed</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDER.BILL_TO_CONTACT</columns>
+    <columns>Total_Net_Amount__c</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>ORDERS.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDER.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Order.Booked_Order</value>
+    </filters>
+    <filters>
+        <field>Sales_User__c</field>
+        <operation>equals</operation>
+        <value>ointe</value>
+    </filters>
+    <filters>
+        <field>ORDERS.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <filters>
+        <field>ORDERS.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2019 12:00 AM</value>
+    </filters>
+    <label>Online Orders To Be Processed</label>
+</ListView>

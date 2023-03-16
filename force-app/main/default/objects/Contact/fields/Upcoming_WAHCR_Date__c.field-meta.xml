@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_WAHCR_Date__c</fullName>
+    <externalId>false</externalId>
+    <label>Upcoming WAHCR Date</label>
+    <summarizedField>Attendee__c.RU_Scheduled_Start_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Attendee__c.Course_Product_Line__c</field>
+        <operation>contains</operation>
+        <value>WAHCR</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Attendee__c.Status__c</field>
+        <operation>notContain</operation>
+        <value>Canceled, Didn&apos;t Show up for 2nd or 3rd Day, Equipment Unavailable, Left Course, No Show, Canceled - Invoice</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Attendee__c.Confirmed__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Attendee__c.RU_SA_Start_In_Future__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Attendee__c.Contact__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

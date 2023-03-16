@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="OSG Online Utility Tool" icon-name="custom:custom67">
+      <div class="slds-var-m-around_medium">
+        <template if:true={showSpinner}>
+          <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+      
+        <lightning-accordion allow-multiple-sections-open active-section-name={activeSections} onsectiontoggle={handleSectionToggle}>
+  
+          <lightning-accordion-section name="Reset" label="Reset Course Progress">
+            <p>The criteria to reset an attendees course progress depends on 1 of the following criteria being met</p>
+            <ul class="slds-list_dotted">
+              <li>If the attendee has started the course and failed</li>
+              <li>If the attendee has started the course and hasn't finished the course in 30 days</li>
+            </ul>
+            <lightning-button variant="brand" onclick={resetCourseProgress} disabled={disableResetButton} label="Reset Course Progress" class="slds-var-m-left_x-small"></lightning-button>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Resend" label="Resend Registration Email">
+            <p>If the user hasn't registered themselves in OSGOnline and requires their registration email resent, this will resend them that email. </p>
+            <lightning-button variant="brand" onclick={resendRegistrationEmail} disabled={disableResendButton} label="Resend Registration Email" class="slds-var-m-left_x-small"></lightning-button>
+          </lightning-accordion-section>
+  
+        </lightning-accordion>
+     
+          
+        <template if:true={errorMessage}>
+          <p>
+            <b style="color: red;">{errorMessage}</b>
+          </p>
+        </template>
+      </div>
+    </lightning-card>
+    </template>

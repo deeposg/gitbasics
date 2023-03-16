@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>html_jhsc_exp__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (isblank(JHSCII_R_Cert_Expiration__c), &apos;&apos;,
+&apos;&lt;li style=&quot;list-style: disc;&quot;&gt;&apos; +
+
+if (JHSCII_R_Cert_Expiration__c &lt; Today(),
+
+if (isblank( Email ), 
+    FullName__c + &apos; - &lt;span style=&quot;font-weight: bold&quot;&gt;Expired &apos; + Text(JHSCII_R_Cert_Expiration__c) + &apos;&lt;/span&gt;&apos;
+,
+    FullName__c + &apos; (&apos; +  Email + &apos;) - &lt;span style=&quot;font-weight: bold&quot;&gt;Expired &apos; + Text(JHSCII_R_Cert_Expiration__c) + &apos;&lt;/span&gt;&apos;
+)
+
+,
+
+if (isblank( Email ), 
+    FullName__c + &apos; - &lt;span style=&quot;font-weight: bold&quot;&gt;Expires &apos; + Text(JHSCII_R_Cert_Expiration__c) + &apos;&lt;/span&gt;&apos;
+,
+    FullName__c + &apos; (&apos; +  Email + &apos;) - &lt;span style=&quot;font-weight: bold&quot;&gt;Expires &apos; + Text(JHSCII_R_Cert_Expiration__c) + &apos;&lt;/span&gt;&apos;
+)
+
+)
+
++
+
+&apos;&lt;/li&gt;&apos;)</formula>
+    <label>html_jhsc_exp</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

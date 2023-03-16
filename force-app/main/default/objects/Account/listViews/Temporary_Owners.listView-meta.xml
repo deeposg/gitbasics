@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temporary_Owners</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Client_ID__c</columns>
+    <columns>Temporary_Owner__c</columns>
+    <columns>Temporary_Owner_Reset_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Temporary_Owner__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Temporary Owners</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_Online_Training_Contract_Length</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Online_Training_Contract__c = TRUE,
+ISBLANK(TEXT( Online_Training_Contract_Length__c))
+)</errorConditionFormula>
+    <errorMessage>Must set the online training contract length!</errorMessage>
+</ValidationRule>

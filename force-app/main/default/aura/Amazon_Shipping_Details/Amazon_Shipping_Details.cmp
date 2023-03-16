@@ -1,0 +1,62 @@
+<aura:component controller="AmazonHelper" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <force:recordData aura:id="shippingRecord"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      recordUpdated="{!c.recordUpdated}"
+                      mode="VIEW"/>
+
+    <div>
+    	<lightning:card title="Amazon Shipping Details">
+        <lightning:spinner aura:id="busyIndicator" variant="brand" size="large" class="slds-hide"/>
+            
+        	<p class="slds-text--heading--medium">
+                <aura:if isTrue="{!v.simpleRecord.Fulfillment_Id__c}">
+                	<aura:if isTrue="{!v.simpleRecord.Shipping_Status__c}">
+                        <p>Shipping Status: {!v.simpleRecord.Shipping_Status__c}</p>
+                        <p>Amazon Shipping Date:
+                            <lightning:formattedDateTime value="{!v.simpleRecord.Amazon_Shipping_Date__c}" year="numeric" month="numeric" day="numeric"  hour="2-digit" minute="2-digit"/>
+                        </p>
+                        <p>Estimated Arrival Date:
+                            <lightning:formattedDateTime value="{!v.simpleRecord.Estimated_Arrival_Date__c}" year="numeric" month="numeric" day="numeric" timeZone="UTC"/>
+                        </p>
+                        <p>Shipping Courrier: {!v.simpleRecord.Shipping_Courrier__c}</p>
+                        <p>Tracking Number: {!v.simpleRecord.Tracking_Number__c}</p>
+                        <br/>
+                        <lightning:button label="Get Details" onclick="{!c.getDetails}"/> 
+                        
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!v.simpleRecord.Fulfillment_Errors__c}">
+                            	<p>{!v.simpleRecord.Fulfillment_Errors__c}</p>
+                                
+                                <aura:set attribute="else">
+                                	<p>Press 'Get Details' to get any shipping details for this physical good.</p>
+                                </aura:set>
+                            </aura:if>
+                            
+                            <br/>
+                            <lightning:button label="Get Details" onclick="{!c.getDetails}"/>                            
+                        </aura:set>
+                    </aura:if>	
+                    
+                    <aura:set attribute="else">
+                        <p>This item is not processed by Amazon. If this is incorrect, contact your administrator.</p>
+                    </aura:set> 
+                    
+                </aura:if>
+            </p>
+            
+        </lightning:card>
+    
+    </div>
+	    
+    
+</aura:component>

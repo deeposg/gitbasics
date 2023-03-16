@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSG_Compact_Layout</fullName>
+    <fields>ServiceAppointment__c</fields>
+    <fields>ServiceResource__c</fields>
+    <fields>Scheduled_Start__c</fields>
+    <fields>Scheduled_End__c</fields>
+    <label>OSG Compact Layout</label>
+</CompactLayout>

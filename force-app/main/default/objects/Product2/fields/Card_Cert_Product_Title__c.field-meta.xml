@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Cert_Product_Title__c</fullName>
+    <description>Captures the external card/cert product name to use with certification templates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the external card/cert product name to use with certification templates.</inlineHelpText>
+    <label>Card/Cert Product Title</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

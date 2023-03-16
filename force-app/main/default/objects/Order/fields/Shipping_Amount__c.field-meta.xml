@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Amount__c</fullName>
+    <externalId>false</externalId>
+    <label>Shipping Amount</label>
+    <summarizedField>OrderItem.Shipping_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>OrderItem.SBQQ__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

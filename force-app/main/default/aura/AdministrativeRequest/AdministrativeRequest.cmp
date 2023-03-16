@@ -1,0 +1,29 @@
+<aura:component controller="AdministrativeRequestHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasSObjectName" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <aura:attribute name="lstOfRecordType" type="String[]" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="account" type="Account" />
+    
+    <div class="slds-border_bottom slds-border_top slds-border_left slds-border_right">
+        <div>
+            <div>
+                <div>
+                    <div class="slds-align--absolute-center">Select a request type</div>                            
+                </div>
+                <div>
+                    <ui:inputSelect aura:id="selectid">
+                        <aura:iteration items="{!v.lstOfRecordType}" var="recordType">                            
+                            <ui:inputSelectOption text="{!recordType.Id}" label="{!recordType.Name}" />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </div> &nbsp; &nbsp;
+            </div>                   
+        </div>
+        
+        <div>
+            <lightning:button class="slds-button slds-button--brand" onclick="{!c.createRecord}">Next</lightning:button>
+        </div>
+	</div>        
+</aura:component>

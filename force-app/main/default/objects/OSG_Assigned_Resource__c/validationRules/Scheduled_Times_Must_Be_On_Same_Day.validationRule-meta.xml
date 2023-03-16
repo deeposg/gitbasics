@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Times_Must_Be_On_Same_Day</fullName>
+    <active>false</active>
+    <errorConditionFormula>(Scheduled_End__c - Scheduled_Start__c) &gt;= 1</errorConditionFormula>
+    <errorMessage>Scheduled Start and End must be within 24 hours of each other!</errorMessage>
+</ValidationRule>

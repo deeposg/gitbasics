@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Valid_Primary_Shipping_Address__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+Primary_Shipping_Address_Count__c &lt; 1,
+ISBLANK(Primary_Shipping_Address__c)
+),
+FALSE,
+TRUE
+)</formula>
+    <label>Has Valid Primary Shipping Address</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Stage__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Direction__c</columns>
+    <columns>To_Phone__c</columns>
+    <columns>Contact__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>Recording_Size__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Direction__c</field>
+        <operation>notEqual</operation>
+        <value>Internal</value>
+    </filters>
+    <filters>
+        <field>Duration__c</field>
+        <operation>greaterThan</operation>
+        <value>15</value>
+    </filters>
+    <label>All</label>
+</ListView>

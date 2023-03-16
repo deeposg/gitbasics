@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Memo__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( ISBLANK(Custom_Memo__c) ,
+ 
+if ( Invoice__c == &apos;a3Y46000000i1Ir&apos;,
+
+if ( Amount__c &lt; 0,
+&quot;Use Prepay Order #&quot; +   Credit_Note__r.Target_Order__r.OrderNumber ,
+
+if (isblank(Credit_Note__r.Target_Order__c),
+&quot;Prepay Account&quot;,
+&quot;Prepay Order #&quot; +   Credit_Note__r.Target_Order__r.OrderNumber)),
+ 
+
+&quot;Pay Invoice #&quot; +  Invoice__r.Name
+
+), Custom_Memo__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Memo</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

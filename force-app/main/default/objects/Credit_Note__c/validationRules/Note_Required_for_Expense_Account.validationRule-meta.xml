@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Note_Required_for_Expense_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL(Source_Expense_Account__c, &apos;&apos;)),
+ISBLANK(Notes__c)
+)</errorConditionFormula>
+    <errorMessage>Notes required when source expense account is used</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Sell_Bundle_Product</fullName>
+    <active>true</active>
+    <errorConditionFormula>SBQQ__ProductCode__c = &apos;OL-JHSCB&apos;</errorConditionFormula>
+    <errorMessage>Cannot sell Bundle Product! Sell OL-JHSCI to process a bundle sale!</errorMessage>
+</ValidationRule>

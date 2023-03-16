@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" access="global">
+    <ltng:require styles="{!$Resource.Lightning_Action_Modal}" />    
+	<c:attendeeTransferTool recordId="{!v.recordId}" onclose="{!c.closeQA}"></c:attendeeTransferTool>
+</aura:component>

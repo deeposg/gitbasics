@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_All_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ ISBLANK(Address_1__c),
+ ISBLANK(City__c),
+ ISPICKVAL(Province__c, &quot;&quot;),
+ ISBLANK(Postal_Code__c),
+ ISPICKVAL(Country__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorMessage>Location Address requires all fields to be valid (Address 1, City, Province, Postal Code, Country)</errorMessage>
+</ValidationRule>

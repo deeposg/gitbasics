@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fillable_Field_Not_Completed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Incoming = false,
+ OR(
+ CONTAINS(TextBody, &apos;&lt;&gt;&apos;)
+ ),
+ NOT(ISPICKVAL(Status, &apos;Draft&apos;))
+)</errorConditionFormula>
+    <errorMessage>Need to replace (&lt;&gt;) with required fillable fields!</errorMessage>
+</ValidationRule>

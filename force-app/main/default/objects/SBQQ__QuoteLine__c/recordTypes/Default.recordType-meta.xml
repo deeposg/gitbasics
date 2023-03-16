@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default</fullName>
+    <active>true</active>
+    <label>Default</label>
+    <picklistValues>
+        <picklist>Additional_Devices__c</picklist>
+        <values>
+            <fullName>Articulated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boom Supported Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bucket Truck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cab Operated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cable Boom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Counterbalance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gantry Crane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jib Crane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Narrow Aisle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Additional Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Picker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overhead Bridge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pallet Truck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scissor Lift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Beam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telehandler</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LMS_Subscription_Length__c</picklist>
+        <values>
+            <fullName>1 Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Year</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LMS_Subscription_Payment_Terms__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__BillingFrequency__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiannual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__BillingType__c</picklist>
+        <values>
+            <fullName>Advance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrears</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ChargeType__c</picklist>
+        <values>
+            <fullName>One-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ComponentSubscriptionScope__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Components</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Package</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__DiscountScheduleType__c</picklist>
+        <values>
+            <fullName>Range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slab</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__GenerateContractedPrice__c</picklist>
+        <values>
+            <fullName>Discount Schedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Generate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__OptionType__c</picklist>
+        <values>
+            <fullName>Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Component</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Related Product</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PricingMethod__c</picklist>
+        <values>
+            <fullName>Block</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>List</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Percent Of Total</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ProductSubscriptionType__c</picklist>
+        <values>
+            <fullName>Evergreen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewable%2FEvergreen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__SpecialPriceType__c</picklist>
+        <values>
+            <fullName>Contracted Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__SubscriptionCategory__c</picklist>
+        <values>
+            <fullName>Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__SubscriptionPricing__c</picklist>
+        <values>
+            <fullName>Fixed Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Percent Of Total</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__SubscriptionScope__c</picklist>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__SubscriptionType__c</picklist>
+        <values>
+            <fullName>Evergreen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewable%2FEvergreen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Method__c</picklist>
+        <values>
+            <fullName>Client Courier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Courier</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Toyota_Training_Room__c</picklist>
+        <values>
+            <fullName>%28Cambridge%29 - Cambridge Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Corolla Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Galt room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Hesepler Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - N200B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Outside UB2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Preston Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - UB1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Cambridge%29 - Visitor Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Development Centre%29 - Meadows Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Development Centre%29 - Oxford Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Development Centre%29 - Thames Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Plant%29 - W101</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Plant%29 - W200A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock Plant%29 - W200B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - ED Paint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - Final Sales Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - ORO Building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - West Paint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - West Plant Assembly Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - West Weld Dojo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Woodstock%29 - West Weld Entrance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distance Learning</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

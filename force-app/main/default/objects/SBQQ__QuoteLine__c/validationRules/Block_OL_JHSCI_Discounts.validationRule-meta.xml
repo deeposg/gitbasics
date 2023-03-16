@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_OL_JHSCI_Discounts</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $Profile.Name!= &apos;OSG Sys Admin&apos;,
+ SBQQ__ProductCode__c = &apos;OL-JHSCI&apos;,
+ Or(
+  /*SBQQ__NetPrice__c != 475,*/
+  SBQQ__ListPrice__c != SBQQ__NetPrice__c,
+  NOT(ISBLANK(Account_Credit_Used__c))
+ )
+)</errorConditionFormula>
+    <errorMessage>No discounts can be applied to OL-JHSCI. Apply any discounts to associated DLIH-JHSCII</errorMessage>
+</ValidationRule>

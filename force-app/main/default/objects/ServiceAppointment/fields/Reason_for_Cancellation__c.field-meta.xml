@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Cancellation__c</fullName>
+    <description>Capture Reason for Cancellation when status is Canceled</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates Reason for Cancellation when status is Canceled</inlineHelpText>
+    <label>Reason for Cancellation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>TextArea</type>
+</CustomField>

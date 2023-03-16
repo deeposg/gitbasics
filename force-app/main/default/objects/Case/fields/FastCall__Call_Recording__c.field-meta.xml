@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FastCall__Call_Recording__c</fullName>
+    <deprecated>false</deprecated>
+    <description>URL to the audio file containing the call recording</description>
+    <externalId>false</externalId>
+    <label>Call Recording</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

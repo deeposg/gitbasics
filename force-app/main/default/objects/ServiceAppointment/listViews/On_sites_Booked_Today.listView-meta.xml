@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_sites_Booked_Today</fullName>
+    <columns>Name</columns>
+    <columns>Product__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Training_Address1__c</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>IH3POS__c</columns>
+    <columns>Status</columns>
+    <columns>CreatedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Scheduled,Assigned</value>
+    </filters>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>IH3POS__c</field>
+        <operation>equals</operation>
+        <value>On-Site</value>
+    </filters>
+    <label>On-sites Booked Today</label>
+    <sharedTo>
+        <role>Accounting</role>
+        <role>Accounting_and_Operations_Manager</role>
+        <role>General_Management</role>
+        <role>IT_Management</role>
+        <role>Marketing_Management</role>
+        <role>Operations</role>
+        <role>Sales_Management</role>
+        <role>Sales_Rep</role>
+        <role>System_Admin</role>
+        <role>Training_Management</role>
+        <role>Training_Operations</role>
+    </sharedTo>
+</ListView>

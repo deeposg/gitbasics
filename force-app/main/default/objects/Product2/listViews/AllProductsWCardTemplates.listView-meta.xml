@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllProductsWCardTemplates</fullName>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>ProdName_Legacy__c</columns>
+    <columns>Card_Cert_Product_Title__c</columns>
+    <columns>Card_Template__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Card_Template__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Evaluations</value>
+    </filters>
+    <label>All Products With Card Templates</label>
+</ListView>

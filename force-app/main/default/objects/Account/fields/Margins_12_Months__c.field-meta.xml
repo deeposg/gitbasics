@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Margins_12_Months__c</fullName>
+    <externalId>false</externalId>
+    <formula>Margins_Month_1__c + 
+ Margins_Month_2__c + 
+ Margins_Month_3__c + 
+ Margins_Month_4__c + 
+ Margins_Month_5__c + 
+ Margins_Month_6__c + 
+ Margins_Month_7__c + 
+ Margins_Month_8__c + 
+ Margins_Month_9__c + 
+ Margins_Month_10__c + 
+ Margins_Month_11__c + 
+ Margins_Month_12__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Margins 12 Months</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

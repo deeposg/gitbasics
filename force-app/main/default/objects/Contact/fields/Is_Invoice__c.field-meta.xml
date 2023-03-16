@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Invoice__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+AND(
+NOT(ISBLANK(Account.Invoice_Contact__c)),
+Id = Account.Invoice_Contact__c
+),
+true,
+false)</formula>
+    <label>Is Invoice</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

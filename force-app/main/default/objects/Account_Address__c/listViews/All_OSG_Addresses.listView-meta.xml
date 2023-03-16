@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_OSG_Addresses</fullName>
+    <columns>NAME</columns>
+    <columns>Location_Code__c</columns>
+    <columns>Classroom_Size__c</columns>
+    <columns>IHTPOSHT__c</columns>
+    <columns>Room_Rental_Pricing__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Training Address</value>
+    </filters>
+    <label>All OSG Addresses</label>
+</ListView>

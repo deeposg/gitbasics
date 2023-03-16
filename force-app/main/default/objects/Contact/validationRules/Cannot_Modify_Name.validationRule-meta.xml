@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Modify_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $User.Id != &apos;00546000000ufVc&apos;,
+ $User.Id != &apos;00546000000uP7f&apos;,
+ Number_of_UUID_Attendees__c &gt; 0,
+ OR(
+  AND(
+   ISCHANGED( FirstName ),
+   LOWER(FirstName) != LOWER(PRIORVALUE(FirstName))
+  ),
+  AND(
+   ISCHANGED( LastName ),
+   LOWER(LastName) != LOWER(PRIORVALUE(LastName))
+  )
+ )
+)</errorConditionFormula>
+    <errorMessage>Contacts name can no longer be modified! Contact your administrator</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Pending_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+Text(PRIORVALUE(Account_Status__c)) = &apos;Pending&apos;,
+Text(Account_Status__c) != &apos;Pending&apos;,
+$UserRole.Name != &apos;System Admin&apos;,
+$UserRole.Name != &apos;Client Success Specialist&apos;,
+$User.Id != &apos;00546000001efkf&apos; /*Sandy*/ 
+)
+
+/*
+and(
+$User.Id != &apos;00546000001efkf&apos;, Sandy
+$User.Id != &apos;00546000000ufVc&apos;, Blessen
+$User.Id != &apos;0054p000002c047&apos;, Ryan M
+$User.Id != &apos;00546000002vwC9&apos;, Jacob M
+$User.Id != &apos;00546000002vwCA&apos;, Ada O
+$User.Id != &apos;0054p000002c04C&apos;  Zack B
+)
+*/</errorConditionFormula>
+    <errorMessage>Cannot make modifications to a pending account! Contact CSS team!</errorMessage>
+</ValidationRule>

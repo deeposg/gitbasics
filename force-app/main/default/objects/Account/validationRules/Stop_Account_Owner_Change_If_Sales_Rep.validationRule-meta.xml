@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Account_Owner_Change_If_Sales_Rep</fullName>
+    <active>false</active>
+    <description>This is to stop Sales Reps from changing Account Owners to anyone else but Trevor</description>
+    <errorConditionFormula>AND(
+ $Profile.Name == &apos;Sales User&apos;,
+ ISCHANGED( OwnerId ),
+ OwnerId  != &apos;00546000000uYF6&apos;
+)</errorConditionFormula>
+    <errorMessage>Cannot change account owners. Please contact System Administrator or Trevor Mandic if record needs to be modified.</errorMessage>
+</ValidationRule>

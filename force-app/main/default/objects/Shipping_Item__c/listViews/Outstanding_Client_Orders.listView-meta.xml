@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outstanding_Client_Orders</fullName>
+    <booleanFilter>NOT (2 AND 3 AND 4) AND NOT (5 AND 4) AND NOT (6 AND 4) AND 1 AND 7</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Order__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>Product__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>Shipping_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Shipped__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>2019OOHSAR</value>
+    </filters>
+    <filters>
+        <field>Quantity__c</field>
+        <operation>lessThan</operation>
+        <value>49</value>
+    </filters>
+    <filters>
+        <field>Shipping_Method__c</field>
+        <operation>equals</operation>
+        <value>Standard Courier</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>GBHOLDER</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>JHSCP</value>
+    </filters>
+    <filters>
+        <field>Order_Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>Outstanding Client Orders</label>
+</ListView>

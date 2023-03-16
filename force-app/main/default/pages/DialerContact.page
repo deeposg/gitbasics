@@ -1,0 +1,9 @@
+<apex:page standardController="Contact"         
+           recordSetVar="records"                     
+           extensions="FastCall.DialerController"     
+           action="{!setSelectedRecords}"             
+           docType="html-5.0">                        
+                                                      
+    <FastCall:Dialer dialerController="{!instance}" />
+                                                      
+</apex:page>

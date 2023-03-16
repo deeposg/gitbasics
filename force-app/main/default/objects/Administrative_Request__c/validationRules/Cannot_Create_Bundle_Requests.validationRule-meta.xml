@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Create_Bundle_Requests</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+CONTAINS(RecordType.DeveloperName, &apos;DL2_Bundle_Unassign&apos;),
+CONTAINS(RecordType.DeveloperName, &apos;JHSC_Bundle_Contact_Swap&apos;),
+CONTAINS(RecordType.DeveloperName, &apos;JHSC_Bundle_Credit_Or_Refund&apos;)
+),
+ $UserRole.DeveloperName = &apos;Sales_Rep&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot create a JHSC Bundle request! Contact CSS to process request</errorMessage>
+</ValidationRule>

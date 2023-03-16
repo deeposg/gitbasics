@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiry_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    MONTH( Completion_Date__c ) = 2,
+    DAY( Completion_Date__c ) = 29,
+    NOT( 
+      OR( 
+        MOD( YEAR( Completion_Date__c ) + Service_Appointment__r.Product__r.Certificate_Length__c, 400 ) = 0, 
+        AND( 
+          MOD( YEAR( Completion_Date__c ) + Service_Appointment__r.Product__r.Certificate_Length__c, 4 ) = 0,
+          MOD( YEAR( Completion_Date__c ) + Service_Appointment__r.Product__r.Certificate_Length__c, 100 ) != 0
+        )
+      )
+    ) 
+  ),
+  DATE( YEAR( Completion_Date__c ) + Service_Appointment__r.Product__r.Certificate_Length__c, 3, 1),
+  DATE( YEAR( Completion_Date__c ) + Service_Appointment__r.Product__r.Certificate_Length__c, MONTH( Completion_Date__c ), DAY( Completion_Date__c ) )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Expiry Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

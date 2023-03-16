@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_SA_DLIH</fullName>
+    <columns>Name</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Status</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Spaces_Left__c</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <columns>Location_Name__c</columns>
+    <columns>Training_Address1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IH3POS__c</field>
+        <operation>notEqual</operation>
+        <value>On-Site</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>greaterThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Scheduled,Assigned</value>
+    </filters>
+    <filters>
+        <field>Distance_Learning__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Future SA DLIH</label>
+</ListView>

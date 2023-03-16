@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Training_Address1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Training Address</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Account Address selected needs to have IH3POS value of OS to use!</errorMessage>
+        <filterItems>
+            <field>Account_Address__c.IHTPOSHT__c</field>
+            <operation>equals</operation>
+            <value>OS</value>
+        </filterItems>
+        <infoMessage>Make sure the location address has IH3POS set to OS</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account_Address__c</referenceTo>
+    <relationshipLabel>Quote Lines</relationshipLabel>
+    <relationshipName>Quote_Lines</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

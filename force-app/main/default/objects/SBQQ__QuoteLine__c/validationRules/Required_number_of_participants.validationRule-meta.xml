@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_number_of_participants</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Promotional_Discount__c)),
+OR(
+AND(
+ SBQQ__Product__r.Id = &apos;01t8Z00000A6lk7&apos;,
+ Number_of_Participants__c &lt;= 3
+),
+AND(
+ OR(
+  SBQQ__Product__r.Id = &apos;01t8Z00000A6lkH&apos;,
+  SBQQ__Product__r.Id = &apos;01t8Z00000A6lkC&apos;
+ ),
+ Number_of_Participants__c &lt;= 4
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Not eligible for discount since number of participants doesn&apos;t meet minimum threshold!</errorMessage>
+</ValidationRule>

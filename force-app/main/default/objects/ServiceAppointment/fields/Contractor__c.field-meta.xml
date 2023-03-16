@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contractor__c</fullName>
+    <description>Captures the specific contractor used on a Service Appointment when Service Appointment is assigned to the &quot;OSG Contractors&quot; Service Resource.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the specific contractor used when Service Appointment is assigned to the &quot;OSG Contractors&quot; Service Resource.</inlineHelpText>
+    <label>Contractor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Battlefield</fullName>
+                <default>false</default>
+                <label>Battlefield</label>
+            </value>
+            <value>
+                <fullName>Connor Cassidy</fullName>
+                <default>false</default>
+                <label>Connor Cassidy</label>
+            </value>
+            <value>
+                <fullName>Dale Barton</fullName>
+                <default>false</default>
+                <label>Dale Barton</label>
+            </value>
+            <value>
+                <fullName>David Jung</fullName>
+                <default>false</default>
+                <label>David Jung</label>
+            </value>
+            <value>
+                <fullName>David Larochelle</fullName>
+                <default>false</default>
+                <label>David Larochelle</label>
+            </value>
+            <value>
+                <fullName>Elizabeth Rooney</fullName>
+                <default>false</default>
+                <label>Elizabeth Rooney</label>
+            </value>
+            <value>
+                <fullName>Future Contractor 2</fullName>
+                <default>false</default>
+                <label>Future Contractor 2</label>
+            </value>
+            <value>
+                <fullName>Future Contractor 3</fullName>
+                <default>false</default>
+                <label>Future Contractor 3</label>
+            </value>
+            <value>
+                <fullName>Future Contractor 4</fullName>
+                <default>false</default>
+                <label>Future Contractor 4</label>
+            </value>
+            <value>
+                <fullName>Future Contractor 5</fullName>
+                <default>false</default>
+                <label>Future Contractor 5</label>
+            </value>
+            <value>
+                <fullName>Herbert Williams</fullName>
+                <default>false</default>
+                <label>Herbert Williams</label>
+            </value>
+            <value>
+                <fullName>IHEAS Inc.</fullName>
+                <default>false</default>
+                <label>IHEAS Inc.</label>
+            </value>
+            <value>
+                <fullName>Jennifer Beeler</fullName>
+                <default>false</default>
+                <label>Jennifer Beeler</label>
+            </value>
+            <value>
+                <fullName>Karen Pinnock</fullName>
+                <default>false</default>
+                <label>Karen Pinnock</label>
+            </value>
+            <value>
+                <fullName>London Fire Equipment</fullName>
+                <default>false</default>
+                <label>London Fire Equipment</label>
+            </value>
+            <value>
+                <fullName>Marlena Cole</fullName>
+                <default>false</default>
+                <label>Marlena Cole</label>
+            </value>
+            <value>
+                <fullName>MidSouthwest Training</fullName>
+                <default>false</default>
+                <label>MidSouthwest Training</label>
+            </value>
+            <value>
+                <fullName>Mike Hannah</fullName>
+                <default>false</default>
+                <label>Mike Hannah</label>
+            </value>
+            <value>
+                <fullName>Ontario Truck Driving</fullName>
+                <default>false</default>
+                <label>Ontario Truck Driving</label>
+            </value>
+            <value>
+                <fullName>Options Inc 1</fullName>
+                <default>false</default>
+                <label>Options Inc 1</label>
+            </value>
+            <value>
+                <fullName>Options Inc 2</fullName>
+                <default>false</default>
+                <label>Options Inc 2</label>
+            </value>
+            <value>
+                <fullName>OSG</fullName>
+                <default>false</default>
+                <label>OSG</label>
+            </value>
+            <value>
+                <fullName>Promar Petroleum</fullName>
+                <default>false</default>
+                <label>Promar Petroleum</label>
+            </value>
+            <value>
+                <fullName>Randall Chamberlain</fullName>
+                <default>false</default>
+                <label>Randall Chamberlain</label>
+            </value>
+            <value>
+                <fullName>Ron Hussain</fullName>
+                <default>false</default>
+                <label>Ron Hussain</label>
+            </value>
+            <value>
+                <fullName>Safety Training Ottawa</fullName>
+                <default>false</default>
+                <label>Safety Training Ottawa</label>
+            </value>
+            <value>
+                <fullName>Samara Vasciana</fullName>
+                <default>false</default>
+                <label>Samara Vasciana</label>
+            </value>
+            <value>
+                <fullName>Shanroy Shirley</fullName>
+                <default>false</default>
+                <label>Shanroy Shirley</label>
+            </value>
+            <value>
+                <fullName>Silecio</fullName>
+                <default>false</default>
+                <label>Silecio</label>
+            </value>
+            <value>
+                <fullName>Steven Lacasse</fullName>
+                <default>false</default>
+                <label>Steven Lacasse</label>
+            </value>
+            <value>
+                <fullName>Sydney Rebhan</fullName>
+                <default>false</default>
+                <label>Sydney Rebhan</label>
+            </value>
+            <value>
+                <fullName>Workplace Medical</fullName>
+                <default>false</default>
+                <label>Workplace Medical</label>
+            </value>
+            <value>
+                <fullName>Workplace Medical Corp.</fullName>
+                <default>false</default>
+                <label>Workplace Medical Corp.</label>
+            </value>
+            <value>
+                <fullName>Workplace Medical Corp. 2</fullName>
+                <default>false</default>
+                <label>Workplace Medical Corp. 2</label>
+            </value>
+            <value>
+                <fullName>Workplace Medical Corp. 3</fullName>
+                <default>false</default>
+                <label>Workplace Medical Corp. 3</label>
+            </value>
+            <value>
+                <fullName>Workplace Medical Corp. 4</fullName>
+                <default>false</default>
+                <label>Workplace Medical Corp. 4</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

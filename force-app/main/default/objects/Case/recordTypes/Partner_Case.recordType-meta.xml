@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Case</fullName>
+    <active>true</active>
+    <businessProcess>CSS Support Process</businessProcess>
+    <compactLayoutAssignment>OSG_Case_Compact_Layout</compactLayoutAssignment>
+    <label>Partner Case</label>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Procedure__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM - Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM- Data Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email - Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email - Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Files Share - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Files Share - Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inoperable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Input device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal%28LAN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office - Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office 366</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stars3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toner%2FDrum Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPN - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPN - Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - End user</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website - Site issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Secondary_Type__c</picklist>
+        <values>
+            <fullName>Account Merge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Address Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate Inquiries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consent Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Set-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course Cancellation %28OSG initiated%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course Reset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo %2F Account Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation Requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freight Forward Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How-Tos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Items %2F Qty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Name Corrections</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Cancellation %2F Refunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-ship%2FLost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receipt %2F Invoice Inquiries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requirements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reschedules %2F Cancellations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTT - Participant Manuals Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Access %2F Login</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tertiary_Type__c</picklist>
+        <values>
+            <fullName>Consulting - Excellence Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHSC Blended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHSC DL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHSC Part 1 Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHSC1 DL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMS - A la carte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMS - Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMS - SCORM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTT PMs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTT Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WAHC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Administrative Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

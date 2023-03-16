@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Void_if_Approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Approved_Date__c)),
+Voided__c = true,
+$Profile.Name!= &apos;OSG Sys Admin&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot void an approved quote!</errorMessage>
+</ValidationRule>

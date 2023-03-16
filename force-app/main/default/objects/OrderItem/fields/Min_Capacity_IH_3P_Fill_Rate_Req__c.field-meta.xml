@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Capacity_IH_3P_Fill_Rate_Req__c</fullName>
+    <description>Captures the course&apos;s minimum capacity for In-House and 3rd Party course Products.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the course&apos;s minimum capacity for In-House and 3rd Party course Products.</inlineHelpText>
+    <label>Min Capacity (IH &amp; 3P Fill Rate Req)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Orders</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.CREATED_DATE</columns>
+    <columns>ORDERS.TOTAL_AMOUNT</columns>
+    <columns>Total_Tax__c</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Sales_User__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>From_LMS__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>LMS Orders</label>
+</ListView>

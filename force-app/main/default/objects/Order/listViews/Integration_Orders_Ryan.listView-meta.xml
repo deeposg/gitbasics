@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_Orders_Ryan</fullName>
+    <columns>SALES.ACCOUNT.OWNERALIAS</columns>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>Owner_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner_Name__c</field>
+        <operation>contains</operation>
+        <value>OSG Integration</value>
+    </filters>
+    <filters>
+        <field>SALES.ACCOUNT.OWNERALIAS</field>
+        <operation>notContain</operation>
+        <value>tmand,nust</value>
+    </filters>
+    <filters>
+        <field>ORDERS.EFFECTIVE_DATE</field>
+        <operation>greaterThan</operation>
+        <value>8/22/2018</value>
+    </filters>
+    <label>Integration Orders - Ryan</label>
+</ListView>

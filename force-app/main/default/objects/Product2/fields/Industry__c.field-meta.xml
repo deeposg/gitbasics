@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry__c</fullName>
+    <description>Captures the industry(ies) the product is applicable for. Specific for marketing.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the industry(ies) the product is applicable for. Specific for marketing.</inlineHelpText>
+    <label>Industry</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agricultural ProductionCrops</fullName>
+                <default>false</default>
+                <label>Agricultural ProductionCrops</label>
+            </value>
+            <value>
+                <fullName>Agricultural ProductionLivestock</fullName>
+                <default>false</default>
+                <label>Agricultural ProductionLivestock</label>
+            </value>
+            <value>
+                <fullName>Agricultural Services</fullName>
+                <default>false</default>
+                <label>Agricultural Services</label>
+            </value>
+            <value>
+                <fullName>Forestry</fullName>
+                <default>false</default>
+                <label>Forestry</label>
+            </value>
+            <value>
+                <fullName>Fishing, Hunting, and Trapping</fullName>
+                <default>false</default>
+                <label>Fishing, Hunting, and Trapping</label>
+            </value>
+            <value>
+                <fullName>Metal Mining</fullName>
+                <default>false</default>
+                <label>Metal Mining</label>
+            </value>
+            <value>
+                <fullName>Anthracite Mining</fullName>
+                <default>false</default>
+                <label>Anthracite Mining</label>
+            </value>
+            <value>
+                <fullName>Coal Mining</fullName>
+                <default>false</default>
+                <label>Coal Mining</label>
+            </value>
+            <value>
+                <fullName>Oil and Gas Extraction</fullName>
+                <default>false</default>
+                <label>Oil and Gas Extraction</label>
+            </value>
+            <value>
+                <fullName>Nonmetallic Mining, Except Fuels</fullName>
+                <default>false</default>
+                <label>Nonmetallic Mining, Except Fuels</label>
+            </value>
+            <value>
+                <fullName>General Building Contractors</fullName>
+                <default>false</default>
+                <label>General Building Contractors</label>
+            </value>
+            <value>
+                <fullName>Heavy Constructions, Except Building</fullName>
+                <default>false</default>
+                <label>Heavy Constructions, Except Building</label>
+            </value>
+            <value>
+                <fullName>Special Trade Contractors</fullName>
+                <default>false</default>
+                <label>Special Trade Contractors</label>
+            </value>
+            <value>
+                <fullName>Food and Kindred Products</fullName>
+                <default>false</default>
+                <label>Food and Kindred Products</label>
+            </value>
+            <value>
+                <fullName>Tobacco Products</fullName>
+                <default>false</default>
+                <label>Tobacco Products</label>
+            </value>
+            <value>
+                <fullName>Textile Mill Products</fullName>
+                <default>false</default>
+                <label>Textile Mill Products</label>
+            </value>
+            <value>
+                <fullName>Apparel/Other Textile Products</fullName>
+                <default>false</default>
+                <label>Apparel/Other Textile Products</label>
+            </value>
+            <value>
+                <fullName>Lumber and Wood Products</fullName>
+                <default>false</default>
+                <label>Lumber and Wood Products</label>
+            </value>
+            <value>
+                <fullName>Furniture and Fixtures</fullName>
+                <default>false</default>
+                <label>Furniture and Fixtures</label>
+            </value>
+            <value>
+                <fullName>Paper and Allied Products</fullName>
+                <default>false</default>
+                <label>Paper and Allied Products</label>
+            </value>
+            <value>
+                <fullName>Printing and Publishing</fullName>
+                <default>false</default>
+                <label>Printing and Publishing</label>
+            </value>
+            <value>
+                <fullName>Chemicals and Allied Products</fullName>
+                <default>false</default>
+                <label>Chemicals and Allied Products</label>
+            </value>
+            <value>
+                <fullName>Petroleum and Coal Products</fullName>
+                <default>false</default>
+                <label>Petroleum and Coal Products</label>
+            </value>
+            <value>
+                <fullName>Rubber and Miscellaneous Plastics</fullName>
+                <default>false</default>
+                <label>Rubber and Miscellaneous Plastics</label>
+            </value>
+            <value>
+                <fullName>Leather and Leather Products</fullName>
+                <default>false</default>
+                <label>Leather and Leather Products</label>
+            </value>
+            <value>
+                <fullName>Stone, Clay, &amp; Glass Products</fullName>
+                <default>false</default>
+                <label>Stone, Clay, &amp; Glass Products</label>
+            </value>
+            <value>
+                <fullName>Primary Metal Industries</fullName>
+                <default>false</default>
+                <label>Primary Metal Industries</label>
+            </value>
+            <value>
+                <fullName>Fabricated Metal Products</fullName>
+                <default>false</default>
+                <label>Fabricated Metal Products</label>
+            </value>
+            <value>
+                <fullName>Industrial Machinery &amp; Equipment</fullName>
+                <default>false</default>
+                <label>Industrial Machinery &amp; Equipment</label>
+            </value>
+            <value>
+                <fullName>Electronic &amp; Electric Equipment</fullName>
+                <default>false</default>
+                <label>Electronic &amp; Electric Equipment</label>
+            </value>
+            <value>
+                <fullName>Transportation Equipment</fullName>
+                <default>false</default>
+                <label>Transportation Equipment</label>
+            </value>
+            <value>
+                <fullName>Instruments &amp; Related Products</fullName>
+                <default>false</default>
+                <label>Instruments &amp; Related Products</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous Manufacturing Industries</fullName>
+                <default>false</default>
+                <label>Miscellaneous Manufacturing Industries</label>
+            </value>
+            <value>
+                <fullName>Railroad Transportation</fullName>
+                <default>false</default>
+                <label>Railroad Transportation</label>
+            </value>
+            <value>
+                <fullName>Local and Interurban Transit</fullName>
+                <default>false</default>
+                <label>Local and Interurban Transit</label>
+            </value>
+            <value>
+                <fullName>Trucking and Warehousing</fullName>
+                <default>false</default>
+                <label>Trucking and Warehousing</label>
+            </value>
+            <value>
+                <fullName>Postal Service</fullName>
+                <default>false</default>
+                <label>Postal Service</label>
+            </value>
+            <value>
+                <fullName>Water Transportation</fullName>
+                <default>false</default>
+                <label>Water Transportation</label>
+            </value>
+            <value>
+                <fullName>Transportation by Air</fullName>
+                <default>false</default>
+                <label>Transportation by Air</label>
+            </value>
+            <value>
+                <fullName>Pipelines, Except Natural Gas</fullName>
+                <default>false</default>
+                <label>Pipelines, Except Natural Gas</label>
+            </value>
+            <value>
+                <fullName>Transportation Services</fullName>
+                <default>false</default>
+                <label>Transportation Services</label>
+            </value>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Electric, Gas, Sanitary Services</fullName>
+                <default>false</default>
+                <label>Electric, Gas, Sanitary Services</label>
+            </value>
+            <value>
+                <fullName>Wholesale TradeDurable Goods</fullName>
+                <default>false</default>
+                <label>Wholesale TradeDurable Goods</label>
+            </value>
+            <value>
+                <fullName>Wholesale TradeNondurable Goods</fullName>
+                <default>false</default>
+                <label>Wholesale TradeNondurable Goods</label>
+            </value>
+            <value>
+                <fullName>Building Materials and Garden Supplies</fullName>
+                <default>false</default>
+                <label>Building Materials and Garden Supplies</label>
+            </value>
+            <value>
+                <fullName>General Merchandise Stores</fullName>
+                <default>false</default>
+                <label>General Merchandise Stores</label>
+            </value>
+            <value>
+                <fullName>Food Stores</fullName>
+                <default>false</default>
+                <label>Food Stores</label>
+            </value>
+            <value>
+                <fullName>Automotive Dealers &amp; Service Stations</fullName>
+                <default>false</default>
+                <label>Automotive Dealers &amp; Service Stations</label>
+            </value>
+            <value>
+                <fullName>Apparel and Accessory Stores</fullName>
+                <default>false</default>
+                <label>Apparel and Accessory Stores</label>
+            </value>
+            <value>
+                <fullName>Furniture and Homefurnishings</fullName>
+                <default>false</default>
+                <label>Furniture and Homefurnishings</label>
+            </value>
+            <value>
+                <fullName>Eating and Drinking Places</fullName>
+                <default>false</default>
+                <label>Eating and Drinking Places</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous Retail</fullName>
+                <default>false</default>
+                <label>Miscellaneous Retail</label>
+            </value>
+            <value>
+                <fullName>Depository Institutions</fullName>
+                <default>false</default>
+                <label>Depository Institutions</label>
+            </value>
+            <value>
+                <fullName>Nondepository Institutions</fullName>
+                <default>false</default>
+                <label>Nondepository Institutions</label>
+            </value>
+            <value>
+                <fullName>Security and Commodity Brokers</fullName>
+                <default>false</default>
+                <label>Security and Commodity Brokers</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Insurance Agents, Brokers/Services</fullName>
+                <default>false</default>
+                <label>Insurance Agents, Brokers/Services</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Combonation Real Estate/Insurance/Loans/Law offices</fullName>
+                <default>false</default>
+                <label>Combonation Real Estate/Insurance/Loans/Law offices</label>
+            </value>
+            <value>
+                <fullName>Holding &amp; Investment Offices</fullName>
+                <default>false</default>
+                <label>Holding &amp; Investment Offices</label>
+            </value>
+            <value>
+                <fullName>Hotels &amp; Other Lodging Places</fullName>
+                <default>false</default>
+                <label>Hotels &amp; Other Lodging Places</label>
+            </value>
+            <value>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+                <label>Personal Services</label>
+            </value>
+            <value>
+                <fullName>Business Services</fullName>
+                <default>false</default>
+                <label>Business Services</label>
+            </value>
+            <value>
+                <fullName>Auto Repair, Services, Parking</fullName>
+                <default>false</default>
+                <label>Auto Repair, Services, Parking</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous Repair Services</fullName>
+                <default>false</default>
+                <label>Miscellaneous Repair Services</label>
+            </value>
+            <value>
+                <fullName>Motion Pictures</fullName>
+                <default>false</default>
+                <label>Motion Pictures</label>
+            </value>
+            <value>
+                <fullName>Amusement &amp; Recreation Services</fullName>
+                <default>false</default>
+                <label>Amusement &amp; Recreation Services</label>
+            </value>
+            <value>
+                <fullName>Health Services</fullName>
+                <default>false</default>
+                <label>Health Services</label>
+            </value>
+            <value>
+                <fullName>Legal Services</fullName>
+                <default>false</default>
+                <label>Legal Services</label>
+            </value>
+            <value>
+                <fullName>Educational Services</fullName>
+                <default>false</default>
+                <label>Educational Services</label>
+            </value>
+            <value>
+                <fullName>Social Services</fullName>
+                <default>false</default>
+                <label>Social Services</label>
+            </value>
+            <value>
+                <fullName>Museums, Botanicals, Zoos</fullName>
+                <default>false</default>
+                <label>Museums, Botanicals, Zoos</label>
+            </value>
+            <value>
+                <fullName>Membership Organizations</fullName>
+                <default>false</default>
+                <label>Membership Organizations</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous Services</fullName>
+                <default>false</default>
+                <label>Miscellaneous Services</label>
+            </value>
+            <value>
+                <fullName>Federal Government Services</fullName>
+                <default>false</default>
+                <label>Federal Government Services</label>
+            </value>
+            <value>
+                <fullName>Provincial Government Services</fullName>
+                <default>false</default>
+                <label>Provincial Government Services</label>
+            </value>
+            <value>
+                <fullName>Local Government Services</fullName>
+                <default>false</default>
+                <label>Local Government Services</label>
+            </value>
+            <value>
+                <fullName>International Government Services</fullName>
+                <default>false</default>
+                <label>International Government Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

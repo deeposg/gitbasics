@@ -1,0 +1,156 @@
+<aura:component controller="RescheduleAttendeeCmpApexController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<ltng:require styles="{!$Resource.Lightning_Action_Modal}" />    
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showComp" type="Boolean" default="false"/>
+    <aura:attribute name="ErrorCode" type="String" default=""/>
+    <aura:attribute name="SuccessCode" type="String" default=""/>
+    <aura:attribute name="listShow" type="Boolean" default="false"/>
+    <aura:attribute name="onSite" type="Boolean" default="false"/>
+    <aura:attribute name="pastSADate" type="Boolean" default="false"/>
+    <aura:attribute name="validOPState" type="Boolean" default="true"/>
+    <aura:attribute name="saWithin5Days" type="Boolean" default="false"/>
+    <aura:attribute name="disableButton" type="Boolean" default="false"/>
+
+    <aura:attribute name="Attendee" type="Attendee__c"/>
+    <aura:attribute name="ServApp" type="ServiceAppointment"/>
+    <aura:attribute name="Order" type="Order"/>
+    <aura:attribute name="OrderProduct" type="OrderItem"/>
+    <aura:attribute name="ServiceAppointments" type="ServiceAppointment[]"/>
+    
+
+    <div class="slds-grid slds-wrap slds-scrollable" style="position:relative;height:200px;">
+        <lightning:spinner aura:id="busyIndicator" variant="brand" size="large" class="slds-hide slds-show"/>
+        
+        <!--Show all options that user can do for attendee record-->
+        <aura:if isTrue="{!v.listShow == false}">
+            <aura:if isTrue="{!v.onSite == false}">
+                <aura:if isTrue="{!v.validOPState == true}">
+                    <aura:if isTrue="{!v.pastSADate == true}">
+                        <div class="slds-col slds-size_12-of-12" align="center">
+                            Service Appointment is in the past. This record can no longer be modified.
+                        </div>
+                        
+                        <aura:set attribute="else">
+                            
+                            <aura:if isTrue="{!v.ErrorCode == ''}">
+                                <div class="slds-col slds-size_6-of-12" align="center">
+                                    <button aura:id="btnReschedule" onclick="{!c.getServAppointmentsClick}" class="slds-button slds-button_success">Reschedule Attendee</button>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12" align="center">
+                                    <button aura:id="btnCancel" disabled="{!v.disableButton}" onclick="{!c.cancelClick}" class="slds-button slds-button_destructive">Cancel Attendee</button>
+                                </div>             
+                            </aura:if>
+ 
+                            <aura:if isTrue="{!v.saWithin5Days == true}">
+                                <div class="slds-col slds-size_12-of-12" align="center">
+                                	<b>NOTE: This attendee is within 5 business days of the Service Appointment.</b>
+                                    <br/> <br/>
+                                    If you cancel this attendee, the client will be invoiced for this seat.                                    
+                                </div>
+                            </aura:if>
+                            
+                        </aura:set>
+    
+                    </aura:if>                    
+                	<aura:set attribute="else">
+                        <div class="slds-col slds-size_12-of-12" align="center">
+                            This attendee's Order Product can no longer be modified.
+                        </div>
+                    </aura:set>
+                </aura:if>
+
+
+                <aura:set attribute="else">
+                	<div class="slds-col slds-size_12-of-12" align="center">
+                    	Contact Tara if rescheduling an On-Site Service Appointment, otherwise if you need to cancel, cancel the Service Appointment.
+                	</div>
+                </aura:set>
+        	</aura:if>
+        </aura:if>
+
+        <!--Show list of all valid service appointments-->
+        <aura:if isTrue="{!v.listShow == true}">
+            <!--Table that will show all available Service Appointment that can be selected-->
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <!--The rows with the field titles and add the fields below-->
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Appointment Number">SA Number</div>                                    
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="Scheduled Start">Scheduled Start</div>
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="Spaces Left">Seats Left</div>
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="Course Capacity">Max Capacity</div>
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="IH3POS">IH3POS</div>
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="Location Name">Location Name</div>
+                        </th>
+                        <th scope="col">
+                        	<div class="slds-truncate" title="Address">Address</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.ServiceAppointments}" var="servApp">
+                        <tr>
+                            <td data-label="AppointmentNumber">
+								<a data-record="{!servApp.AppointmentNumber}" id="{!servApp.Id}" onclick="{!c.rescheduleClick}">{!servApp.AppointmentNumber}</a>
+                            </td>
+                            <td data-label="SchedStartTime">
+								<ui:outputDateTime value="{!servApp.SchedStartTime}"/>
+                            </td>
+                            <td data-label="SpacesLeft">
+                                <ui:outputText value="{!servApp.Spaces_Left__c}"/>
+                            </td>
+                            <td data-label="CourseCapacity">
+                                <ui:outputText value="{!servApp.Course_Maximum_Capacity__c}"/>
+                            </td>
+                            <td data-label="IH3POS">
+                                <ui:outputText value="{!servApp.IH3POS__c}"/>
+                            </td>
+                            <td data-label="LocationName">
+                                <ui:outputText value="{!servApp.Training_Address1__r.Location_Address__r.Name}"/>
+                            </td>
+                            <td data-label="Address">
+                                <ui:outputText value="{!servApp.Address.street}"/>
+                            </td>
+                        </tr>
+                    </aura:iteration> 
+                </tbody>
+           	</table>     
+        </aura:if>
+        
+        <aura:if isTrue="{!v.ErrorCode != ''}">
+            <br/><br/><br/>
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.ErrorCode}</span>
+                    <h2>
+                        {!v.ErrorCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.SuccessCode != ''}">
+            <br/><br/><br/>
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.SuccessCode}</span>
+                    <h2>
+                        {!v.SuccessCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

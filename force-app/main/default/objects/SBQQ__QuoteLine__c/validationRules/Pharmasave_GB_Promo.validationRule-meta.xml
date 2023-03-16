@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pharmasave_GB_Promo</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+Promotional_Discount__c = &apos;a1h4p000002bPuU&apos;,
+Promotional_Discount__c = &apos;a1h4p000003qRtk&apos;,
+Promotional_Discount__c = &apos;a1h8Z000002q3em&apos;
+),
+NOT(CONTAINS(Account__r.Name, &apos;Pharmasave&apos;))
+)</errorConditionFormula>
+    <errorMessage>Discount can only be applied to Pharmasave accounts!</errorMessage>
+</ValidationRule>

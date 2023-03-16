@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Account_Non_Exclusive_Change</fullName>
+    <active>true</active>
+    <description>Stops accounts from changing once set to Non-Exclusive</description>
+    <errorConditionFormula>and(
+  TEXT(PRIORVALUE(Account_Owner_Type__c)) = &apos;Non-Exclusive&apos;,
+  NOT(TEXT(Account_Owner_Type__c) = &apos;Non-Exclusive&apos;)
+  /*
+  not(
+   $UserRole.Name = &apos;System Admin&apos;
+  )
+  */
+)</errorConditionFormula>
+    <errorMessage>You cannot make an account exclusive once it has become non-exclusive!</errorMessage>
+</ValidationRule>

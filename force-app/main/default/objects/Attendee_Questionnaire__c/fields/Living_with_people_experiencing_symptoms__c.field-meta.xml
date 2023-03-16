@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Living_with_people_experiencing_symptoms__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is anyone you live with currently experiencing any new COVID-19 symptoms and/or waiting for test results after experiencing symptoms? If you are fully vaccinated, select no. (If the individual received a COVID-19 vaccine in the past 48 hours, select no)</description>
+    <externalId>false</externalId>
+    <label>Living with people experiencing symptoms</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

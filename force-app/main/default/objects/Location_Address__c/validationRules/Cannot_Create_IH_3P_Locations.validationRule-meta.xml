@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Create_IH_3P_Locations</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+AND(
+ ISNEW(),
+ OR(
+  ISPICKVAL(IHTPOSHT__c,&apos;IH&apos;),
+  ISPICKVAL(IHTPOSHT__c,&apos;3P&apos;)
+ )
+),
+
+AND(
+ ISCHANGED(IHTPOSHT__c),
+ OR(
+  ISPICKVAL(IHTPOSHT__c,&apos;IH&apos;),
+  ISPICKVAL(IHTPOSHT__c,&apos;3P&apos;)
+ )
+)
+),
+  $User.Id != &apos;00546000000u1OS&apos;,
+  $User.Id != &apos;00546000000vXWl&apos;,
+  $User.Id != &apos;00546000000ufVc&apos;,
+  $User.Id != &apos;0054p000002tHJ0&apos;
+)</errorConditionFormula>
+    <errorMessage>Cannot make location address that is IH or 3P! Contact Scott/Tara/Blessen</errorMessage>
+</ValidationRule>

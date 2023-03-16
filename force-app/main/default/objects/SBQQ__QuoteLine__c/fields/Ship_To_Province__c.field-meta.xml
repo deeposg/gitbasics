@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To_Province__c</fullName>
+    <description>Captures the Ship To Province listed on the Quote Line record. Used with tax calculation for online products.</description>
+    <externalId>false</externalId>
+    <formula>Shipping_Address__r.Province1__c</formula>
+    <inlineHelpText>Indicates the Ship To Province listed on the Quote Line record. Used with tax calculation for online products.</inlineHelpText>
+    <label>Ship To Province</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED(AccountId),
+ $User.Id != &apos;00546000001efkf&apos;, /*Sandy*/
+ $User.Id != &apos;00546000000ufVc&apos;,
+ $User.Id != &apos;00546000000uP7f&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot change the account of a contact! Contact your administrator</errorMessage>
+</ValidationRule>

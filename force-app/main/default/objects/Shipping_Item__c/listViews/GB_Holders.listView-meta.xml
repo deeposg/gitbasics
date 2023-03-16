@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GB_Holders</fullName>
+    <columns>NAME</columns>
+    <columns>Order__c</columns>
+    <columns>Product__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>Shipping_Courrier__c</columns>
+    <columns>Fulfilled_By_Amazon__c</columns>
+    <columns>Order_Product_Status__c</columns>
+    <columns>Shipped__c</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Time_to_Ship__c</columns>
+    <columns>Shipping_Status__c</columns>
+    <columns>Tracking_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>GBH</value>
+    </filters>
+    <filters>
+        <field>Order_Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>GB Holders</label>
+</ListView>

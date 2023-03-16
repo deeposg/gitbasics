@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Training_Other_Required</fullName>
+    <active>true</active>
+    <description>Reason for Training Other must be populated when Reason for Training = &quot;Other&quot;</description>
+    <errorConditionFormula>AND( ISPICKVAL(Reason_for_Training__c, &quot;Other&quot;), 
+     ISBLANK( Reason_for_Training_Other__c ) 
+ )</errorConditionFormula>
+    <errorMessage>You must indicate the other reason for training.</errorMessage>
+</ValidationRule>

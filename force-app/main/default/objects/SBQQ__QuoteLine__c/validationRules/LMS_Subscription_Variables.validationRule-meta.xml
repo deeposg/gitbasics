@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Subscription_Variables</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(SBQQ__Product__r.Delivery_Method__c, &apos;Online&apos;),  
+ SBQQ__Product__r.External_Product_Name__c == &apos;Subscription&apos;,
+ OR(
+ ISBLANK( TEXT(LMS_Subscription_Length__c) ),
+ ISBLANK( TEXT(LMS_Subscription_Payment_Terms__c) )
+ )
+)</errorConditionFormula>
+    <errorMessage>LMS Subscription requires length and payment terms to be defined!</errorMessage>
+</ValidationRule>

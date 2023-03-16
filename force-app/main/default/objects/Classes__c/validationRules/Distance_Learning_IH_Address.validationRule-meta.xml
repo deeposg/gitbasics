@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distance_Learning_IH_Address</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ CONTAINS(Work_Type__r.Product__r.Name, &quot;DLIH&quot;),
+  Class_Address__c != &apos;a1Y4p000001CQp3&apos;
+)</errorConditionFormula>
+    <errorMessage>Must use &quot;Distance Learning&quot; training address for DLIH courses!</errorMessage>
+</ValidationRule>

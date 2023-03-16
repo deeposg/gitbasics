@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Site_SA_Requires_Training_Address</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+not( Text(Status) = &apos;Canceled&apos;),
+Text(IH3POS__c) = &apos;On-Site&apos;,
+not(isblank(Quote_Line__c)),
+isblank( Quote_Line__r.Quote_Training_Address1__c)
+)</errorConditionFormula>
+    <errorMessage>On-Site Appointments Require A Valid Training Address</errorMessage>
+</ValidationRule>

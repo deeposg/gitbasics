@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Consulting_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>Standard_Price__c</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>Course_Product_Line__c</columns>
+    <columns>SBQQ__PriceEditable__c</columns>
+    <columns>Pay_Commission__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Consulting Services</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Consulting Products</label>
+</ListView>

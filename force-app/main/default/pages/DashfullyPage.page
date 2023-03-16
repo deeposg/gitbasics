@@ -1,0 +1,43 @@
+<apex:page title="Dashfully" standardStylesheets="false" lightningStylesheets="false" sidebar="false" >
+    <style>
+            
+           body {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: #a5b4c6;
+
+            width: 100%;
+            position: absolute;
+
+        }
+        
+        table, td {
+            padding: 0 !important;
+        }
+        
+        iframe {
+            height: 30px;
+        }
+    </style>
+
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
+    
+    <script>
+        var j$ = jQuery.noConflict();
+     
+        window.addEventListener('message', receiver, false);
+
+        function receiver(e) {
+           if (e.data && e.data.frameHeight) {
+               j$("#dashframe").css('height', e.data.frameHeight + 'px'); 
+           }
+        }
+        
+    </script>
+    
+    <apex:iframe src="https://dashfully.herokuapp.local/home/?Session_ID={!$Api.Session_ID}&API_URL={!$Api.Partner_Server_URL_460}&User_ID={!$User.Id}&SF_Theme={!$User.UIThemeDisplayed}" scrolling="false" id="dashframe" height="100%"/>
+
+
+
+    
+</apex:page>

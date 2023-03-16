@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotes_Not_Approved</fullName>
+    <columns>SBQQ__Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Sent_By_User__c</columns>
+    <columns>Send_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Sent_By_User__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Approved_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Voided__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>My Sent Quotes Waiting Approval</label>
+</ListView>

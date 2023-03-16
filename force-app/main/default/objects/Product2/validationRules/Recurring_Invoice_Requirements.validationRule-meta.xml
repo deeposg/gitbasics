@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Invoice_Requirements</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ ISCHANGED( Recurring_Invoice_Frequency__c  ),
+ Recurring_Invoice__c = true,
+ ISBLANK(TEXT(Recurring_Invoice_Frequency__c) )
+),
+AND(
+ ISCHANGED( Recurring_Invoice__c ),
+ Recurring_Invoice__c = true,
+ ISBLANK(TEXT(Recurring_Invoice_Frequency__c) )
+),
+AND(
+ ISCHANGED( Recurring_Invoice__c ),
+ Recurring_Invoice__c = false,
+ NOT(ISBLANK(TEXT(Recurring_Invoice_Frequency__c) ))
+),
+AND(
+ ISCHANGED( Recurring_Invoice_Frequency__c ),
+ Recurring_Invoice__c = false,
+ NOT(ISBLANK(TEXT(Recurring_Invoice_Frequency__c) ))
+)
+)</errorConditionFormula>
+    <errorMessage>Recurring invoices require a valid frequency to be set!</errorMessage>
+</ValidationRule>

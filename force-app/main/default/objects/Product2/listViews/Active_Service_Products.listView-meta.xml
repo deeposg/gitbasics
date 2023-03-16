@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Service_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>ProdName_Legacy__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Card_Template__c</columns>
+    <columns>Certificate_Template__c</columns>
+    <columns>Card_Cert_Product_Title__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Courses,Evaluations,Consulting Services</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Service Products</label>
+</ListView>

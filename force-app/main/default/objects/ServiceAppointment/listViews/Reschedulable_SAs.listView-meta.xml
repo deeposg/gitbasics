@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reschedulable_SAs</fullName>
+    <columns>Name</columns>
+    <columns>Product_Name__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Status</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>CreatedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Reschedulable</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2022 12:00 AM</value>
+    </filters>
+    <label>Reschedulable SAs</label>
+</ListView>

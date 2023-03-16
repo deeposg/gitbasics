@@ -1,0 +1,324 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+
+    <!--
+        If record level, pull account data
+        If home page level, pull account data filtered by user Id
+
+        where accountOwner = userId
+
+    -->
+
+    <lightning-card title={getCardLabel} icon-name="standard:segments">
+        <div class="slds-var-m-around_medium">
+            <template if:true={hasGoal}>
+                <!-- <p>Current Fiscal Period: {fiscalQuarterLabel}</p> -->
+                
+                    <div style="position: absolute;right: 17px;top: 8px;"><lightning-input type="toggle" label="" message-toggle-active="Current FQ" message-toggle-inactive="Current FY" onchange={handleToggleChange}></lightning-input></div>
+                    <!-- <div>Days left: Quarter: {daysToQuarterEnd} days /  Year: {daysToYearEnd} days</div> -->
+                    <!-- <div style="margin-left: 25px;line-height: 19px;margin-top: -2px;">Quarter: {daysToQuarterEnd} days left<br>Year: {daysToYearEnd} days left</div> -->
+                
+
+                <template if:false={displayCurrentFQ}>
+                    <lightning-layout horizontal-align="spread">
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={fyRingProgress} size="large" variant={fyRingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName}</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={fyGoal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={fy} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {fyProgress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={fq1RingProgress} size="large" variant={fq1RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName} (Q1)</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={fq1Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={fq1} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {fq1Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={fq2RingProgress} size="large" variant={fq2RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName} (Q2)</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={fq2Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={fq2} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {fq2Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={fq3RingProgress} size="large" variant={fq3RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName} (Q3)</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={fq3Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={fq3} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {fq3Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={fq4RingProgress} size="large" variant={fq4RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName} (Q4)</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={fq4Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={fq4} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {fq4Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+
+
+                <!--Current fiscal quarter months and their individual sales + progress-->
+                <template if:true={displayCurrentFQ}>
+                    <lightning-layout horizontal-align="spread">
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={cfqRingProgress} size="large" variant={cfqRingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{getYearName} ({cfqName})</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={cfqGoal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={cfq} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {cfqProgress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={cfqM1RingProgress} size="large" variant={cfqM1RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{cfqM1Name}</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={cfqM1Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={cfqM1} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {cfqM1Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={cfqM2RingProgress} size="large" variant={cfqM2RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{cfqM2Name}</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={cfqM2Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={cfqM2} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {cfqM2Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item size="2" padding="around-small">
+                            <div style="display:flex">
+                                <div style="margin-right: 10px;">
+                                    <lightning-progress-ring value={cfqM3RingProgress} size="large" variant={cfqM3RingVariant}> </lightning-progress-ring>
+                                </div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600;">{cfqM3Name}</div>
+                                    <div>
+                                        <span>Goal: </span> 
+                                        <lightning-formatted-number value={cfqM3Goal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>
+                                        <span>Sales: </span> 
+                                        <lightning-formatted-number value={cfqM3} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                    <div>Progress: {cfqM3Progress}%</div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+
+                        
+                    </lightning-layout>
+                </template>
+
+                <!--
+                <lightning-progress-indicator current-step={fiscalQuarterValue} type="path">
+                    <lightning-progress-step label="Q1" value="1"></lightning-progress-step>
+                    <lightning-progress-step label="Q2" value="2"></lightning-progress-step>
+                    <lightning-progress-step label="Q3" value="3"></lightning-progress-step>
+                    <lightning-progress-step label="Q4" value="4"></lightning-progress-step>
+                </lightning-progress-indicator>
+                -->
+
+                <hr style="margin: 0px 0px 10px;">
+
+                <div style="display:flex">
+                    <div style="flex:2; margin-right:10px">
+                        <p>Fiscal Year Time Progress: {fyTimeProgress}%</p>
+                        <lightning-progress-bar value={fyTimeProgress} size="large"></lightning-progress-bar>
+                    </div>
+
+                    <div style="flex:2; margin-left:10px">
+                        <p>Fiscal Year Revenue Progress: {fyProgress}%</p>
+                        <lightning-progress-bar value={fyProgress} size="large"></lightning-progress-bar>
+                    </div>
+                </div>
+
+            </template>
+
+            <template if:false={hasGoal}>
+                <div>
+                    <span>Q1 Sales: </span> 
+                    <lightning-formatted-number value={fq1} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>Q2 Sales: </span> 
+                    <lightning-formatted-number value={fq2} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>Q3 Sales: </span> 
+                    <lightning-formatted-number value={fq3} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>Q4 Sales: </span> 
+                    <lightning-formatted-number value={fq4} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+
+                <br/>
+
+                <div>
+                    <span>{fiscalYearValue} Sales: </span> 
+                    <lightning-formatted-number value={fy} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>{previousFY1Name} Sales: </span> 
+                    <lightning-formatted-number value={previousFY1} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>{previousFY2Name} Sales: </span> 
+                    <lightning-formatted-number value={previousFY2} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+                <div>
+                    <span>{previousFY3Name} Sales: </span> 
+                    <lightning-formatted-number value={previousFY3} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </div>
+
+
+                <template if:true={hasPendingGoal}>
+                    <br/>
+                    <div>
+                        <span>Pending Requested Goal: </span>
+                        <lightning-formatted-number value={pendingRequestedSalesGoal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </div>
+                </template>
+
+                <!--
+                <p>Last Fiscal Year Sales: {lastFiscalYearSales}</p>
+                -->
+
+                <br/>
+                <template if:true={showGoalForm}>
+                    <lightning-layout>
+                        <lightning-layout-item size="2">
+                            <lightning-input type="number" label="Sales Goal" onchange={handleGoalChange} value={requestedSalesGoal} formatter="currency" step="1"></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+
+                    <lightning-button variant="brand" label="Set Goal Request" title="Set Goal Request" onclick={setSalesGoal}></lightning-button>
+                    <lightning-button variant="destructive-text" label="Cancel" title="Cancel" onclick={toggleGoalForm} class="slds-var-m-left_x-small"></lightning-button>
+
+                </template>
+
+                <template if:false={showGoalForm}>
+                    <lightning-button variant="brand" label="Set Sales Goal" title="Set Sales Goal" onclick={toggleGoalForm}></lightning-button>
+                </template>
+
+                <template if:true={showAdminApproval}>
+                    <lightning-button variant="destructive" label="Approve Goal" title="Approve Goal Request" onclick={approveGoal} class="slds-var-m-left_x-small"></lightning-button>
+                </template>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+
+    <template if:true={errorMessage}>
+        <p>
+            <b style="color: red;">{errorMessage}</b>
+        </p>
+    </template>
+</template>

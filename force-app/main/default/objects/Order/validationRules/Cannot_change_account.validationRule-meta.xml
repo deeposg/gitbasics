@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( AccountId ),
+$User.Id != &apos;00546000000uP7f&apos;, /*Greg*/
+$User.Id != &apos;00546000001efkf&apos;, /*Sandy*/
+$User.Id != &apos;00546000000urMD&apos;, /*Ana*/
+$User.Id != &apos;00546000000ufVc&apos; /*Blessen*/
+)</errorConditionFormula>
+    <errorMessage>Cannot change account on order. Create quote under correct account.</errorMessage>
+</ValidationRule>

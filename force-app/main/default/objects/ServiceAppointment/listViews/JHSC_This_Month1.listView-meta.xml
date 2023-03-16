@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JHSC_This_Month1</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>Name</columns>
+    <columns>Status</columns>
+    <columns>Location_Code__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Course_Product_Line__c</field>
+        <operation>equals</operation>
+        <value>JHSCI</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>JHSC This Month</label>
+    <sharedTo>
+        <role>Accounting</role>
+        <role>Accounting_and_Operations_Manager</role>
+        <role>Curriculum_Development</role>
+        <role>General_Management</role>
+        <role>IT_Management</role>
+        <role>Marketing_Management</role>
+        <role>Operations</role>
+        <role>Sales_Management</role>
+        <role>Sales_Rep</role>
+        <role>System_Admin</role>
+        <role>Training_Management</role>
+        <role>Training_Operations</role>
+    </sharedTo>
+</ListView>

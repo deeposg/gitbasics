@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Account_Same_Quote_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (
+!isblank(Opportunity_Account_ID__c),
+Opportunity_Account_ID__c != SBQQ__Account__c
+)</errorConditionFormula>
+    <errorMessage>Opportunity Account and Quote Account must be the same.</errorMessage>
+</ValidationRule>

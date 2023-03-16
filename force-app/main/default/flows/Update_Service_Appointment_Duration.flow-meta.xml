@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Is Locked</label>
+        </rules>
+    </decisions>
+    <description>Update Service Appointment Time Fields If Earliest Start Permitted and Due Date are set</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].ArrivalWindowEndTime )),  [ServiceAppointment].ArrivalWindowEndTime, 
+PRIORVALUE( [ServiceAppointment].ArrivalWindowEndTime )
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_9129630035</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.ArrivalWindowEndTime} )),  {!myVariable_current.ArrivalWindowEndTime}, 
+PRIORVALUE( {!myVariable_current.ArrivalWindowEndTime} )
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].ArrivalWindowStartTime )),  [ServiceAppointment].ArrivalWindowStartTime, 
+PRIORVALUE( [ServiceAppointment].ArrivalWindowStartTime )
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_1704756507</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.ArrivalWindowStartTime} )),  {!myVariable_current.ArrivalWindowStartTime}, 
+PRIORVALUE( {!myVariable_current.ArrivalWindowStartTime} )
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].DueDate )),  
+[ServiceAppointment].DueDate, 
+PRIORVALUE( [ServiceAppointment].DueDate )
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myRule_1_A1_2384245885</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.DueDate} )),  
+{!myVariable_current.DueDate}, 
+PRIORVALUE( {!myVariable_current.DueDate} )
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].EarliestStartTime )),  [ServiceAppointment].EarliestStartTime, 
+PRIORVALUE( [ServiceAppointment].EarliestStartTime )
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_1_A1_5829922565</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.EarliestStartTime} )),  {!myVariable_current.EarliestStartTime}, 
+PRIORVALUE( {!myVariable_current.EarliestStartTime} )
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].SchedEndTime )),  [ServiceAppointment].SchedEndTime, PRIORVALUE( [ServiceAppointment].SchedEndTime ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_1_A1_0373223410</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.SchedEndTime} )),  {!myVariable_current.SchedEndTime}, PRIORVALUE( {!myVariable_current.SchedEndTime} ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if (isblank(PRIORVALUE( [ServiceAppointment].SchedStartTime )),  [ServiceAppointment].SchedStartTime, PRIORVALUE( [ServiceAppointment].SchedStartTime ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_1_A1_3406815421</name>
+        <dataType>DateTime</dataType>
+        <expression>if (isblank(PRIORVALUE( {!myVariable_current.SchedStartTime} )),  {!myVariable_current.SchedStartTime}, PRIORVALUE( {!myVariable_current.SchedStartTime} ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>and(
+Text([ServiceAppointment].Status) != &apos;Reschedulable&apos;,
+not(isblank([ServiceAppointment].SchedStartTime )),
+NOT(ISCHANGED([ServiceAppointment].Material_Quantity_Packed__c )),
+NOT(ISCHANGED([ServiceAppointment].Material_Location__c )),
+ISCHANGED([ServiceAppointment].SchedStartTime),
+[ServiceAppointment].SchedStartTime &gt; DATETIMEVALUE(&quot;2022-01-01 12:00:00&quot;) 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>and(
+Text({!myVariable_current.Status}) != &apos;Reschedulable&apos;,
+not(isblank({!myVariable_current.SchedStartTime} )),
+NOT(ISCHANGED({!myVariable_current.Material_Quantity_Packed__c} )),
+NOT(ISCHANGED({!myVariable_current.Material_Location__c} )),
+ISCHANGED({!myVariable_current.SchedStartTime}),
+{!myVariable_current.SchedStartTime} &gt; DATETIMEVALUE(&quot;2022-01-01 12:00:00&quot;) 
+)</expression>
+    </formulas>
+    <interviewLabel>Update_Service_Appointment_Duration-36_InterviewLabel</interviewLabel>
+    <label>Update_Service_Appointment_Duration</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>ServiceAppointment</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ServiceAppointment]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Revert</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Arrival Window End</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ArrivalWindowEndTime</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_9129630035</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Arrival Window Start</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ArrivalWindowStartTime</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_1704756507</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Due Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>DueDate</field>
+            <value>
+                <elementReference>formula_4_myRule_1_A1_2384245885</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Earliest Start Permitted</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>EarliestStartTime</field>
+            <value>
+                <elementReference>formula_5_myRule_1_A1_5829922565</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Scheduled End</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>SchedEndTime</field>
+            <value>
+                <elementReference>formula_6_myRule_1_A1_0373223410</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Scheduled Start</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>SchedStartTime</field>
+            <value>
+                <elementReference>formula_7_myRule_1_A1_3406815421</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ServiceAppointment</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>ServiceAppointment</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointment</objectType>
+    </variables>
+</Flow>

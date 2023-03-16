@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(
+OR(
+ Product_Family__c = &apos;Courses&apos;,
+Product_Family__c = &apos;Evaluations&apos;
+),
+&apos;Facilitator&apos;,
+IF(
+AND(
+ From_LMS__c = true,
+ Product_Family__c != &apos;Memberships&apos;
+),
+&apos;A La Carte&apos;,
+IF(
+AND(
+ From_LMS__c = true,
+ Product_Family__c = &apos;Memberships&apos;
+),
+&apos;LMS Membership&apos;,
+IF(
+ Product_Family__c = &apos;Consulting Services&apos;,
+ &apos;Consulting&apos;,
+IF(
+AND(
+ Product_Family__c = &apos;Physical Goods&apos;,
+ Course_Product_Line__c != &apos;COVID-19&apos;
+),
+&apos;Physical Goods&apos;,
+IF(
+AND(
+ Product_Family__c = &apos;Physical Goods&apos;,
+ Course_Product_Line__c = &apos;COVID-19&apos;
+),
+&apos;COVID&apos;,
+&apos;&apos;
+)
+)
+)
+)
+)
+)</formula>
+    <label>Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

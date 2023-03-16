@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Target_Order</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Target_Order__c ),
+$UserRole.Name != &apos;System Admin&apos;,
+$UserRole.Name != &apos;Accounting&apos;,
+$UserRole.Name != &apos;Accounting and Operations Manager&apos;
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to change the target order! Contact accounting</errorMessage>
+</ValidationRule>

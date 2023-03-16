@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_UUID</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( UUID__c ),
+ NOT(ISBLANK(PRIORVALUE( UUID__c ))),
+ $User.Id != &apos;00546000000ufVc&apos;
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to change the UUID! Contact your administrator.</errorMessage>
+</ValidationRule>

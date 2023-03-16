@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>This_Months_Orders</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDER.BILL_TO_CONTACT</columns>
+    <columns>ORDERS.TOTAL_AMOUNT</columns>
+    <columns>Sales_User__c</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>SBQQ__Quote__c</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>ORDER.RECORDTYPE</columns>
+    <columns>SALES.ACCOUNT.OWNERALIAS</columns>
+    <columns>Count_of_Physical_Goods__c</columns>
+    <columns>Pending_Invoice_Balance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDER.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Order.Booked_Order</value>
+    </filters>
+    <filters>
+        <field>ORDERS.EFFECTIVE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>This Month&apos;s Orders</label>
+</ListView>

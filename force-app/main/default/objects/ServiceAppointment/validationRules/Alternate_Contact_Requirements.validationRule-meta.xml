@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternate_Contact_Requirements</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Alternate_Contact__c ),
+NOT(ISBLANK(Alternate_Contact__c)),
+OR(
+ISBLANK( Alternate_Contact__r.MobilePhone ),
+ISBLANK( Alternate_Contact__r.Email ),
+ISBLANK( Alternate_Contact__r.Phone )
+)
+)</errorConditionFormula>
+    <errorMessage>Alternate contact requires an email, work phone number and mobile number!</errorMessage>
+</ValidationRule>

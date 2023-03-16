@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Quantity_Packed__c</fullName>
+    <description>Captures the number of materials packed for the course.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the number of materials packed for the course.</inlineHelpText>
+    <label>Material Quantity Packed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>TextArea</type>
+</CustomField>

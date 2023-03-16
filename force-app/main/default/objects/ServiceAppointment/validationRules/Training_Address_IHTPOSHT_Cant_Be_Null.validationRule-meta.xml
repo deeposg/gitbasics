@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Address_IHTPOSHT_Cant_Be_Null</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+
+not(isblank(Training_Address1__c)),
+isblank(Training_Address1__r.IHTPOSHT__c),
+
+not( $User.Alias = &apos;aivan&apos;),
+not( $User.Alias = &apos;gthom&apos;),
+not ($User.Alias = &apos;THugh&apos;),
+not ($User.Alias = &apos;bmath&apos;),
+not ($User.Alias = &apos;slam&apos;),
+not ($User.Alias = &apos;jquin&apos;),
+not ($User.Alias = &apos;amccr&apos;),
+not ($User.Alias = &apos;slove&apos;),
+not ($User.Alias = &apos;nhubb&apos;),
+not ($User.Alias = &apos;dwilk&apos;),
+not ($User.Alias = &apos;amitc&apos;)
+)</errorConditionFormula>
+    <errorMessage>Service Appointment Training Address&apos; IHTPOSHT Must Be Set</errorMessage>
+</ValidationRule>

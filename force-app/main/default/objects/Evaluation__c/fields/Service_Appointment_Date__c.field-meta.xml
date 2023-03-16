@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Appointment_Date__c</fullName>
+    <description>Captures the Scheduled Start of the Service Appointment</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Scheduled Start of the Service Appointment</inlineHelpText>
+    <label>Service Appointment Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

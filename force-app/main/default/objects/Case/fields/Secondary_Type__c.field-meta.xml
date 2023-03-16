@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Secondary Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Merge</fullName>
+                <default>false</default>
+                <label>Account Merge</label>
+            </value>
+            <value>
+                <fullName>Address Change</fullName>
+                <default>false</default>
+                <label>Address Change</label>
+            </value>
+            <value>
+                <fullName>Certificate Inquiries</fullName>
+                <default>false</default>
+                <label>Certificate Inquiries</label>
+            </value>
+            <value>
+                <fullName>Consent Forms</fullName>
+                <default>false</default>
+                <label>Consent Forms</label>
+            </value>
+            <value>
+                <fullName>Contract Set-up</fullName>
+                <default>false</default>
+                <label>Contract Set-up</label>
+            </value>
+            <value>
+                <fullName>Course Cancellation (OSG initiated)</fullName>
+                <default>false</default>
+                <label>Course Cancellation (OSG initiated)</label>
+            </value>
+            <value>
+                <fullName>Course Fail</fullName>
+                <default>false</default>
+                <label>Course Fail</label>
+            </value>
+            <value>
+                <fullName>Course Reset</fullName>
+                <default>false</default>
+                <label>Course Reset</label>
+            </value>
+            <value>
+                <fullName>Demo / Account Code</fullName>
+                <default>false</default>
+                <label>Demo / Account Code</label>
+            </value>
+            <value>
+                <fullName>Distributors</fullName>
+                <default>false</default>
+                <label>Distributors</label>
+            </value>
+            <value>
+                <fullName>Evaluation Requests</fullName>
+                <default>false</default>
+                <label>Evaluation Requests</label>
+            </value>
+            <value>
+                <fullName>Freight Forward Request</fullName>
+                <default>false</default>
+                <label>Freight Forward Request</label>
+            </value>
+            <value>
+                <fullName>How-Tos</fullName>
+                <default>false</default>
+                <label>How-Tos</label>
+            </value>
+            <value>
+                <fullName>Incorrect Items / Qty</fullName>
+                <default>false</default>
+                <label>Incorrect Items / Qty</label>
+            </value>
+            <value>
+                <fullName>Name Corrections</fullName>
+                <default>false</default>
+                <label>Name Corrections</label>
+            </value>
+            <value>
+                <fullName>Order Cancellation / Refunds</fullName>
+                <default>false</default>
+                <label>Order Cancellation / Refunds</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Receipt / Invoice Inquiries</fullName>
+                <default>false</default>
+                <label>Receipt / Invoice Inquiries</label>
+            </value>
+            <value>
+                <fullName>Requirements</fullName>
+                <default>false</default>
+                <label>Requirements</label>
+            </value>
+            <value>
+                <fullName>Reschedules / Cancellations</fullName>
+                <default>false</default>
+                <label>Reschedules / Cancellations</label>
+            </value>
+            <value>
+                <fullName>Re-ship/Lost</fullName>
+                <default>false</default>
+                <label>Re-ship/Lost</label>
+            </value>
+            <value>
+                <fullName>Schedule</fullName>
+                <default>false</default>
+                <label>Schedule</label>
+            </value>
+            <value>
+                <fullName>Shipping Update</fullName>
+                <default>false</default>
+                <label>Shipping Update</label>
+            </value>
+            <value>
+                <fullName>TTT - Participant Manuals Request</fullName>
+                <default>false</default>
+                <label>TTT - Participant Manuals Request</label>
+            </value>
+            <value>
+                <fullName>Unable to Access / Login</fullName>
+                <default>false</default>
+                <label>Unable to Access / Login</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Shipping Inquiry</controllingFieldValue>
+            <valueName>Address Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Inquiry</controllingFieldValue>
+            <valueName>Freight Forward Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Inquiry</controllingFieldValue>
+            <valueName>Incorrect Items / Qty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Inquiry</controllingFieldValue>
+            <valueName>Re-ship/Lost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipping Inquiry</controllingFieldValue>
+            <valueName>Shipping Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technical Support</controllingFieldValue>
+            <valueName>Course Reset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technical Support</controllingFieldValue>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Demo / Account Code</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technical Support</controllingFieldValue>
+            <valueName>Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technical Support</controllingFieldValue>
+            <valueName>Unable to Access / Login</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Support</controllingFieldValue>
+            <valueName>Order Cancellation / Refunds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Support</controllingFieldValue>
+            <valueName>Receipt / Invoice Inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Account Merge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Certificate Inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Consent Forms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Contract Set-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Course Cancellation (OSG initiated)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Course Fail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Evaluation Requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>How-Tos</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Name Corrections</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative Support</controllingFieldValue>
+            <valueName>Reschedules / Cancellations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Inquiry</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Inquiry</controllingFieldValue>
+            <valueName>Requirements</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Inquiry</controllingFieldValue>
+            <valueName>Schedule</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Inquiry</controllingFieldValue>
+            <valueName>TTT - Participant Manuals Request</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPaymentTooBig</fullName>
+    <active>true</active>
+    <description>Total_Payments_Can&apos;t_Be_Greater_Than_Total</description>
+    <errorConditionFormula>Total_Payments__c &gt; Total__c</errorConditionFormula>
+    <errorMessage>Total Payments Can&apos;t Be Greater Than Total</errorMessage>
+</ValidationRule>

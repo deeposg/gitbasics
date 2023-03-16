@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Changes_On_Sent_Quotes</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+AND(
+OR(
+ ISCHANGED( SBQQ__Product__c ),
+ AND(
+   ISCHANGED( Classroom_Course__c ),
+   NOT(ISBLANK(PRIORVALUE(Classroom_Course__c)))
+ ),
+ ISCHANGED( Number_of_Participants__c ),
+ ISCHANGED( SBQQ__Quantity__c ),
+ ISCHANGED( Shipping_Method__c ),
+ ISCHANGED( ShipToContactId__c ),
+ ISCHANGED( Shipping_Address__c ),
+ ISCHANGED( Additional_Devices__c ),
+ ISCHANGED( Toyota_Training_Room__c ),
+ ISCHANGED( Account_Credit_Used__c )
+),
+ NOT(ISBLANK(SBQQ__Quote__r.Accept_URL__c)),
+ AND(
+    $UserRole.Name != &apos;System Admin&apos;,
+    $UserRole.Name != &apos;Accounting&apos;,
+    $UserRole.Name != &apos;Accounting and Operations Manager&apos;
+ )
+)*/
+
+AND(
+ OR(
+  ISCHANGED( Number_of_Participants__c ),
+  ISCHANGED( SBQQ__Product__c ),
+  ISCHANGED( SBQQ__Quantity__c ),
+  ISCHANGED( Shipping_Method__c ),
+  AND(
+  ISCHANGED( Shipping_Address__c ),
+   Ship_To_Province__c != PRIORVALUE(Ship_To_Province__c)
+  ),
+  ISCHANGED( Additional_Devices__c ),
+  /*ISCHANGED( Promotional_Discount__c ),*/
+  ISCHANGED( Surcharge__c )
+ ),
+ NOT(ISBLANK(SBQQ__Quote__r.Accept_URL__c)),
+ $UserRole.Name != &apos;System Admin&apos;,
+ $UserRole.Name != &apos;Accounting&apos;,
+ $UserRole.Name != &apos;Accounting and Operations Manager&apos;
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t make changes to sent quotes! Contact your administrator.</errorMessage>
+</ValidationRule>

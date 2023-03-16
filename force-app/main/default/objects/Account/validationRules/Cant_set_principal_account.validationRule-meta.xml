@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_set_principal_account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Principal_Account__c ),
+$User.Id != &apos;00546000000uP7f&apos;, /*Greg*/
+$User.Id != &apos;00546000001efkf&apos;, /*Sandy*/
+$User.Id != &apos;00546000000urMD&apos;, /*Ana*/
+$User.Id != &apos;00546000000ufVc&apos;, /*Blessen*/
+$User.Id != &apos;0054p000003QvvE&apos; /*Lissbeth*/
+)</errorConditionFormula>
+    <errorMessage>Dont have permission to set principal account! Contact lissbeth, sandy or your administrator</errorMessage>
+</ValidationRule>

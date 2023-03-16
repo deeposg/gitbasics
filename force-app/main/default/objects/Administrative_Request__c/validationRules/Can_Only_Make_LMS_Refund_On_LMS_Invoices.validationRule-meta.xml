@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_Only_Make_LMS_Refund_On_LMS_Invoices</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+CONTAINS(RecordType.DeveloperName, &apos;LMS_Refund_Invoice&apos;),
+ Invoice__r.From_LMS__c = false
+)</errorConditionFormula>
+    <errorMessage>Can only make LMS Refund request on LMS Invoices!</errorMessage>
+</ValidationRule>

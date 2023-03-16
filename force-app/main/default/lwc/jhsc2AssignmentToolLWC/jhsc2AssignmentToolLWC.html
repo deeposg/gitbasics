@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="JHSCII Bundle Assign Tool" icon-name="custom:custom14">
+      <div class="slds-m-around_medium">
+
+        <template if:true={showSpinner}>
+          <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+
+        <template if:true={serviceAppointments}>
+          <div class="slds-scrollable_y">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+              <thead>
+                <tr class="slds-line-height_reset">
+                  <th scope="col">
+                    <div title="Service Appointment">Service Appointment</div>
+                  </th>
+                  <th scope="col">
+                    <div title="Start Time">Start Time</div>
+                  </th>
+                  <th scope="col">
+                    <div title="Instructor">Instructor</div>
+                  </th>             
+                </tr>
+              </thead>
+
+              <tbody>
+                <template for:each={serviceAppointments} for:item="sa">
+                  <tr key={sa.Id} class="slds-hint-parent">
+                    <td data-label="Service Appointment">
+                      <a href="#" name={sa.Id} onclick={selectAppointment}>{sa.AppointmentNumber}</a>
+                    </td>
+                    <td data-label="Start Time">
+                      <lightning-formatted-date-time value={sa.SchedStartTime} year="numeric" day="2-digit" month="long" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                    </td>
+                    <td data-label="Instructor">
+                      <div class="slds-truncate" title="Instructor">{sa.Service_Resource_Name__c}</div>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>        
+          </div>  
+        </template>
+
+        <br>
+
+        <template if:true={errorMessage}>
+          <p>
+            <b style="color: red;">{errorMessage}</b>
+          </p>
+        </template>
+
+      </div>
+    </lightning-card>
+  </template>

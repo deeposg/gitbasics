@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_evaluation_for_Attendee</fullName>
+    <active>false</active>
+    <description>Prevents the user from saving an Evaluation if the &quot;Attendee_c.Theory_Status_c&quot; = &quot;Failed&quot;</description>
+    <errorConditionFormula>ISPICKVAL(  Attendee__r.Theory_Status__c  , &apos;Failed&apos;)</errorConditionFormula>
+    <errorMessage>You cannot create an evaluation for an Attende that failed the theory portion.</errorMessage>
+</ValidationRule>

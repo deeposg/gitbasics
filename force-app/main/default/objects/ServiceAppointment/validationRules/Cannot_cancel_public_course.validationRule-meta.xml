@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_cancel_public_course</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( Status , &apos;Canceled&apos;),
+$Profile.Name!= &apos;OSG Sys Admin&apos;, 
+$User.Alias!= &apos;THugh&apos;,
+$User.Alias!= &apos;jquin&apos;,
+$User.Alias!= &apos;amccr&apos;,
+$User.Alias!= &apos;slove&apos;,
+$User.Alias!= &apos;dwilk&apos;,
+$User.Alias!= &apos;amitc&apos;,
+$User.Alias!= &apos;nhubb&apos;,
+NOT(ISBLANK(Reason_for_Cancellation__c )),
+NOT(ISPICKVAL(IH3POS__c, &apos;On-Site&apos; ))
+)</errorConditionFormula>
+    <errorMessage>You cannot cancel public courses. Contact Scheduling regarding cancellations.</errorMessage>
+</ValidationRule>

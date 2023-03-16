@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="ModalCheck" type="Boolean"/>
+    <aura:attribute name="CouseName" type="String"/>
+    <aura:attribute name="SbqqQuoteLineId" type="String"/>
+</aura:event>

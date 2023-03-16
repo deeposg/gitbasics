@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-m-around_medium">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+
+        <template if:true={record}>            
+            <template if:true={allowTimeChange}>
+                <lightning-input type="datetime" name="startDate" label="Start Date" value={selectedStartDatetime} onchange={handleStartDateTimeChange}></lightning-input>
+                <div style="display:flex">
+                    <lightning-input type="datetime" name="endDate" label="End Date" value={selectedEndDatetime} onchange={handleEndDateTimeChange} disabled={disableEndDatetime}></lightning-input>
+                    <lightning-input style="margin-top:5%;margin-left:5%" type="toggle" label="Override End Datetime" name="overrideEndDatetime" onchange={handleOverrideToggle}></lightning-input>
+                </div>
+    
+                <lightning-button class="slds-align_absolute-center" variant="brand" label="Update Time" title="updateTime" onclick={validateData}></lightning-button>
+            </template>
+            
+            <template if:false={allowTimeChange}>
+                This Service Appointment scheduled time is locked! Talk to Scheduling team to have it unlocked!
+            </template>
+        </template>
+
+        <template if:true={errorMessage}>
+            <p>
+                <b style="color: red;">{errorMessage}</b>
+            </p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+	Sample D3 Component
+
+    
+<lightning:overlayLibrary aura:id="overlayLib"/>
+    <div aura:id="d3Container" id="d3Container" width="500" height="500" style="background:white">d3Container
+    <!-- Neutral variant (default) -->
+    <lightning:button label="NeutralX" title="Neutral action" onclick="{! c.handleClick }"/>
+        <iframe src="https://www.aoda.ca"></iframe>
+    </div>
+</aura:component>

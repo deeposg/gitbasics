@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Payment_Method__c</columns>
+    <columns>Reference__c</columns>
+    <columns>Amount__c</columns>
+    <columns>AR_Note__c</columns>
+    <columns>Intacct_GL_No__c</columns>
+    <columns>Date_Received__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Payment_Method__c</field>
+        <operation>equals</operation>
+        <value>EFT</value>
+    </filters>
+    <label>All</label>
+</ListView>

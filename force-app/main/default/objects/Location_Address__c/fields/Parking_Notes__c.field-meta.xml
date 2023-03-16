@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parking_Notes__c</fullName>
+    <description>Captures details about parking details at a location</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates details about parking details at this location</inlineHelpText>
+    <label>Parking Notes</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

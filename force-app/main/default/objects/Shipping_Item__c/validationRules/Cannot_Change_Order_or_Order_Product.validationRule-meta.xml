@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Order_or_Order_Product</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+OR(
+ISCHANGED( Order__c ),
+ISCHANGED( Order_Product__c )
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot change order or order product details</errorMessage>
+</ValidationRule>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Address__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Class Address</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Class address must belong to OSG</errorMessage>
+        <filterItems>
+            <field>Account_Address__c.Account__r.Id</field>
+            <operation>equals</operation>
+            <value>0017800000CJUMa</value>
+        </filterItems>
+        <filterItems>
+            <field>Account_Address__c.Location_Address__r.IHTPOSHT__c</field>
+            <operation>equals</operation>
+            <value>IH, 3P</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account_Address__c</referenceTo>
+    <relationshipLabel>Classes</relationshipLabel>
+    <relationshipName>Classes</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

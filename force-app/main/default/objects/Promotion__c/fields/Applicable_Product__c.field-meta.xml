@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicable_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Captures the Product this Promotion Code applies to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Product this Promotion Code applies to.</inlineHelpText>
+    <label>Applicable Product</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Product2.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Promotions</relationshipLabel>
+    <relationshipName>Promotions</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

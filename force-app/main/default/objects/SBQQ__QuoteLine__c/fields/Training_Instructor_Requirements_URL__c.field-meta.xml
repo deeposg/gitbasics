@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Instructor_Requirements_URL__c</fullName>
+    <description>Captures the auto-generated FastForm hyperlink for the Training Instructor Requirements for TTT Quote Lines.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Auto-generated FastForm hyperlink for the Training Instructor Requirements</inlineHelpText>
+    <label>Training Instructor Requirements URL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

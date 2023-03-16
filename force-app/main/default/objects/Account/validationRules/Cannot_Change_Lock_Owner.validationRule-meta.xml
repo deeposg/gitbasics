@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Lock_Owner</fullName>
+    <active>true</active>
+    <description>Lock ownership of account</description>
+    <errorConditionFormula>AND( 
+ISCHANGED( Lock_Owner__c ),
+$User.Id != &apos;00546000000urMD&apos;,
+$User.Id != &apos;00546000000ufVc&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot modify this field! Talk to your administrator!</errorMessage>
+</ValidationRule>

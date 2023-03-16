@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Number_Required_For_Payment_Type</fullName>
+    <active>false</active>
+    <description>Requires user to provide a Purchase Order Number if the Payment Type = Purchase Order</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Payment_Type__c, &quot;Purchase Order&quot;),
+ISBLANK(Purchase_Order_Number__c)
+)</errorConditionFormula>
+    <errorMessage>You must provide the Purchase Order Number when Payment Type = Purchase Order.</errorMessage>
+</ValidationRule>

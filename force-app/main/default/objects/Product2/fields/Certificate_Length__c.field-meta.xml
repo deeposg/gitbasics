@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Length__c</fullName>
+    <description>Captures the number of years a certificate can last for.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the number of years a certificate can last for.</inlineHelpText>
+    <label>Certificate Length</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

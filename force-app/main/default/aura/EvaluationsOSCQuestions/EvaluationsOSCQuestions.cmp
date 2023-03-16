@@ -1,0 +1,24 @@
+<aura:component controller="OnSiteCourseQuestionApexController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="SBQQ__QuoteLine__c" type="SBQQ__QuoteLine__c" default="{ 'sobjectType': 'SBQQ__QuoteLine__c' }" access="global"/>
+    <br/>
+    <p>1. Who is the point of contact and contact number? Alternate name and number if early start prior to 8am</p>
+    <br/>
+    <div>
+        <div style="width:48%;float:left;display:inline;">
+            <p>Primary Contact</p>
+            <force:inputField value="{!v.SBQQ__QuoteLine__c.Primary_Contact__c}" class=""/>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <br/>
+    <br/>
+    <p>1. Identify the type(s) and number(s) of lifting device(s) each person needs to be evaluated on.</p>
+    <br/>
+    <force:inputField aura:id="ppe" value="{!v.SBQQ__QuoteLine__c.Lifting_Device_Eval_Details__c}" class=""/>
+    <br/>
+    <p>2. Has your annual safety inspection been completed on the equipment being used for evaluation?</p>
+    <br/>
+    <force:inputField aura:id="ppe" value="{!v.SBQQ__QuoteLine__c.Annual_Safety_Inspection_Eval_Details__c}" class=""/>
+    <br/>
+</aura:component>

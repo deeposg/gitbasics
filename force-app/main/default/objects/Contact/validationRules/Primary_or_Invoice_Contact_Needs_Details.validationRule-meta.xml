@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_or_Invoice_Contact_Needs_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+OR(
+ISBLANK(Email),
+ISBLANK(Phone),
+LEN(Phone) &lt; 10
+),
+OR(
+AND(
+Is_Primary__c = true,
+NOT(ISBLANK(Account.Primary_Contact__c))
+),
+AND(
+Is_Invoice__c = true,
+NOT(ISBLANK(Account.Invoice_Contact__c))
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Primary and Invoice contacts require a valid email and phone number!</errorMessage>
+</ValidationRule>

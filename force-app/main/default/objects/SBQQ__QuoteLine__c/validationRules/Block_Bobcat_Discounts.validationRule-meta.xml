@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Bobcat_Discounts</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;OS-BOBCAT&apos;,
+NOT(ISBLANK(Promotional_Discount__c))
+)</errorConditionFormula>
+    <errorMessage>Cannot use discount codes with Bobcat Training! Talk to Ana about pricing</errorMessage>
+</ValidationRule>

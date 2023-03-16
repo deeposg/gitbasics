@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Cert_Product_Title__c</fullName>
+    <description>Captures the Product title to use on the cert/card. Modifiable. Pulled from the Product - External Product Name</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Product title to use on the cert/card. Modifiable. Pulled from the Product - External Product Name</inlineHelpText>
+    <label>Card/Cert Product Title</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

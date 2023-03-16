@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Status_Change_On_Delivery</fullName>
+    <active>true</active>
+    <errorConditionFormula>and( 
+NOT(ISPICKVAL(SBQQ__Status__c, &apos;Delivered&apos;)),
+ISPICKVAL(PRIORVALUE(SBQQ__Status__c), &apos;Delivered&apos;),
+$Profile.Name!= &apos;OSG Sys Admin&apos; 
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t change status once Delivered.</errorMessage>
+</ValidationRule>

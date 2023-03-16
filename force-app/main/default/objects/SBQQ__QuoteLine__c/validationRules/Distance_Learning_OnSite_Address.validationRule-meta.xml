@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distance_Learning_OnSite_Address</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ CONTAINS(SBQQ__ProductCode__c, &quot;DLOS&quot;),
+ /*NOT(ISBLANK(Quote_Training_Address1__c)),*/
+ Quote_Training_Address1__c != &apos;a1Y4p000002MxkP&apos;
+)</errorConditionFormula>
+    <errorMessage>Must use &quot;Distance Learning (OS)&quot; training address for DLOS courses!</errorMessage>
+</ValidationRule>

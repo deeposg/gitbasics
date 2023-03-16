@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Physical_Good_Manual_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Physical_Good_Type__c</columns>
+    <columns>Requires_Shipping__c</columns>
+    <columns>Shipping_Weight_Per_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Physical Goods</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Physical_Good_Type__c</field>
+        <operation>equals</operation>
+        <value>Manual</value>
+    </filters>
+    <label>Active Physical Good Manual Products</label>
+</ListView>

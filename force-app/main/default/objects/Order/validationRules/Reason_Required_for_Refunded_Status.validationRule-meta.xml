@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Required_for_Refunded_Status</fullName>
+    <active>true</active>
+    <description>requires a user to populate &quot;Reason for Refunded&quot; field if Status= &quot;Refunded&quot;</description>
+    <errorConditionFormula>IF( AND( ISPICKVAL(Status , &apos;Refunded&apos;),ISBLANK( Reason_for_Refund__c ) ), true, false)</errorConditionFormula>
+    <errorMessage>Reason for Refunded is a required field if status = &apos;Refunded&apos;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consulting_Variables_Needed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+isblank(SBQQ__RequiredBy__c), 
+OR( 
+ISPICKVAL(SBQQ__Product__r.Family , &apos;Consulting Services&apos;)
+), 
+Delivery_Method__c == &apos;On-site&apos;, 
+OR( 
+ISBLANK( Consulting_Hours_Needed__c), 
+ISBLANK(Preferred_Date_and_Time__c), 
+ISBLANK(Quote_Training_Address1__c) 
+) 
+)</errorConditionFormula>
+    <errorMessage>Number of Consulting Hours, Preferred Date &amp; Time and Training Address are required for all On-site Consulting Services.</errorMessage>
+</ValidationRule>

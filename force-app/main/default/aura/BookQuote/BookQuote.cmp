@@ -1,0 +1,55 @@
+<aura:component controller="QuoteTriggerHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="SuccessCode" type="String" default=""/>
+    <aura:attribute name="ErrorCode" type="String" default=""/>
+    <aura:attribute name="OS" type="Boolean" default="false"/>
+    <aura:attribute name="IH" type="Boolean" default="false"/>
+    
+    <div class="slds-grid slds-wrap">
+        <lightning:spinner aura:id="busyIndicator" variant="brand" size="large"/>
+        
+        <!--Show the appropriate error, if it exists for setting quote approval-->
+
+        <aura:if isTrue="{!v.OS || v.IH}">
+        	<div class="slds-col slds-size_12-of-12">
+            	<b>Before creating order, ensure you have met the following criteria in the quote</b>
+            </div>
+            <br/><br/>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.OS == true}">
+            <div class="slds-col slds-size_12-of-12">
+                <p>For any <b>On-Site</b> courses ensure that:</p>
+                <div>
+					<li>You have created a service appointment for each quote line</li>
+                    <li>You have selected a training address in "Edit Lines"</li>
+                </div>
+            </div>
+            <br/>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.IH == true}">
+            <br/><br/><br/>
+            <div class="slds-col slds-size_12-of-12">
+                <p>For any <b>In-House/Third-Party</b> courses ensure that:</p>
+                <div>
+                	<li>Every attendee has a contact (Contact must belong to same account as quote)</li>
+                    <li>You have selected a classroom course for every quote line</li>
+                </div>
+            </div>
+        </aura:if>
+
+        <aura:if isTrue="{!v.ErrorCode != ''}">
+            <br/><br/><br/>
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.ErrorCode}</span>
+                    <h2>
+                        {!v.ErrorCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

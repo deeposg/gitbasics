@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Check for valid tax rate</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;5% Canada Tax&apos;), [Credit_Note__c].Amount__c + Round([Credit_Note__c].Amount__c * 0.05,2),
+if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;13% Ontario Tax&apos; ), [Credit_Note__c].Amount__c + Round([Credit_Note__c].Amount__c * 0.13,2),
+if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;15% HST Tax&apos; ), [Credit_Note__c].Amount__c + Round([Credit_Note__c].Amount__c * 0.15,2),
+[Credit_Note__c].Amount__c)))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_5052894968</name>
+        <dataType>Currency</dataType>
+        <expression>if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;5% Canada Tax&apos;), {!myVariable_current.Amount__c} + Round({!myVariable_current.Amount__c} * 0.05,2),
+if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;13% Ontario Tax&apos; ), {!myVariable_current.Amount__c} + Round({!myVariable_current.Amount__c} * 0.13,2),
+if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;15% HST Tax&apos; ), {!myVariable_current.Amount__c} + Round({!myVariable_current.Amount__c} * 0.15,2),
+{!myVariable_current.Amount__c})))</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;5% Canada Tax&apos;), Round([Credit_Note__c].Amount__c * 0.05,2),
+if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;13% Ontario Tax&apos; ), Round([Credit_Note__c].Amount__c * 0.13,2),
+if(
+ISPICKVAL([Credit_Note__c].Tax_rate__c, &apos;15% HST Tax&apos; ), Round([Credit_Note__c].Amount__c * 0.15,2),
+0.0)
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_4096089369</name>
+        <dataType>Currency</dataType>
+        <expression>if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;5% Canada Tax&apos;), Round({!myVariable_current.Amount__c} * 0.05,2),
+if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;13% Ontario Tax&apos; ), Round({!myVariable_current.Amount__c} * 0.13,2),
+if(
+ISPICKVAL({!myVariable_current.Tax_rate__c}, &apos;15% HST Tax&apos; ), Round({!myVariable_current.Amount__c} * 0.15,2),
+0.0)
+))</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISPICKVAL([Credit_Note__c].Tax_rate__c , &apos;No Tax&apos;)),
+NOT(ISPICKVAL([Credit_Note__c].Tax_rate__c , &apos;&apos;))
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISPICKVAL({!myVariable_current.Tax_rate__c} , &apos;No Tax&apos;)),
+NOT(ISPICKVAL({!myVariable_current.Tax_rate__c} , &apos;&apos;))
+)</expression>
+    </formulas>
+    <interviewLabel>Set_Tax_Amount_on_Credit_Note-4_InterviewLabel</interviewLabel>
+    <label>Set Tax Amount on Credit Note</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Credit_Note__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onCreateOnly</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Credit_Note__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Tax Amount</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Amount</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_5052894968</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Tax Amount</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Tax_Amount__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_4096089369</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Credit_Note__c</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Credit_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Credit_Note__c</objectType>
+    </variables>
+</Flow>

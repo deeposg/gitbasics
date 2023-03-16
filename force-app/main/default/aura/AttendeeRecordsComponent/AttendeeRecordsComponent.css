@@ -1,0 +1,10 @@
+.THIS .lookup__menu {
+    position : absolute !important;
+}
+
+.THIS .forceSearchInputLookupDesktop {
+	position: relative;
+}
+.THIS .set-background{
+    background-color: #D3D3D3;
+}

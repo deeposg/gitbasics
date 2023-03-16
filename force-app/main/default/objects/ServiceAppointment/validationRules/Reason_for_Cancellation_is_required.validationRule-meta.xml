@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Cancellation_is_required</fullName>
+    <active>true</active>
+    <description>Reason for Cancellation is required when status = Canceled</description>
+    <errorConditionFormula>IF( AND(ISBLANK( Reason_for_Cancellation__c ), ISPICKVAL(  Status , &apos;Canceled&apos;) ) , true, false)</errorConditionFormula>
+    <errorMessage>Reason for Cancellation is required when status is Canceled</errorMessage>
+</ValidationRule>

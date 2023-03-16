@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_New_QuoteLines_On_Frozen_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+isNew(),
+(Text(  Account__r.Account_Status__c) = &apos;Frozen&apos;),
+ $User.Alias != &apos;bmath&apos;
+)</errorConditionFormula>
+    <errorMessage>You Can&apos;t Create New Quote Items On Frozen Accounts</errorMessage>
+</ValidationRule>

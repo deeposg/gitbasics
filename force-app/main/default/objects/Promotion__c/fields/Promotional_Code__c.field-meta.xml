@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotional_Code__c</fullName>
+    <description>Captures the promotional code. Used as matching variable during quoting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the promotional code. Used as matching variable during quoting.</inlineHelpText>
+    <label>Promotional Code</label>
+    <length>20</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

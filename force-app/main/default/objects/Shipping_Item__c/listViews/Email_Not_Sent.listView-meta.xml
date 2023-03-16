@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Not_Sent</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Ship_To_Contact__c</columns>
+    <columns>Product__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipping_Courrier__c</columns>
+    <columns>Tracking_Number__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>Shipping_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Shipping_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>9/6/2019 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Send_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Shipping_Courrier__c</field>
+        <operation>notEqual</operation>
+        <value>Amazon,OSS Supplier</value>
+    </filters>
+    <filters>
+        <field>Shipping_Method__c</field>
+        <operation>notEqual</operation>
+        <value>London Pickup</value>
+    </filters>
+    <label>Email Not Sent</label>
+</ListView>

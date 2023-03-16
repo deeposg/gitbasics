@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contains_Invalid_Data</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Has_Valid_Data__c = False,
+ ISCHANGED(Has_Valid_Data__c)
+/*
+ ,$User.Id != &apos;00546000000ufVc&apos;
+*/
+)</errorConditionFormula>
+    <errorMessage>Ensure the contacts name doesn&apos;t contain ZZZ, TBA, other symbols, single character in name or numbers. If it is a primary contact, ensure the phone and email are valid in addition!</errorMessage>
+</ValidationRule>

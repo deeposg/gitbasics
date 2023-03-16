@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2nd_Evaluation_Type__c</fullName>
+    <description>Captures the type of evaluation the Attendee needs to be evaluated on again.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the type of evaluation the Attendee needs to be evaluated on again.</inlineHelpText>
+    <label>2nd Evaluation Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Counterbalance</fullName>
+                <default>false</default>
+                <label>Counterbalance</label>
+            </value>
+            <value>
+                <fullName>Narrow Aisle</fullName>
+                <default>false</default>
+                <label>Narrow Aisle</label>
+            </value>
+            <value>
+                <fullName>Order Picker</fullName>
+                <default>false</default>
+                <label>Order Picker</label>
+            </value>
+            <value>
+                <fullName>Pallet Truck</fullName>
+                <default>false</default>
+                <label>Pallet Truck</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

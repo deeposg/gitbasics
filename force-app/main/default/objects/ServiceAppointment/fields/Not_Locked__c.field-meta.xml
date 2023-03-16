@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Locked__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Set to true unless Scheduled Start is NOW + 3 days or if Product Family = &quot;Consulting Services&quot;. via time-based WFR to Used with Optimization criteria.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Set to true unless Scheduled Start is NOW + 3 days or if Product Family = &quot;Consulting Services&quot;. via time-based WFR to Used with Optimization criteria.</inlineHelpText>
+    <label>Not Locked</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

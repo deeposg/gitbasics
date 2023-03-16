@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_OS_Service_Appointments_Not_Closed</fullName>
+    <columns>Name</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>IH3POS__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Status</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>SchedEndTime</field>
+        <operation>greaterThan</operation>
+        <value>7/24/2018 12:00 AM</value>
+    </filters>
+    <label>My OS Service Appointments (Not Closed)</label>
+</ListView>

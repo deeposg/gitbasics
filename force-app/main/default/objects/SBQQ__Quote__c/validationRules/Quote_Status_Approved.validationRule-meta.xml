@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_Approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (Text(SBQQ__Status__c) = &apos;Approved&apos;,
+not(RecordType.Name = &apos;Approved Quote&apos;)
+)</errorConditionFormula>
+    <errorMessage>Quote Must Have Record Type Approved To Be Marked As Approved</errorMessage>
+</ValidationRule>

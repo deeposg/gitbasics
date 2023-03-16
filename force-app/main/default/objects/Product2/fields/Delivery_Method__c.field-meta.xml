@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Method__c</fullName>
+    <description>Captures the delivery method for the Product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the delivery method for the Product.</inlineHelpText>
+    <label>Delivery Method</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Classroom</fullName>
+                <default>false</default>
+                <label>Classroom</label>
+            </value>
+            <value>
+                <fullName>On-site</fullName>
+                <default>false</default>
+                <label>On-site</label>
+            </value>
+            <value>
+                <fullName>Online</fullName>
+                <default>false</default>
+                <label>Online</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+                <label>Subscription</label>
+            </value>
+            <value>
+                <fullName>Train-the-Trainer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Train-the-Trainer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

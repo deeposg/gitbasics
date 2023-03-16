@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_Rejected</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (Text(SBQQ__Status__c) = &apos;Rejected&apos;,
+not(RecordType.Name = &apos;Rejected Quote&apos;)
+)</errorConditionFormula>
+    <errorMessage>Quote Must Have Record Type Rejected To Be Marked As Rejected</errorMessage>
+</ValidationRule>

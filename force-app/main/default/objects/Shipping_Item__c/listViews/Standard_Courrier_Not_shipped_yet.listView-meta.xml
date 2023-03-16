@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Courrier_Not_shipped_yet</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>Ship_To_Contact__c</columns>
+    <columns>Shipping_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Shipped__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Shipping_Method__c</field>
+        <operation>equals</operation>
+        <value>Standard Courier</value>
+    </filters>
+    <filters>
+        <field>Order_Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>Outstanding Standard Courrier</label>
+</ListView>

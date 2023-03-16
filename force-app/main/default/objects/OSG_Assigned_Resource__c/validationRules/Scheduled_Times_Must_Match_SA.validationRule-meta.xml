@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Times_Must_Match_SA</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+  TIMEVALUE(Scheduled_Start__c) !=  TIMEVALUE( ServiceAppointment__r.SchedStartTime ),
+  TIMEVALUE(Scheduled_End__c) !=  TIMEVALUE( ServiceAppointment__r.SchedEndTime )
+)</errorConditionFormula>
+    <errorMessage>Scheduled Time must match the ServiceAppointment Scheduled Time!</errorMessage>
+</ValidationRule>

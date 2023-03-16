@@ -1,0 +1,58 @@
+<aura:component controller="SAppointmentAttandeeCmpApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    <aura:attribute name="AttendeeRec" type="Attendee__c"  default="{ 'sobjectType': 'Attendee__c' }" access="global"/>
+     <aura:attribute name="Count" type="integer" access="global"/>
+ 	<aura:attribute name="LastCount" type="integer" access="global"/>
+    <!--<force:outputField value=""/>-->
+    <hr style="{!if(v.AttendeeRec.Service_Appointment__r.AppointmentNumber =='','Display:none;','margin: 1%;')}"></hr>
+    
+    <span style="{!if(v.AttendeeRec.Service_Appointment__r.AppointmentNumber =='','Display:none;','margin: 1%;')}">Service Appointment:</span><force:outputField value="{!v.AttendeeRec.Service_Appointment__r.AppointmentNumber}"  class="displayof" /> <span style="{!if(v.AttendeeRec.Service_Appointment__r.AppointmentNumber =='','Display:none;','margin: 1%;')}"></span> <span style="{!if(v.AttendeeRec.Service_Appointment__r.AppointmentNumber =='','Display:none;','margin: 1%;')}"> {!v.LastCount} Attendees</span>
+    <hr style="{!if(v.AttendeeRec.Service_Appointment__r.AppointmentNumber =='','Display:none;','margin: 1%;')}"></hr>
+    <div style="padding-left:5%;padding-right:5%;">
+        
+		<div style="width:10%;float:left;">
+
+        </div>
+        <div style="width:45%;float:left;">
+			Attendee Name<br/>
+    		<force:outputField value="{!v.AttendeeRec.Name}" class="slds-input set-background" />
+        </div>
+       
+        
+    	<div style="width:50%;float:left;padding-left:5%;">
+            &nbsp;Contact<br/>
+            <force:inputField value="{!v.AttendeeRec.Contact__c}" class="slds-input" />
+        </div>
+        
+    </div>
+    <div style="padding-left:5%;padding-right:5%;">
+        <br/><br/>
+        <div style="width:10%;float:left;">
+
+        </div>
+        <div style="width:45%;float:left;">
+            &nbsp;Status<br/>
+            <force:inputField value="{!v.AttendeeRec.Status__c}" class="slds-input" />
+        </div>
+         <div style="width:50%;float:left;padding-left:5%;">
+            &nbsp;Theory Status<br/>
+            <force:inputField value="{!v.AttendeeRec.Theory_Status__c}" class="slds-input" />
+        </div>
+   </div>
+    
+   
+    <br/>
+    <div style="padding-left:5%;padding-right:5%;">
+        <div style="width:10%;float:left;">
+
+        </div>
+       
+        <br/><br/>
+        <div style="width:95%;float:left;">
+            &nbsp;Theory Exam Results<br/>
+            <force:inputField value="{!v.AttendeeRec.Theory_Exam_Results__c}" class="slds-input" />
+        </div>
+        
+        <br/><br/>
+    </div>
+    <br/><br/><br/><br/>
+</aura:component>

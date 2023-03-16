@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Trigger_Setup</fullName>
+    <columns>NAME</columns>
+    <columns>All_Triggers__c</columns>
+    <columns>Deactivate_QuoteTrigger__c</columns>
+    <columns>Deactivate_QuoteLineTrigger__c</columns>
+    <columns>Deactivate_OrderTrigger__c</columns>
+    <columns>Deactivate_OrderProductTrigger__c</columns>
+    <columns>Deactivate_ServiceAppointmentTrigger__c</columns>
+    <columns>Deactivate_AttendeeTrigger__c</columns>
+    <columns>Deactivate_AssignedResourceTrigger__c</columns>
+    <columns>Deactivate_TimeOffRequestTrigger__c</columns>
+    <columns>Deactivate_Course_Reminder_Batch__c</columns>
+    <columns>Deactivate_RainchecksTrigger__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Trigger Setup</label>
+</ListView>

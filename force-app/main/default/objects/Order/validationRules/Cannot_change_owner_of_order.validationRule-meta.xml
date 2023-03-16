@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_owner_of_order</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Id = &apos;8014p000001YMEf&apos;,
+ISCHANGED(OwnerId)
+)</errorConditionFormula>
+    <errorMessage>This order cannot be moved to a different owner!</errorMessage>
+</ValidationRule>

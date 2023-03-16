@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed_Seats__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Captures the number Attendees on the Service Appointment where Confirmed = Yes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Attendees on the Service Appointment where Confirmed = Yes.</inlineHelpText>
+    <label>Confirmed Seats</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

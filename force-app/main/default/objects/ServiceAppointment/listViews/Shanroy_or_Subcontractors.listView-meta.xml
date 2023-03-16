@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shanroy_or_Subcontractors</fullName>
+    <booleanFilter>(1 OR 3) AND 2 AND 4</booleanFilter>
+    <columns>Name</columns>
+    <columns>SchedStartTime</columns>
+    <columns>Status</columns>
+    <columns>Service_Resource_Name__c</columns>
+    <columns>Contractor__c</columns>
+    <columns>Product__c</columns>
+    <columns>Location_Name__c</columns>
+    <columns>Training_Address1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Service_Resource_Name__c</field>
+        <operation>contains</operation>
+        <value>shanroy</value>
+    </filters>
+    <filters>
+        <field>Status</field>
+        <operation>notEqual</operation>
+        <value>Completed,Canceled</value>
+    </filters>
+    <filters>
+        <field>Service_Resource_Name__c</field>
+        <operation>equals</operation>
+        <value>Shanroy Shirley</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <label>Shanroy or Subcontractors</label>
+</ListView>

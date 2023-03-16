@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Requires_Order_Info</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISCHANGED(Status), 
+ISPICKVAL(Status , &apos;Completed&apos;), 
+ISPICKVAL(IH3POS__c, &apos;On-Site&apos;),
+OR(
+ISBLANK(Order__c),
+ISBLANK( Order_Product__c)
+)
+)</errorConditionFormula>
+    <errorMessage>The Service Appointment is missing order information. Please contact your administrator</errorMessage>
+</ValidationRule>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Captures the status of the customized course record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the customized course status.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom Course Proposed</fullName>
+                <default>false</default>
+                <label>Custom Course Proposed</label>
+            </value>
+            <value>
+                <fullName>CD Reviewing Internally</fullName>
+                <default>false</default>
+                <label>CD Reviewing Internally</label>
+            </value>
+            <value>
+                <fullName>Custom Course Approved</fullName>
+                <default>false</default>
+                <label>Custom Course Approved</label>
+            </value>
+            <value>
+                <fullName>SOW in Development</fullName>
+                <default>false</default>
+                <label>SOW in Development</label>
+            </value>
+            <value>
+                <fullName>SOW sent to Client</fullName>
+                <default>false</default>
+                <label>SOW sent to Client</label>
+            </value>
+            <value>
+                <fullName>Approved by Client</fullName>
+                <default>false</default>
+                <label>Approved by Client</label>
+            </value>
+            <value>
+                <fullName>Custom Course in Development</fullName>
+                <default>false</default>
+                <label>Custom Course in Development</label>
+            </value>
+            <value>
+                <fullName>Custom Course Completed</fullName>
+                <default>false</default>
+                <label>Custom Course Completed</label>
+            </value>
+            <value>
+                <fullName>Client Cancelled</fullName>
+                <default>false</default>
+                <label>Client Cancelled</label>
+            </value>
+            <value>
+                <fullName>Curriculum Cancelled</fullName>
+                <default>false</default>
+                <label>Curriculum Cancelled</label>
+            </value>
+            <value>
+                <fullName>Course not feasible</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Course not feasible</label>
+            </value>
+            <value>
+                <fullName>Pending Client Responses</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pending Client Responses</label>
+            </value>
+            <value>
+                <fullName>Proposal Approved by GM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proposal Approved by GM</label>
+            </value>
+            <value>
+                <fullName>Proposal Rejected by GM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proposal Rejected by GM</label>
+            </value>
+            <value>
+                <fullName>SOW and Pricing in Development</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SOW and Pricing in Development</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

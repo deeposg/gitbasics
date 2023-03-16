@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Set_Account_To_Pending</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+$User.Id != &apos;00546000000ufVc&apos;,  /*Blessen*/
+Text(PRIORVALUE(Account_Status__c)) != &apos;Pending&apos;,
+Text(Account_Status__c) = &apos;Pending&apos;
+)</errorConditionFormula>
+    <errorMessage>Cannot set account to pending!</errorMessage>
+</ValidationRule>

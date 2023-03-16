@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_modify_commisson_once_invoiced</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+ ISBLANK(PRIORVALUE(Commission_Percentage_Override__c )), 
+ NOT(ISBLANK( Commission_Percentage_Override__c )),
+ Invoiced__c = true
+)</errorConditionFormula>
+    <errorMessage>Cannot modify commission percentage override once invoiced!</errorMessage>
+</ValidationRule>

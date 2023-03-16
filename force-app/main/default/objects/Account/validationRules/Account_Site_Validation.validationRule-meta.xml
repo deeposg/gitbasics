@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Site_Validation</fullName>
+    <active>true</active>
+    <description>Account Site must either by a HO or a Site</description>
+    <errorConditionFormula>AND( NOT(ISBLANK(Site)), LOWER(Site) &lt;&gt; &quot;site&quot;, LOWER(Site) &lt;&gt; &quot;ho&quot; )</errorConditionFormula>
+    <errorMessage>You must set the Account Site to either &quot;HO&quot; or &quot;Site&quot;.</errorMessage>
+</ValidationRule>

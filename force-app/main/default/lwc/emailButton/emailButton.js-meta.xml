@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+<apiVersion>55.0</apiVersion>
+    <masterLabel>Email: Button</masterLabel>
+    <isExposed>true</isExposed>
+    <targets>
+      <target>lightningStatic__Email</target>
+    </targets>
+
+    <targetConfigs>  
+      <targetConfig targets="lightningStatic__Email">
+          <property name="label" type="String" default="Button Label" label="Label" required="true"/>
+          <property name="url" type="String" default="https://osg.ca" label="Destination URL" required="true"/>
+          <property name="styleType" type="String" default="Default" datasource="Default,Success,Warning,Error" label="Style" />
+          <property name="alignment" type="HorizontalAlignment" default="center" label="Alignment" />
+      </targetConfig>
+    </targetConfigs>
+
+</LightningComponentBundle>

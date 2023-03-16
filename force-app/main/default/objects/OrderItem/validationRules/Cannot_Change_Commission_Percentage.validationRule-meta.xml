@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Commission_Percentage</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+NOT(ISBLANK( Commission_Percentage_Override__c )),
+ISCHANGED(Commission_Percentage_Override__c ),
+$Profile.Name!= &apos;OSG Sys Admin&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot modify the commisson percentage!</errorMessage>
+</ValidationRule>

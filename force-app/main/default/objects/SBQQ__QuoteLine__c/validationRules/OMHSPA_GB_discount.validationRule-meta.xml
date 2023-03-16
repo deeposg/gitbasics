@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OMHSPA_GB_discount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+OR(
+Promotional_Discount__c = &apos;a1h4p000002anhL&apos;,
+Promotional_Discount__c = &apos;a1h4p000002pM2K&apos;,
+Promotional_Discount__c = &apos;a1h4p000002bPVb&apos;,
+Promotional_Discount__c = &apos;a1h4p000003q7gI&apos;,
+Promotional_Discount__c = &apos;a1h8Z000002q3eh&apos;
+),
+$User.Id != &apos;00546000001efkf&apos;, /* Sandy */
+$UserRole.Name != &apos;Client Success Specialist&apos;,
+$User.Id != &apos;00546000000ufVc&apos;, /* Blessen */
+$User.Id != &apos;0054p000003QvvE&apos;, /* LIssbeth*/
+$User.Id != &apos;00546000000urMD&apos;, /* Ana */
+
+/*Accounting*/
+$User.Id != &apos;00546000000uiEZ&apos;, /* Jamie */
+$UserRole.Name != &apos;Accounting&apos;
+)</errorConditionFormula>
+    <errorMessage>Please contact the CSS team regarding OMHSPA discounts!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customized_Product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Captures if a Product needs customized material.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if a Product needs customized material.</inlineHelpText>
+    <label>Customized Product</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

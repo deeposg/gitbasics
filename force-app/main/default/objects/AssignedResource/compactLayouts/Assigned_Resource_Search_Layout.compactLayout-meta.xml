@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Resource_Search_Layout</fullName>
+    <fields>AssignedResourceNumber</fields>
+    <fields>ServiceAppointmentId</fields>
+    <fields>Service_Appointment_Duration__c</fields>
+    <fields>Service_Appointment_Product__c</fields>
+    <fields>Service_Appointment_Type__c</fields>
+    <fields>Service_Appointment_Scheduled_Start__c</fields>
+    <fields>Service_Appointment_Scheduled_End__c</fields>
+    <label>Assigned Resource Search Layout</label>
+</CompactLayout>

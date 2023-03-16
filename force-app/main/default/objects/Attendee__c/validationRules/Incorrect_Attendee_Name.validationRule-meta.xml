@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incorrect_Attendee_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED(Name),
+ NOT(ISBLANK(Contact__c)),
+Contact__c != &apos;0038Z00002wEyIz&apos;,
+ LOWER(Name) !=  LOWER(Contact__r.FirstName + &apos; &apos; + Contact__r.LastName)
+)</errorConditionFormula>
+    <errorMessage>Attendee Name cannot be different from the contact name</errorMessage>
+</ValidationRule>

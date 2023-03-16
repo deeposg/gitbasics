@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable" >
+    <aura:attribute name="userId" type="String" />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<iframe id="frame"
+            src="{!'https://ac.osg.ca/dashboard/public/?key=osgca&amp;userId=' + v.userId}"
+            width="100%"
+            style="height:100%"
+            frameBorder="no"
+            scrolling="yes"
+            allowtransparency="true"
+	/>
+
+
+</aura:component>

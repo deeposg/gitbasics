@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JHSC_Bundle_Discount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Course_Product_Line__c != &apos;JHSCII&apos;,
+ISBLANK(SBQQ__RequiredBy__c),
+OR(
+Promotional_Discount__c = &apos;a1h4p0000037vo1&apos;,
+Promotional_Discount__c = &apos;a1h4p0000037vo6&apos;
+) 
+)</errorConditionFormula>
+    <errorMessage>Can only apply this promo to a DL2 sold with a bundle!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_SWO</fullName>
+    <columns>Location_Code__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>Status</columns>
+    <columns>Name</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Location_Code__c</field>
+        <operation>contains</operation>
+        <value>BFD,CMB,L74065,LMGN,LTN1,LCM1,LDN2,LDN3,LDN4,LHI1,LON,LON3,STONE1,STONE2,STONE3,WSR,SAR2,WSR2</value>
+    </filters>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2018 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>IH3POS__c</field>
+        <operation>notEqual</operation>
+        <value>On-Site</value>
+    </filters>
+    <label>Region - SWO</label>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Update_View</fullName>
+    <columns>NAME</columns>
+    <columns>Contact_s_Account_Client_ID__c</columns>
+    <columns>Service_Appointment__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Certificate_Status__c</columns>
+    <columns>Certificate_Card_Expiration_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Requires_Wall_Cert__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Certificate_Status__c</field>
+        <operation>equals</operation>
+        <value>Mailed Out,E-Mailed Out</value>
+    </filters>
+    <label>Certificate Update View</label>
+</ListView>

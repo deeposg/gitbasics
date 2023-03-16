@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reminder_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reminder emails will be sent to this contact instead of the order contact (Only applies to On-Site Courses)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reminder emails will be sent to this contact instead of the order contact (Only applies to On-Site Courses)</inlineHelpText>
+    <label>Reminder Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Reminder contact must belong to account listed on SA!</errorMessage>
+        <filterItems>
+            <field>Contact.Account.Id</field>
+            <operation>equals</operation>
+            <valueField>$Source.Account__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Service Appointments (Reminder Contact)</relationshipLabel>
+    <relationshipName>Service_Appointments1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

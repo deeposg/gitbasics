@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_ID_and_Charge_ID_Must_be_Same</fullName>
+    <active>true</active>
+    <errorConditionFormula>charge_id__c != Name</errorConditionFormula>
+    <errorMessage>Stripe Charge ID and Charge ID Must be the same value</errorMessage>
+</ValidationRule>

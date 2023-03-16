@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Template__c</fullName>
+    <description>Captures the template to use. Pulled from Product.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Product__r.Certificate_Template__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates the template to use. Pulled from Product.</inlineHelpText>
+    <label>Certificate Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

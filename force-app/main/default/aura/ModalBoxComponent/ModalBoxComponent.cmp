@@ -1,0 +1,147 @@
+<aura:component controller="ClassroomCourseCmpApexController">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:registerEvent name="CloseModal" type="c:CloseModalEvent"/>
+    <aura:registerEvent name="UpdateRecord" type="c:CourseUpdateEvent"/>
+   	<aura:attribute name="ProductId" type="String"/>
+    <aura:attribute name="QuoteId" type="String"/>
+    <aura:attribute name="CProductLine" type="String"/>
+    <aura:attribute name="mbcDistanceLearning" type="Boolean"/>
+    <aura:attribute name="NoRecord" type="Boolean"/>
+    
+    <aura:attribute name="ServiceAppointments" type="ServiceAppointment[]"/>
+    <div style="position: fixed !important;top:20%;bottom:20%;z-index: 922332050;background-color: rgba(255, 255, 255, 0.75);">
+                        <lightning:spinner aura:id="busyIndicator"  variant="brand" size="large" class="slds-show slds-sfx_custom"/>
+     </div> 
+    
+    <div style="height:800px;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" style="max-width: 70% !important;width: 70% !important;">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                       <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeModal}" alternativeText="Close window." />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Classroom Course Search</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium slds-scrollable" id="modal-content-id-1">
+                    <div>
+                    	<ui:inputText class="slds-input" placeholder="Search Courses" aura:id="KeyComp" keyup="{!c.SearchFilter}" updateOn="keyup"/>
+					</div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Appointment Number">Appointment Number</div>
+                                    
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Training Address">Training Address</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="IH3POS">IH3POS</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Scheduled Start">Scheduled Start</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Scheduled End">Scheduled End</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Spaces Left">Spaces Left</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Address">Address</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Product">Product</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Course Maximum">Course Maximum</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Confirmed Seats">Confirmed Seats</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Current Quoted Seats">Current Quoted Seats</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.ServiceAppointments}" var="ServiceAptmnt">     
+                                <tr>
+                                    <td data-label="AppointmentNumber">
+                                        <div class="slds-truncate" title="Appointment Number">
+                                            <a data-record="{!ServiceAptmnt.AppointmentNumber}" id="{!ServiceAptmnt.Id}" onclick="{!c.saveAptNumber}">{!ServiceAptmnt.AppointmentNumber}</a>
+                                        </div>
+                                    </td>
+                                    <td data-label="Training Address">
+                                        <div class="slds-truncate" title="ProductName">{!ServiceAptmnt.Training_Address1__r.Location_Address__r.Name}</div>
+                                    </td>
+                                    <td data-label="IH3POS__c">
+                                        <div class="slds-truncate" title="IH3POS__c">{!ServiceAptmnt.IH3POS__c}</div>
+                                    </td> 
+									<td data-label="SchedStartTime">
+                                        <div class="slds-truncate" title="SchedStartTime">
+                                            <ui:outputDateTime value="{!ServiceAptmnt.SchedStartTime}"/>
+                                        
+                                        </div>
+                                    </td>
+                                    <td data-label="SchedEndTime">
+                                        <div class="slds-truncate" title="SchedEndTime"><ui:outputDateTime value="{!ServiceAptmnt.SchedEndTime}"/></div>
+                                    </td>
+                                    <td data-label="Spaces Left" title="Spaces Left">
+                                        <div class="slds-truncate" title="Duration">{!ServiceAptmnt.Spaces_Left__c}
+                                        </div>
+                                    </td>
+                                    <td data-label="Address">
+                                        <div class="slds-truncate" title="Address">
+                                            {!ServiceAptmnt.Address.street}<b style="{!if(ServiceAptmnt.Address.street == null,'Display:none;','')}">,</b>{!ServiceAptmnt.Address.state}<b style="{!if(ServiceAptmnt.Address.state == null,'Display:none;','')}">,</b>{!ServiceAptmnt.Address.countryCode}
+                                        </div>
+                                    </td>
+                                    <td data-label="ProductName">
+                                        <div class="slds-truncate" title="ProductName">{!ServiceAptmnt.Product_Name__c}</div>
+                                    </td>
+                                    <td data-label="Course_Maximum_Capacity__c">
+                                        <div class="slds-truncate" title="Course_Maximum_Capacity__c">{!ServiceAptmnt.Course_Maximum_Capacity__c}</div>
+                                    </td>
+                                    <td data-label="Confirmed_Seats__c">
+                                        <div class="slds-truncate" title="Confirmed_Seats__c">{!ServiceAptmnt.Confirmed_Seats__c}</div>
+                                    </td>
+                                    <td data-label="Current_Quoted_Seats__c">
+                                        <div class="slds-truncate" title="Current_Quoted_Seats__c">{!ServiceAptmnt.Current_Quoted_Seats__c}</div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            
+                           
+                        </tbody>
+                    </table>
+                     <aura:If isTrue="{!v.NoRecord}">
+                                
+                                	<div class="slds-notify_container" style="position: relative;">
+                                        <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                                            
+                                            <span class="slds-assistive-text">Error</span>
+                                            <h2>
+                                                No Appointments available for this Product.
+                                            </h2>
+                                        </div>
+                                    </div>
+                                
+                            </aura:If>
+                    
+                </div>
+                <footer class="slds-modal__footer">
+                        <button onclick= "{!c.closeModal}" class="slds-button slds-button_neutral">Cancel</button>
+               </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+       
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Changes_Can_Be_Made_While_Primary</fullName>
+    <active>true</active>
+    <errorConditionFormula>and (Primary__c,
+
+or(
+ISCHANGED( Location_Address__c ),
+ISCHANGED( Account__c  ),
+ISCHANGED( Type__c  ) 
+
+))</errorConditionFormula>
+    <errorMessage>No Changes Can Be Made Until Primary Is Disabled</errorMessage>
+</ValidationRule>

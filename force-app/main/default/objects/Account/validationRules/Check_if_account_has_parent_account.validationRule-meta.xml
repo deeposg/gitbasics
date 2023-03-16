@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_if_account_has_parent_account</fullName>
+    <active>true</active>
+    <description>Cant set child contact if there is no parent</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Child_Company_Contact_Required__c),
+Child_Company_Contact_Required__c = TRUE,
+ISBLANK(ParentId)
+)</errorConditionFormula>
+    <errorDisplayField>Child_Company_Contact_Required__c</errorDisplayField>
+    <errorMessage>There needs to be a parent account associated with this account first</errorMessage>
+</ValidationRule>

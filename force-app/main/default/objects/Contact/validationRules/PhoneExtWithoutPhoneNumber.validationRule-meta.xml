@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PhoneExtWithoutPhoneNumber</fullName>
+    <active>true</active>
+    <errorConditionFormula>!isBlank(Phone_Ext__c) &amp;&amp;  isBlank(Phone)</errorConditionFormula>
+    <errorMessage>Phone extension used with a missing phone number.</errorMessage>
+</ValidationRule>

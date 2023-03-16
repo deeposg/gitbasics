@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Check_SA_Ignore_Start_Date</name>
+        <label>Check SA Ignore Start Date</label>
+        <locationX>1282</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Set_RU_Fields_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Completion_Date_Set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Completion_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0_0</targetReference>
+            </connector>
+            <label>Completion Date Set</label>
+        </rules>
+        <rules>
+            <name>Yes_Ignore</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Appointment__r.Ignore_Scheduled_Start__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>New_or_Changed</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0</targetReference>
+            </connector>
+            <label>Yes Ignore</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Final_Test_Is_Null_or_Passed</name>
+        <label>If Final Test Is Null or Passed</label>
+        <locationX>446</locationX>
+        <locationY>551</locationY>
+        <defaultConnector>
+            <targetReference>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Not_Attended_Full</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Attended Entire Course</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0_0</targetReference>
+            </connector>
+            <label>Status Not Attended Full</label>
+        </rules>
+        <rules>
+            <name>Final_Test_Is_Passed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Theory_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Passed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0_0_0</targetReference>
+            </connector>
+            <label>Final Test Is Passed</label>
+        </rules>
+        <rules>
+            <name>Final_Test_Is_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Theory_Status__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0_0_0_0</targetReference>
+            </connector>
+            <label>Final Test Is Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_New_or_SA_Changed</name>
+        <label>If New or SA Changed</label>
+        <locationX>1392</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Changed_To_AttendedFull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StatustoAttendedFull</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0</targetReference>
+            </connector>
+            <label>Status Changed To AttendedFull</label>
+        </rules>
+        <rules>
+            <name>New_or_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NeworSAChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_SA_Ignore_Start_Date</targetReference>
+            </connector>
+            <label>New or Changed</label>
+        </rules>
+        <rules>
+            <name>CheckInDateChanged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CheckInDateChangedToNonNull</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Service_Appointment__r.Ignore_Scheduled_Start__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RU_Fields_0_0_0_0_0_0_0</targetReference>
+            </connector>
+            <label>CheckInDateChanged</label>
+        </rules>
+        <rules>
+            <name>SA_Canceled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SACanceled</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_RU_To_Nulls</targetReference>
+            </connector>
+            <label>SA Canceled</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>certdateinfuture</name>
+        <dataType>Number</dataType>
+        <expression>if (isblank({!CertExpDate}), null, 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>CertExpDate</name>
+        <dataType>Date</dataType>
+        <expression>if ( or(isblank({!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}), 
+isblank({!$Record.Completion_Date__c}), {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}&lt;=0), null, 
+
+IF(
+  AND(
+    MONTH( {!NewCompletionDate} ) = 2,
+    DAY(  {!NewCompletionDate} ) = 29,
+    NOT( 
+      OR( 
+        MOD( YEAR( {!NewCompletionDate} ) + {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}, 400 ) = 0, 
+        AND( 
+          MOD( YEAR( {!NewCompletionDate} ) + {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}, 4 ) = 0,
+          MOD( YEAR( {!NewCompletionDate} ) + {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}, 100 ) != 0
+        )
+      )
+    ) 
+  ),
+  DATE( YEAR( {!NewCompletionDate} ) + {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}, 3, 1),
+  DATE( YEAR( {!NewCompletionDate} ) + {!$Record.Service_Appointment__r.Product__r.Certificate_Length__c}, MONTH( {!NewCompletionDate} ), DAY( {!NewCompletionDate} ) )
+)
+
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CheckInDateChangedToNonNull</name>
+        <dataType>Boolean</dataType>
+        <expression>and(
+not(isblank({!$Record.Check_in_Time__c})),
+ischanged({!$Record.Check_in_Time__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NewCompletionDate</name>
+        <dataType>Date</dataType>
+        <expression>if (
+        isblank({!$Record.Completion_Date__c}),
+        Today(),
+        {!$Record.Completion_Date__c}
+    )</expression>
+    </formulas>
+    <formulas>
+        <name>NeworSAChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>or(isnew(), ischanged({!$Record.Service_Appointment__c}),ischanged({!$Record.Contact__c}), ischanged({!$Record.force_ru_update__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>NewTrainingCompleted</name>
+        <dataType>Date</dataType>
+        <expression>if (isblank({!$Record.Training_Completed__c}), Today(), {!$Record.Training_Completed__c})</expression>
+    </formulas>
+    <formulas>
+        <name>SACanceled</name>
+        <dataType>Boolean</dataType>
+        <expression>and(
+   ischanged({!$Record.Status__c}), 
+
+or(
+   ISPICKVAL({!$Record.Status__c},&apos;Canceled&apos;),
+  ISPICKVAL({!$Record.Status__c},&apos;Didn\&apos;t Show up for 2nd or 3rd Day&apos;),
+  ISPICKVAL({!$Record.Status__c},&apos;Left Course&apos;),
+  ISPICKVAL({!$Record.Status__c},&apos;No Show&apos;),
+  ISPICKVAL({!$Record.Status__c},&apos;Canceled - Invoice&apos;)
+)
+
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SchedStartDaysinFuture</name>
+        <dataType>Number</dataType>
+        <expression>min(max(0,DATEVALUE({!$Record.Service_Appointment__r.SchedStartTime}) - TODAY()),1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>StatustoAttendedFull</name>
+        <dataType>Boolean</dataType>
+        <expression>or (
+    ischanged({!$Record.force_ru_update__c}),
+    ischanged({!$Record.Completion_Date__c}),
+    ischanged({!$Record.Theory_Status__c}),
+and(
+   ischanged({!$Record.Status__c}), 
+   ISPICKVAL({!$Record.Status__c},&apos;Attended Entire Course&apos;)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>Update Attendee SA RU Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Attendee SA RU Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_RU_Fields_0</name>
+        <label>Set RU Fields</label>
+        <locationX>1546</locationX>
+        <locationY>551</locationY>
+        <inputAssignments>
+            <field>Course_Product_Line__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Course_Product_Line__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_Name__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_SA_Start_In_Future__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Scheduled_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.SchedStartTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>1282</locationX>
+        <locationY>551</locationY>
+        <inputAssignments>
+            <field>Course_Product_Line__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Course_Product_Line__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_Name__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_SA_Start_In_Future__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Scheduled_Start_Date__c</field>
+            <value>
+                <elementReference>NewCompletionDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>If_Final_Test_Is_Null_or_Passed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RU_SA_Start_In_Future__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Scheduled_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Check_in_Time__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Training_Completed__c</field>
+            <value>
+                <elementReference>NewTrainingCompleted</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>1018</locationX>
+        <locationY>551</locationY>
+        <inputAssignments>
+            <field>Course_Product_Line__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Course_Product_Line__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_Name__c</field>
+            <value>
+                <elementReference>$Record.Service_Appointment__r.Product__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>314</locationX>
+        <locationY>671</locationY>
+        <connector>
+            <targetReference>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Completion_Date__c</field>
+            <value>
+                <elementReference>NewCompletionDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>578</locationX>
+        <locationY>671</locationY>
+        <connector>
+            <targetReference>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Completion_Date__c</field>
+            <value>
+                <elementReference>$Record.Training_Completed__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>1810</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>RU_SA_Start_In_Future__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Scheduled_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Check_in_Time__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>446</locationX>
+        <locationY>1007</locationY>
+        <inputAssignments>
+            <field>RU_Cert_Exp_In_Future__c</field>
+            <value>
+                <elementReference>certdateinfuture</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Cert_Expiration_Date__c</field>
+            <value>
+                <elementReference>CertExpDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_RU_Fields_0_0_0_0_0_0_0_0_0_0_0</name>
+        <label>Set RU Fields</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <inputAssignments>
+            <field>Completion_Date__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Cert_Exp_In_Future__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Cert_Expiration_Date__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Training_Completed__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_RU_To_Nulls</name>
+        <label>Update RU To Nulls</label>
+        <locationX>2074</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>RU_Cert_Exp_In_Future__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Cert_Expiration_Date__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_SA_Start_In_Future__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RU_Scheduled_Start_Date__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1266</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>If_New_or_SA_Changed</targetReference>
+        </connector>
+        <object>Attendee__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

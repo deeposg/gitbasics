@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Synced_w_Skillspass</fullName>
+    <columns>Attendee_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>Product_Code__c</columns>
+    <columns>UUID__c</columns>
+    <columns>Theory_Exam_Results__c</columns>
+    <columns>Theory_Status__c</columns>
+    <columns>LMS_Module_Position__c</columns>
+    <columns>Scheduled_Start__c</columns>
+    <columns>Scheduled_End__c</columns>
+    <columns>Order_Product_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UUID__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Synced w/ Skillspass</label>
+</ListView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_SA_Scheduled_Next_week_DL</fullName>
+    <columns>Name</columns>
+    <columns>Status</columns>
+    <columns>IH3POS__c</columns>
+    <columns>CreatedDate</columns>
+    <columns>SchedStartTime</columns>
+    <columns>SchedEndTime</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <columns>Location_Name__c</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>CreatedBy</columns>
+    <columns>Contractor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <filters>
+        <field>Location_Name__c</field>
+        <operation>equals</operation>
+        <value>Distance Learning</value>
+    </filters>
+    <label>New SA Scheduled- Next week DL</label>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Half_Day_Course__c</fullName>
+    <description>Formula field to indicate if the Order Product has a Duration = 4. Set to 1 if True. Used with Summary Variables and Price Rules.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Formula field to indicate if the Order Product has a Duration = 4. Set to 1 if True.</inlineHelpText>
+    <label>Is Half Day Course</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

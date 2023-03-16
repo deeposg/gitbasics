@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provincial_or_Federally_Regulated__c</fullName>
+    <description>Captures whether the customized course is regulated provincially or federally.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether the customized course is regulated provincially or federally.</inlineHelpText>
+    <label>Provincial or Federally Regulated?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Provincial</fullName>
+                <default>false</default>
+                <label>Provincial</label>
+            </value>
+            <value>
+                <fullName>Federal</fullName>
+                <default>false</default>
+                <label>Federal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

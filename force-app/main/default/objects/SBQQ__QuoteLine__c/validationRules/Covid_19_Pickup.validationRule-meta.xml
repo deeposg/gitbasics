@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Covid_19_Pickup</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Shipping_Method__c, &apos;London Pickup&apos;),
+ Course_Product_Line__c = &apos;COVID-19&apos;,
+ $Profile.Name!= &apos;OSG Sys Admin&apos;
+)</errorConditionFormula>
+    <errorMessage>Pick-ups are not a valid option for supplies currently!</errorMessage>
+</ValidationRule>

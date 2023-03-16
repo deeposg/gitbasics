@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Date_and_Time__c</fullName>
+    <description>Captures the preferred date and time for the service appointment used at time of booking.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the preferred date and time for the service appointment used at time of booking.</inlineHelpText>
+    <label>Preferred Date and Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

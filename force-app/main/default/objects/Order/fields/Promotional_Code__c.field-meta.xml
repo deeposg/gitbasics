@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotional_Code__c</fullName>
+    <description>Captures the promotional code(s) that should to apply to the Order. Each unique Promotional Code needs to be separated by a comma.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the promotional code(s) that should apply to the Order. Separate each unique Promotional Code with a comma. Promotional Codes not separated by a comma will not be applied.</inlineHelpText>
+    <label>Promotional Code</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

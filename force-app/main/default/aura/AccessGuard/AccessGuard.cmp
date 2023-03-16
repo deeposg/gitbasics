@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<aura:attribute name="recordFields4" type="List" default="[Id,From_Phone__c,Contact__c,Name,To_Phone__c,From_Name__c,Duration__c,From_Phone__c,Contact__c,CreatedDate,Id,Name,From_Name__c,To_Phone__c,Duration__c,From_Phone__c,Contact__c]" />
+    
+    
+    <lightning:card footer="Card Footer" title="AccessGuard v42">
+		
+        <lightning:button label="Neutral" title="Neutral action" onclick="{! c.handleClick }"/>
+        
+   </lightning:card>
+</aura:component>

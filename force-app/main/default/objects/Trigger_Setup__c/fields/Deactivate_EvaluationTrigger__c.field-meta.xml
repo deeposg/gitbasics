@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivate_EvaluationTrigger__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows for deactivation of all EvaluationTirgger when checked.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows for deactivation of all EvaluationTirgger when checked.</inlineHelpText>
+    <label>Deactivate EvaluationTrigger</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

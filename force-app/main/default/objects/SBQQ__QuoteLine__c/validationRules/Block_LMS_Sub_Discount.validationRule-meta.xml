@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_LMS_Sub_Discount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;OL-SUB&apos;,
+NOT(ISBLANK(Promotional_Discount__c))
+)</errorConditionFormula>
+    <errorMessage>Cannot use discount codes with LMS Subscription! Talk to Ana about contracted pricing</errorMessage>
+</ValidationRule>

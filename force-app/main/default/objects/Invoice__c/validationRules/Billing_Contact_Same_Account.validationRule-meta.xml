@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Contact_Same_Account</fullName>
+    <active>false</active>
+    <errorConditionFormula>Billing_Contact__r.AccountId !=  Account__r.Id</errorConditionFormula>
+    <errorMessage>Billing Contact Doesn&apos;t Belong to the Invoice Account</errorMessage>
+</ValidationRule>

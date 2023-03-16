@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incorrect_Quote_Account_on_Order</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK( SBQQ__Quote__c )),
+  ISCHANGED(AccountId),
+  SBQQ__Quote__r.SBQQ__Account__c != AccountId 
+)</errorConditionFormula>
+    <errorMessage>Account must be the same as the quoted account!</errorMessage>
+</ValidationRule>

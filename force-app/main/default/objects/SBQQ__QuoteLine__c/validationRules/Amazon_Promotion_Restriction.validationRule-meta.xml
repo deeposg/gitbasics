@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amazon_Promotion_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+OR(
+Promotional_Discount__c = &apos;a1h46000002jdPW&apos;, 
+Promotional_Discount__c = &apos;a1h46000002jdPb&apos;
+),
+$User.Id = &apos;00546000000ufVc&apos;,
+$User.Id = &apos;00546000000vXWl&apos;,
+$User.Id = &apos;00546000001efkf&apos;
+)</errorConditionFormula>
+    <errorMessage>Please contact Scott Loveland regarding use of Amazon Promotions!</errorMessage>
+</ValidationRule>

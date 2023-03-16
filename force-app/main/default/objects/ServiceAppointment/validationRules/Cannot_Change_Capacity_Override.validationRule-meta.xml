@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Capacity_Override</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Max_Capacity_Override__c ),
+$Profile.Name!= &apos;OSG Sys Admin&apos;,
+$User.Alias!= &apos;THugh&apos;,
+$User.Alias!= &apos;amccr&apos;,
+$User.Alias!= &apos;jquin&apos;,
+$User.Alias!= &apos;slove&apos;,
+$User.Alias!= &apos;dwilk&apos;,
+$User.Alias!= &apos;nhubb&apos;,
+$User.Alias!= &apos;amitc&apos;
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to change the capacity override! Contact your administrator</errorMessage>
+</ValidationRule>

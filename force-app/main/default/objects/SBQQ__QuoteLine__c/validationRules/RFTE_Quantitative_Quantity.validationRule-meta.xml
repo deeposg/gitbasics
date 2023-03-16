@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFTE_Quantitative_Quantity</fullName>
+    <active>false</active>
+    <errorConditionFormula>and(
+   SBQQ__Product__r.Id = &apos;01t4p000004SV6y&apos;,
+  ISCHANGED(SBQQ__Quantity__c),
+  SBQQ__Quantity__c &lt; 12
+)</errorConditionFormula>
+    <errorMessage>Cannot select a quantity less than 12 for Quantitative Fit Test!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Address1__c</fullName>
+    <description>Concatenates the entire address fields.</description>
+    <externalId>false</externalId>
+    <formula>upper(substitute(Address__c + BR() + City1__c + &quot;, &quot; + Province1__c + BR() + Postal_Code1__c + BR() + Country1__c, BR()+BR(), BR()))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Concatenates the entire address fields.</inlineHelpText>
+    <label>Location Address</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

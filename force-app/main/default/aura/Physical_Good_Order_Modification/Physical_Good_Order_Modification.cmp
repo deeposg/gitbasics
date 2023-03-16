@@ -1,0 +1,68 @@
+<aura:component controller="PhysicalGoodOrderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<ltng:require styles="{!$Resource.Lightning_Action_Modal}" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showOptions" type="Boolean" default="false"/> 
+    <aura:attribute name="modifyQuantity" type="Boolean" default="false"/>
+    <aura:attribute name="ErrorCode" type="String" default=""/>
+    <aura:attribute name="SuccessCode" type="String" default=""/>
+    <aura:attribute name="newQuantity" type="integer" default="0"/>
+    <aura:attribute name="originalQuantity" type="integer"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>    
+    
+    <force:recordData aura:id="shippingRecord"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      mode="VIEW"/>    
+    
+    <div class="slds-grid slds-wrap" style="position:relative;height:140px;">
+        <lightning:spinner aura:id="busyIndicator" variant="brand" size="large" class="slds-hide"/>
+        
+        <aura:if isTrue="{!v.showOptions == true}">
+            <div class="slds-col slds-size_6-of-12" align="center">
+                <button onclick="{!c.modifyQuantityClick}" class="slds-button slds-button_success">Modify Quantity</button>
+            </div>
+            <div class="slds-col slds-size_6-of-12" align="center">
+                <button onclick="{!c.cancelShippingItemClick}" class="slds-button slds-button_destructive">Cancel Shipping Item</button>
+            </div>                       
+        </aura:if>       
+        
+        <aura:if isTrue="{!v.modifyQuantity}">
+            <div class="slds-col slds-size_12-of-12 slds-align_absolute-center" align="center">
+                <ui:inputNumber label="New Quantity" value="{!v.newQuantity}"/>
+            </div>
+            <div class="slds-col slds-size_12-of-12 slds-align_absolute-center" align="center">
+                <button onclick="{!c.cancelModifyClick}" class="slds-button slds-button_outline-brand">Back</button>                        
+                <button onclick="{!c.updateQuantityClick}" class="slds-button slds-button_success">Update Quantity</button>
+            </div>                    
+        </aura:if>
+        
+        <aura:if isTrue="{!v.ErrorCode != ''}">
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.ErrorCode}</span>
+                    <h2>
+                        {!v.ErrorCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.SuccessCode != ''}">
+            <div class="slds-notify_container" Style="position: inherit;">
+                <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+                    <span class="slds-assistive-text">{!v.SuccessCode}</span>
+                    <h2>
+                        {!v.SuccessCode}
+                    </h2>
+                </div>
+            </div>
+        </aura:if>            
+    </div>
+</aura:component>

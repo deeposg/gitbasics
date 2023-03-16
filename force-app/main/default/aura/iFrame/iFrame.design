@@ -1,0 +1,10 @@
+<design:component label="iFrame">
+
+    <design:attribute name="recordId" label="recordId" />
+    <design:attribute name="iframeUrl" label="iframeUrl" />
+    <design:attribute name="width" label="width" />
+    <design:attribute name="height" label="height" />
+    <design:attribute name="scrolling" label="scrolling" />
+    <design:attribute name="frameBorder" label="frameBorder" />
+    <design:attribute name="style" label="style" />
+</design:component>

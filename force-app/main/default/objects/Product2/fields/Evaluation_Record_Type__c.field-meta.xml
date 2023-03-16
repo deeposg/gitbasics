@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Evaluation Record Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aerial Lift Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Aerial Lift Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Bucket Truck Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Bucket Truck Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Lift Truck Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Lift Truck Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Mobile Boom Crane Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Mobile Boom Crane Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Overhead Crane Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Overhead Crane Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Respirator Fit Testing (Qualitative)</fullName>
+                <default>false</default>
+                <label>Respirator Fit Testing (Qualitative)</label>
+            </value>
+            <value>
+                <fullName>Respirator Fit Testing (Quantitative)</fullName>
+                <default>false</default>
+                <label>Respirator Fit Testing (Quantitative)</label>
+            </value>
+            <value>
+                <fullName>Telehandler Practical Evaluation</fullName>
+                <default>false</default>
+                <label>Telehandler Practical Evaluation</label>
+            </value>
+            <value>
+                <fullName>Working at Heights Evaluation</fullName>
+                <default>false</default>
+                <label>Working at Heights Evaluation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMarker_DLOS_Webinar_Info</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Product__r.Delivery_Method__c, &apos;On-site&apos;),
+ Product__r.Distance_Learning__c = true,
+OR(
+AND(
+ ISCHANGED(BigMarker_Webinar_Link__c),
+ NOT(ISBLANK(BigMarker_Webinar_Link__c)),
+ ISBLANK(BigMarker_Webinar_Id__c)
+),
+AND(
+ ISCHANGED(BigMarker_Webinar_Id__c),
+ NOT(ISBLANK(BigMarker_Webinar_Id__c)),
+ ISBLANK(BigMarker_Webinar_Link__c)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Populate BIgMarker Webinar Id and Webinar Link for DLOS courses!</errorMessage>
+</ValidationRule>

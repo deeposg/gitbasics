@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Changes_On_Ordered_Quote</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ SBQQ__Quote__r.SBQQ__Ordered__c = true,
+  OR(
+  ISCHANGED( Number_of_Participants__c ),
+  ISCHANGED( SBQQ__Quantity__c ),
+  ISCHANGED( Shipping_Method__c ),
+  ISCHANGED( ShipToContactId__c ),
+  ISCHANGED( Shipping_Address__c ),
+  ISCHANGED( Additional_Devices__c ),
+  ISCHANGED( Toyota_Training_Room__c ),
+  ISCHANGED( Account_Credit_Used__c ),
+  ISCHANGED( Promotional_Discount__c ),
+  ISCHANGED( Surcharge__c ),
+  AND(
+   ISCHANGED( Classroom_Course__c ),
+   Delivery_Method__c = &apos;Classroom&apos;
+  ),
+ AND(
+   ISCHANGED( Classroom_Course__c ),
+   Delivery_Method__c != &apos;Classroom&apos;,
+   NOT(ISBLANK(PRIORVALUE(Classroom_Course__c)))
+ )
+ )
+)</errorConditionFormula>
+    <errorMessage>Cannot make changes once quote has been ordered. Make any applicable changes on the order/order products!</errorMessage>
+</ValidationRule>

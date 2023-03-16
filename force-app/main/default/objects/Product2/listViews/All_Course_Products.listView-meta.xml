@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Course_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>External_Product_Name__c</columns>
+    <columns>Course_Product_Line__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Delivery_Method__c</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Requires_Evaluation__c</columns>
+    <columns>Duration__c</columns>
+    <columns>IsMutiDay__c</columns>
+    <columns>Train_the_Trainer__c</columns>
+    <columns>Min_Capacity_IH_3P_Fill_Rate_Req__c</columns>
+    <columns>MaxOSCapacity_AdditionalChargeThreshold__c</columns>
+    <columns>Maximum_Capacity_Maximum_Attendees__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Courses</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Course Products</label>
+</ListView>

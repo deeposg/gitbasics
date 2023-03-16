@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Card__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (isblank(payment_card_brand__c), &apos;&apos;, 
+
+
+INITCAP(payment_card_brand__c) + &apos; **** &apos; +  text(payment_card_last4__c) + &apos; (Exp &apos; + text( payment_card_exp_month__c ) + &apos;/&apos; +  text(payment_card_exp_year__c) + &apos;)&apos;
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Payment Card</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

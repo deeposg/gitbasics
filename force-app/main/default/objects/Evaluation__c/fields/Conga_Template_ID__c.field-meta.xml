@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Template_ID__c</fullName>
+    <description>Sets the Conga Template Id</description>
+    <externalId>false</externalId>
+    <formula>CASE( 
+RecordType.DeveloperName,
+&quot;Aerial_Lift_Practical_Evaluation&quot;,$Label.Conga_Aerial_Lift_Practical_Evaluation_Template,
+&quot;Bucket_Truck_Practical_Evaluation&quot;,$Label.Conga_Bucket_Truck_Practical_Evaluation_Template,
+&quot;Mobile_Boom_Crane_Practical_Evaluation&quot;,$Label.Conga_Mobile_Boom_Crane_Practical_Evaluation_Template,
+&quot;Overhead_Crane_Practical_Evaluation&quot;,$Label.Conga_Overhead_Crane_Practical_Evaluation_Template,
+&quot;Safe_Operation_of_Lift_Trucks_Practical_Evaluation&quot;,$Label.Conga_Safe_Operation_of_Lift_Trucks_Practical_Evaluation_Template,
+&quot;Telehandler_Practical_Evaluation&quot;,$Label.Conga_Telehandler_Practical_Evaluation_Template,
+null
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Template ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

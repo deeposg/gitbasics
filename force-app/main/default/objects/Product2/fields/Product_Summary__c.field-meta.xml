@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Summary__c</fullName>
+    <description>Captures the product summary details used on the website.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the product summary details used on the website.</inlineHelpText>
+    <label>Product Summary</label>
+    <length>32000</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

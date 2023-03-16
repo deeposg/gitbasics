@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_Courses</fullName>
+    <columns>Name</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>IH3POS__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>Date_Time_Completed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Date_Time_Completed__c</field>
+        <operation>lessThan</operation>
+        <value>5/7/2021 12:00 AM</value>
+    </filters>
+    <label>Completed Courses</label>
+</ListView>

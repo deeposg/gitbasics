@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LMS_Orders1</fullName>
+    <columns>SALES.ACCOUNT.OWNERALIAS</columns>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>Owner_Name__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Order_Owner_Alias__c</columns>
+    <columns>LearningLogin_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LearningLogin_Id__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>LMS Orders</label>
+</ListView>

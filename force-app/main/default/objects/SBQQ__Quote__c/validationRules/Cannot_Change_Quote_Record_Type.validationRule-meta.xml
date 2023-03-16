@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Quote_Record_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( RecordTypeId ),
+ /*REJECTED QUOTE*/
+ OR(
+  PRIORVALUE( RecordTypeId) = &apos;0124p0000015Tuc&apos;,
+  RecordTypeId!= &apos;0124p0000015Tuc&apos;
+ ),
+ /*EXPIRED QUOTE*/
+ OR(
+  PRIORVALUE( RecordTypeId) = &apos;0124p0000015Tuh&apos;,
+  RecordTypeId!= &apos;0124p0000015Tuh&apos;
+ ),
+ /*BOOKED QUOTE*/
+ OR(
+  PRIORVALUE( RecordTypeId) = &apos;01246000000HDK8&apos;,
+  RecordTypeId!= &apos;01246000000HDK8&apos;
+ ),
+ $Profile.Name &lt;&gt; &quot;OSG Sys Admin&quot;
+)</errorConditionFormula>
+    <errorMessage>Once a quote is in a final status (booked, expired, rejected) it cannot be changed!</errorMessage>
+</ValidationRule>

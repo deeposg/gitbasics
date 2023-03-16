@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2022_Greenbooks</fullName>
+    <columns>NAME</columns>
+    <columns>Order__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>Ship_To_Contact__c</columns>
+    <columns>Time_to_Ship__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>2022OOHSAR</value>
+    </filters>
+    <filters>
+        <field>Order_Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>2022 Greenbooks</label>
+</ListView>

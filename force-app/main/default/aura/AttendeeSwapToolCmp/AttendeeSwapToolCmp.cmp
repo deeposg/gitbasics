@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" access="global">
+    <ltng:require styles="{!$Resource.Lightning_Action_Modal}" />    
+	<c:attendeeSwapTool recordId="{!v.recordId}" onclose="{!c.closeQA}"></c:attendeeSwapTool>
+</aura:component>

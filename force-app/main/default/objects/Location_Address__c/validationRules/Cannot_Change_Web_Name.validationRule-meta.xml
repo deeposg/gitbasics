@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Web_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Web_Name__c),
+NOT(
+OR(
+$User.Id = &apos;00546000000u1OS&apos;,
+$User.Id = &apos;00546000000vXWl&apos;,
+$User.Id = &apos;00546000000ufVc&apos;,
+$User.Id = &apos;0054p000002tHJ0&apos;
+)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot modify the web name of this location!</errorMessage>
+</ValidationRule>

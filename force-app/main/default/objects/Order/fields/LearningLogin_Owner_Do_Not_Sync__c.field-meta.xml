@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LearningLogin_Owner_Do_Not_Sync__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account.LearningLogin_Owner_Do_Not_Sync__c</formula>
+    <label>LearningLogin Owner Do Not Sync</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

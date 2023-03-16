@@ -1,0 +1,31 @@
+<aura:component controller="AttendeeMangementCmpApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    <aura:attribute name="AttendeeRec" type="Attendee__c"  default="{ 'sobjectType': 'Attendee__c' }" access="global"/>
+     <aura:attribute name="Count" type="integer" access="global"/>
+ 	<aura:attribute name="LastCount" type="integer" access="global"/>
+    
+    <hr style="{!if(v.AttendeeRec.Quote_Line__r.Name =='','Display:none;','margin: 1%;')}"></hr>
+    
+    <span style="{!if(v.AttendeeRec.Quote_Line__r.Name =='','Display:none;','margin: 1%;')}">QuoteLine:</span><force:outputField value="{!v.AttendeeRec.Quote_Line__r.Name}"  class="displayof" /> <span style="{!if(v.AttendeeRec.Quote_Line__r.Name =='','Display:none;','margin: 1%;')}"> | {!v.AttendeeRec.Quote_Line__r.SBQQ__Product__r.Name}</span> <span style="{!if(and(v.AttendeeRec.Quote_Line__r.Name =='', v.AttendeeRec.Quote_Line__r.Scheduled_Date_and_Time__c != null),'Display:none;','margin: 1%;')}"> | <ui:outputDateTime value="{!v.AttendeeRec.Quote_Line__r.Scheduled_Date_and_Time__c}"/></span> <span style="{!if(and(v.AttendeeRec.Quote_Line__r.Name !=undefined,v.AttendeeRec.Quote_Line__r.Training_Location_Name__c !=undefined),'margin: 1%;','Display:none;')}"> | {!v.AttendeeRec.Quote_Line__r.Training_Location_Name__c}</span> <span style="{!if(v.AttendeeRec.Quote_Line__r.Name =='','Display:none;','margin: 1%;')}"> | {!v.LastCount} Attendees</span>
+    <hr style="{!if(v.AttendeeRec.Quote_Line__r.Name =='','Display:none;','margin: 1%;')}"></hr>
+    
+    <div style="padding-left:5%;padding-right:5%;">
+        
+		<div style="width:10%;float:left;padding-left:2%;">
+
+        </div>
+        <div style="width:45%;float:left;padding-left:2%;">
+            
+			Attendee Name<br/>
+    		<force:outputField value="{!v.AttendeeRec.Name}" class="slds-input set-background" />
+        </div>
+       
+        
+    	<div style="width:45%;float:left;padding-left:5%;">
+            &nbsp;Contact<br/>
+            <force:inputField value="{!v.AttendeeRec.Contact__c}" class="slds-input" />
+        </div>
+   <br/><br/>
+    
+   </div>
+    <br/><br/>
+</aura:component>

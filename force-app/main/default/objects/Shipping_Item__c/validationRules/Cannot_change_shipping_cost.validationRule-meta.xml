@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_shipping_cost</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Shipping_Cost__c),
+AND( 
+$Profile.Name!= &apos;OSG Sys Admin&apos;, 
+$User.Alias != &apos;THugh&apos;,
+$User.Alias != &apos;slove&apos;,
+$User.Alias != &apos;amccr&apos;,
+$User.Alias != &apos;cwang&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot modify the shipping cost. Please contact Tara.</errorMessage>
+</ValidationRule>

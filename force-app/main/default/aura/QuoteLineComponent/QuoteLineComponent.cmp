@@ -1,0 +1,25 @@
+<aura:component controller="ClassroomCourseCmpApexController" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:registerEvent name="UpdateModal" type="c:ModalEvent"/>
+    <aura:attribute name="SbqqQuoteLine" type="ClassroomCourseCmpApexController.QuoteLine"/>	  
+    <tr>
+        <td data-label="Name">
+            <div class="slds-truncate" title="Line Name"><a data-record="{!v.SbqqQuoteLine.Name}">{!v.SbqqQuoteLine.LineName}</a></div>
+        </td>
+        <td data-label="SBQQ__Product__c">
+            <div class="slds-truncate" title="Product">{!v.SbqqQuoteLine.ProductName}</div>
+        </td>
+        <td data-label="SBQQ__Quantity__c">
+            <div class="slds-truncate" title="Quantity">{!v.SbqqQuoteLine.Quantity}</div>
+        </td> 
+        <td data-label="Contact_Sort__c" title="Classroom Course">
+            <div class="slds-truncate" title="Classroom Course">
+                <lightning:buttonIcon iconName="utility:search" variant="bare" onclick="{!c.ClickLookup}" alternativeText="Close window." />
+                <div style="{!if(v.SbqqQuoteLine.ClassroomName == null,'Display:block;float: right;width: 88%;','Display:none;')}">
+                    Search <br/>Courses Classroom
+                </div>
+                &nbsp;&nbsp;{!v.SbqqQuoteLine.ClassroomName}
+            </div>
+        </td>  
+    </tr>
+    
+</aura:component>

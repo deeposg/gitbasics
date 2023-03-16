@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Related_to_Bug_Enhancement__c</fullName>
+    <description>Captures the record name related to the issue or that further defines the requested enhancement.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the record name related to the issue or that further defines the requested enhancement.</inlineHelpText>
+    <label>Record Related to Bug/Enhancement</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

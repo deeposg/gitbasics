@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Report1</fullName>
+    <columns>Name</columns>
+    <columns>IH3POS__c</columns>
+    <columns>Assigned_Service_Resource__c</columns>
+    <columns>Contractor__c</columns>
+    <columns>Confirmed_Seats__c</columns>
+    <columns>Course_Max_Capacity__c</columns>
+    <columns>Account__c</columns>
+    <columns>Location_Name__c</columns>
+    <columns>Training_Address1__c</columns>
+    <columns>Product__c</columns>
+    <columns>SchedStartTime</columns>
+    <columns>Material_Notes__c</columns>
+    <columns>Material_Location__c</columns>
+    <columns>Material_Quantity_Packed__c</columns>
+    <columns>Course_Material__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SchedStartTime</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <filters>
+        <field>Status</field>
+        <operation>notEqual</operation>
+        <value>Completed,Canceled</value>
+    </filters>
+    <filters>
+        <field>Assigned_Service_Resource__c</field>
+        <operation>notEqual</operation>
+        <value>Jerry Morrison</value>
+    </filters>
+    <label>Shipping Report</label>
+</ListView>

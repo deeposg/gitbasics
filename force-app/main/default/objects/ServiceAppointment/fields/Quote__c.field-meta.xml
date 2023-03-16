@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Connects the Service Appointment to the Quote. Populated when &quot;On-Site&quot; Service Appointments are created as part of the quoting process.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Connects the Service Appointment to the Quote. Populated when &quot;On-Site&quot; Service Appointments are created as part of the quoting process.</inlineHelpText>
+    <label>Quote</label>
+    <referenceTo>SBQQ__Quote__c</referenceTo>
+    <relationshipLabel>Service Appointments</relationshipLabel>
+    <relationshipName>Service_Appointments</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

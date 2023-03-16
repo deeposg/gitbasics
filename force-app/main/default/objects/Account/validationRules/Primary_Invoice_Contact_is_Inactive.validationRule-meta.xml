@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Invoice_Contact_is_Inactive</fullName>
+    <active>true</active>
+    <errorConditionFormula>or (
+ isPickVal(Primary_Contact__r.Contact_Status__c, &apos;Inactive&apos;),
+ isPickVal(Invoice_Contact__r.Contact_Status__c , &apos;Inactive&apos;)
+)</errorConditionFormula>
+    <errorMessage>Primary/Invoice Contact Can&apos;t Be Inactive</errorMessage>
+</ValidationRule>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Respirator_QLFT_Protocol__c</fullName>
+    <externalId>false</externalId>
+    <label>Respirator QLFT Protocol</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Saccharin</fullName>
+                <default>false</default>
+                <label>Saccharin</label>
+            </value>
+            <value>
+                <fullName>Bitter</fullName>
+                <default>false</default>
+                <label>Bitter</label>
+            </value>
+            <value>
+                <fullName>Smoke</fullName>
+                <default>false</default>
+                <label>Smoke</label>
+            </value>
+            <value>
+                <fullName>Banana Oil</fullName>
+                <default>false</default>
+                <label>Banana Oil</label>
+            </value>
+            <value>
+                <fullName>Bitrex</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bitrex</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

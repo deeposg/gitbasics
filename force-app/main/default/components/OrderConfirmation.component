@@ -1,0 +1,560 @@
+<!-- 
+* OrderConfirmation visualforce component
+* Created By : Aditya Chasta
+* Created Date : 06/26/2017
+* Description :  This component will be used in Master Order Confirmation email template -->
+<apex:component controller="OrderConfirmationController" access="global" >
+    <apex:attribute name="orderId" type="String" description="This will store order record related to the email template" assignTo="{!recordId}"/>
+    <apex:attribute name="order" type="Order" description="This will store order record related to the email template" assignTo="{!orderRecord}"/>
+    
+    <!-- <script>
+    window.onload = function() {
+        if(!{!isInitialized}) {alert('{!recordId}');
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.OrderConfirmationController.init}', '{!recordId}', function(result, event){
+            
+            });
+        }
+    }
+    </script> -->
+    <apex:outputPanel rendered="{!evaluationProductList == null || evaluationProductList.size == 0}">
+        <p>Please consider this as confirmation for your order. The details are as follows:</p>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!evaluationProductList != null && evaluationProductList.size > 0}">
+        <p>Please consider this as confirmation for your upcoming evaluation. The details are as follows:</p>
+    </apex:outputPanel>
+    <!-- Evaluation Products -->
+    <apex:outputPanel rendered="{!evaluationProductList != null && evaluationProductList.size > 0}">
+        <p>Please consider this as confirmation for your upcoming evaluation. The details are as follows:</p>
+        <apex:repeat value="{!evaluationProductList}" var="evaluationProduct">
+            <table style="border-collapse:collapse; ">
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Evaluation Name
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Pricebookentry.Product2.Name}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                         Evaluation Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(evaluationProduct.Scheduled_Date_and_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Number of Evaluations
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Quantity}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Start Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="startTime" value=" {!evaluationProduct.Scheduled_Date_and_Time__c}" />
+                        {!MID(startTime, 12, 9)}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Location
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Training_Location_Name__c} {!evaluationProduct.Training_Street__c} {!evaluationProduct.Training_City__c} {!evaluationProduct.Training_Province__c} {!evaluationProduct.Training_Postal_Code__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(evaluationProduct.Scheduled_End_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Parking
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Parking_Details__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="endTime" value=" {!evaluationProduct.Scheduled_End_Time__c}" />
+                        {!MID(endTime, 12, 9)}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        PPE Required
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Personal_Protective_Equipment_PPE__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Contact Name
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Primary_Contact__r.Name}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Name and Lifting Device
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Lifting_Device_Eval_Details__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Contact Phone Number
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Primary_Contact__r.Phone}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Annual Safety Inspection
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Annual_Safety_Inspection_Eval_Details__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Other
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!evaluationProduct.Other__c}
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </apex:repeat>
+        <br/>
+    </apex:outputPanel>
+    
+    <!-- Onsite products -->
+    <apex:outputPanel rendered="{!onsiteProductList != null && onsiteProductList.size > 0}">
+        <apex:repeat value="{!onsiteProductList}" var="onsiteProduct">
+            <table style="border-collapse:collapse; ">
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Course Name
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px" >
+                        {!onsiteProduct.Pricebookentry.Product2.Name}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Course Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(onsiteProduct.Scheduled_Date_and_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Number of Participants
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!onsiteProduct.Number_of_Participants__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Start Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="startTime" value=" {!onsiteProduct.Scheduled_Date_and_Time__c}" />
+                        {!MID(startTime, 12, 9)}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px" rowspan="2">
+                        Location
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px" rowspan="2">
+                        {!onsiteProduct.Training_Location_Name__c} {!onsiteProduct.Training_Street__c} {!onsiteProduct.Training_City__c} {!onsiteProduct.Training_Province__c} {!onsiteProduct.Training_Postal_Code__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(onsiteProduct.Scheduled_End_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="endTime" value=" {!onsiteProduct.Scheduled_End_Time__c}" />
+                        {!MID(endTime, 12, 9)}
+                    </td>
+                </tr>
+            </table>
+            
+            <h3>Trainer Instructions:</h3>
+            <ol>
+                <li>Who is the point of contact and contact number (alternative name and number if early start prior to 8am)?<br/>
+                    <apex:outputText escape="false" value="    &#8226; {!onsiteProduct.Primary_Contact__r.Name}, {!onsiteProduct.Primary_Contact__r.Phone} and {!onsiteProduct.Alternate_Contact__r.Name}, {!onsiteProduct.Alternate_Contact__r.Phone}"/>
+                </li>
+                <li>Are there any specific instructions for parking and/or entry into the building (ie. security, training room location)?<br/>
+                    <apex:outputText escape="false" value="    &#8226; {!onsiteProduct.Parking_Details__c}"/>
+                </li>
+                <li>Who is the point of contact and contact number (alternative name and number if early start prior to 8am)?<br/>
+                    <apex:outputText escape="false" value="    &#8226; {!onsiteProduct.Personal_Protective_Equipment_PPE__c}"/>
+                </li>
+            </ol>
+            <br/>
+        </apex:repeat>
+        <br/>
+    </apex:outputPanel>
+    
+    <!-- Public Products -->
+    <apex:outputPanel rendered="{!publicProductList != null && publicProductList.size > 0}">
+        <apex:repeat value="{!publicProductList}" var="publicProduct">
+            <table style="border-collapse:collapse; ">
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                         Course Name
+                     </td>
+                     <td style="border:2px solid #305082; padding: 10px">
+                         {!publicProduct.Pricebookentry.Product2.Name}
+                     </td>
+                     <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px" rowspan="8">
+                        Participant Names
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px" rowspan="8">
+                        {!if(orderItemAttendeeMap[publicProduct.id] != null, orderItemAttendeeMap[publicProduct.id], '')}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Course Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(publicProduct.Scheduled_Date_and_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Start Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="startTime" value=" {!publicProduct.Scheduled_Date_and_Time__c}" />
+                        {!MID(startTime, 12, 9)}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Date
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:outputText value=" {0,date,MM/dd/yy}">
+                            <apex:param value="{!DATEVALUE(publicProduct.Scheduled_End_Time__c)}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        End Time
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <apex:variable var="endTime" value=" {!publicProduct.Scheduled_End_Time__c}" />
+                        {!MID(endTime, 12, 9)}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Location
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!publicProduct.Training_Location_Name__c} {!publicProduct.Training_Street__c} {!publicProduct.Training_City__c} {!publicProduct.Training_Province__c} {!publicProduct.Training_Postal_Code__c}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Map
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?center={!publicProduct.Training_Street__c},{!publicProduct.Training_City__c},{!publicProduct.Training_Province__c},{!publicProduct.Training_Country__c}&zoom=15&size=300x150&maptype=roadmap"/>
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Parking Instructions
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!publicProduct.Parking_Details__c}
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </apex:repeat>
+        <br/>
+    </apex:outputPanel>
+    
+    <!-- Physical Goods -->
+    <apex:outputPanel rendered="{!physicalGoodsProductList != null && physicalGoodsProductList.size > 0 }">
+        <apex:repeat value="{!physicalGoodsProductList}" var="physicalGoodsProduct">
+            <table style="border-collapse:collapse; ">
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Product
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!physicalGoodsProduct.Pricebookentry.Product2.Name}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Shipping Address
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!if(orderList != null && orderList.size > 0, orderList[0].ShippingStreet, '')}
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Quantity
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!physicalGoodsProduct.Quantity}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Shipping City and Province
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!if(orderList != null && orderList.size > 0, orderList[0].ShippingCity+''+ orderList[0].ShippingState, '')} 
+                    </td>
+                </tr>
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Company Name
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!physicalGoodsProduct.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__ShippingName__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                        Shipping Postal Code
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px">
+                        {!if(orderList != null && orderList.size > 0, orderList[0].ShippingPostalCode, '')}
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </apex:repeat>
+        <br/>
+    </apex:outputPanel>
+    <ol>
+        <apex:outputPanel rendered="{!countOfOnsiteJHSCProducts > 0 || (onsiteProductList != null && onsiteProductList.size > 0) || countOfOnsiteTTTProducts > 0}">
+            <li>
+                You will need to have a screen or wall to project on and to ensure that the room is suitable for training (ie. tables, chars, sufficient space for instructor and gear).”
+            </li>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!countOfJHSCProducts > 0}">
+            <li>
+                The MOL requires WSIB Firm NO., Company name, address, postal code and phone number on the day of train-ing. JHSC1 must be completed prior to taking JHSC2 and that JHSC2 must be completed within 6 months of your JHSC1 completion date in order to be certified. Those certified under the new training standard are required to take Refresher Training every three years to maintain their certification.”
+            </li>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!countOfTTTProducts > 0}">
+            <li>
+                Occupational Safety Group will replace or exchange any missing or defective items from your specific “Train-the-Trainer” kit within 30 days of your training course. Replacement or exchange will only occur if the missing materials are documented on the materials confirmation sheet and initialed by the trainer. If all materials are present the participant will sign to confirm receipt the TTT kit is complete. After 30 days Occupational Safety Group assumes no responsibility for any missing or lost materials and charges will apply for any requested materials.”
+            </li>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!physicalGoodsProductList != null && physicalGoodsProductList.size > 0}">
+            <li>
+                There are no refunds on physical goods.
+            </li>
+        </apex:outputPanel>
+    </ol>
+    <p>If you have any questions or further requirements, please visit our website at <a href="www.osg.ca" target="_blank">www.osg.ca</a> or contact me  at</p>
+    <p>{!if(orderList != null && orderList.size > 0, orderList[0].Owner.Phone, '')}</p>
+    <p>Thank you for entrusting your training needs with us. Your business is truly appreciated!</p>
+    <p>Be Safe,</p>
+    <p>{!if(orderList != null && orderList.size > 0, orderList[0].Owner.Name, '')}</p>
+    <p>{!if(orderList != null && orderList.size > 0, orderList[0].Owner.Phone, '')}</p>
+    <p>{!if(orderList != null && orderList.size > 0, orderList[0].Owner.Email, '')}</p>
+    <h3 style="color:#305082"><apex:outputtext value="Terms &#38; Conditions" escape="false"/></h3>
+    <ol>
+        <apex:outputPanel rendered="{!countOfConsultingServices > 0 || (onsiteProductList != null && onsiteProductList.size > 0) || (publicProductList != null && publicProductList.size > 0) }">
+            <li>
+                Your company may cancel a course registration or service, up to five business days prior to the course/service date without penalty. Cancellations must be received via email to <a href="mailto:cancellations@osg.ca" target="_top">cancellations@osg.ca</a>.
+            </li>
+            <li>
+                If your cancellation is received less than five working days prior to the course/service start date or if the participant(s) fails to attend the course/service your company will be charged the full amount.
+            </li>
+            <li>
+                The terms and conditions applicable to certain courses or services being requested vary.  Please see below for details:
+                
+                3.1. Attending a public course (at an OSG location) – Your company may substitute a participant up until the course start date if the original participant is unable to attend at no additional cost. In the event that a participant does not attend a public training course, the full cost of the course will apply for rescheduling".
+    
+                3.2. OSG comes to you (onsite course or consulting at a location requested by you) – You may cancel the course or consulting anytime outside of 5 business days of the course/service date.  If canceled within 5 business days, you are responsible for the full cost of the course/service.  Your course cost includes material for up to 15 participants (Not applicable for Train the Training Courses).  The cost of the course will not be reduced if less then 15 participants are in attendance.
+            </li>
+            <li>
+                Please note that due to circumstances beyond our control, OSG may find it necessary to reschedule or cancel any course/service with low enrollment at any time, you will be notified accordingly. 
+            </li>
+        </apex:outputPanel>
+     
+        <apex:outputPanel rendered="{!evaluationProductList != null && evaluationProductList.size > 0}">
+            <li>
+                A. Normal charges still apply if; lifting device scheduling confirmation is not signed before the evaluation is to take place; notification the day of evaluation that participant has less than the minimum 8 hours of practical experience on each piece of equipment he/she will be operating; annual certification has not been completed on the equipment the participant is to be certified on; or if an OSG evaluator deems that the lifting device equipment is not in good working order.
+                B. Additional charges will apply for different types of lifting devices and to perform evaluations outside 905, 416, 519 and 226 area codes.
+            </li>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!physicalGoodsProductList != null && physicalGoodsProductList.size > 0}">
+            <li>
+                <apex:outputText value="All physical goods ie. ‘The Green Book’ Ontario Occupational Health &#38; Safety Act and Regulations, TDG Clear Language Shipper & Driver’s Handbook, DVDs, Participant Manuals etc. are final sale." escape="false"/>
+            </li>
+        </apex:outputPanel>
+    </ol>
+    
+    <h2 style="color:#305082"><apex:outputText value="Order Summary &#38; Payment" escape="false"/></h2>
+        <table style="border-collapse:collapse; ">
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    PO Number
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Purchase_Order_Number__c, '')}
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Company ID
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Client_Id__c, '')}
+                </td>
+            </tr>
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Order Number
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].OrderNumber, '')}
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    HST Number
+                </td>
+                <td style="border:2px solid #305082">
+                    86913 6820RT
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <table style="border-collapse:collapse; ">
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Company Name
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Account.Name, '')}
+                </td>
+            </tr>
+             <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Invoice Contact
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Invoice_Contact__r.Name, '')}
+                </td>
+            </tr>
+
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Address
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].BillingStreet, '')}
+                </td>
+            </tr>
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    City
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].BillingCity, '')}
+                </td>
+            </tr>
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Province
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].BillingState, '')}
+                </td>
+            </tr>
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    Postal Code
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].BillingPostalCode, '')}
+                </td>
+            </tr>
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5; width: 190px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Owner.Title, '')}
+                </td>
+                <td style="border:2px solid #305082; padding: 10px">
+                    {!if(orderList != null && orderList.size > 0, orderList[0].Owner.Name, '')}
+                </td>
+            </tr>
+        </table>
+        
+        <br/>
+        <br/>
+        <table style="border-collapse:collapse;">
+            <tr style="border:2px solid #305082">
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    Product
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    QTY
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    # of Participants
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    Name of Participants
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    Unit Price
+                </td>
+                <td style="border:2px solid #305082; padding: 10px; background-color:#e8e5e5;">
+                    Subtotal
+                </td>
+            </tr>
+            <apex:repeat value="{!OrderItemsList}" var="orderItem" rendered="{! OrderItemsList != null && OrderItemsList.size > 0}">
+                <tr style="border:2px solid #305082">
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!orderItem.Pricebookentry.Product2.Name}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!orderItem.Quantity}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!orderItem.Number_of_Participants__c}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!orderItemAttendeeMap[orderItem.id]}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!if(ISBLANK(TEXT(orderItem.UnitPrice)), '', '$'+TEXT(orderItem.UnitPrice))}
+                    </td>
+                    <td style="border:2px solid #305082; padding: 10px;">
+                        {!if(ISBLANK(TEXT(orderItem.TotalPrice)), '', '$'+TEXT(orderItem.TotalPrice))}
+                    </td>
+                </tr>
+            </apex:repeat>
+        </table>
+        <br/>
+        <br/>
+</apex:component>

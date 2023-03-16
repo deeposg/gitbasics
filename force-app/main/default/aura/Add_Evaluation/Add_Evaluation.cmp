@@ -1,0 +1,32 @@
+<aura:component controller="RecordTypeController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <aura:attribute name="lstOfRecordType" type="String[]" />
+    <aura:attribute name="isEval" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="contactId" type="String" />
+    
+    <aura:if isTrue="{!v.isEval}">
+        <div>
+            <div>
+                <div>
+                    <div class="slds-align--absolute-center">Select a Record Type</div>                            
+                </div>
+                <div>
+                    <ui:inputSelect aura:id="selectid">
+                        <aura:iteration items="{!v.lstOfRecordType}" var="recordType">                            
+                            <ui:inputSelectOption text="{!recordType}" label="{!recordType}"  />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </div> &nbsp; &nbsp;
+            </div>                   
+        </div>
+        
+        <div>
+            <lightning:button class="slds-button slds-button--brand" onclick="{!c.createRecord}">Next</lightning:button>
+        </div>
+        <aura:set attribute="else">
+			<div class="slds-align--absolute-center">This attendee does not belong to a Evaluation. Please locate the correct Service Appointment or contact evaluations@osg.ca</div>
+        </aura:set>
+    </aura:if>
+</aura:component>

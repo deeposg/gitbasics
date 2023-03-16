@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Is_Owned__c</fullName>
+    <externalId>false</externalId>
+    <formula>or (
+ OwnerId = &apos;00546000000u1Or&apos;, /* Kevin Gates */
+ OwnerId = &apos;00546000000u1Oh&apos;, /* Jennifer Malcolm */
+ OwnerId = &apos;00546000000u1P6&apos;, /* Tricia Rizzo */
+ OwnerId = &apos;00546000001eZuE&apos;, /* Mitchell McGuffin */
+ OwnerId = &apos;00546000001goI9&apos;, /* Tara Dutrizac */
+ OwnerId = &apos;00546000000vDvA&apos;  /* Jason Janusz */
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Is Owned</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

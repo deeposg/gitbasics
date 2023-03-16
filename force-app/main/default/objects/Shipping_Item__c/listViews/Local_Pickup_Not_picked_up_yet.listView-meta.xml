@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Local_Pickup_Not_picked_up_yet</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Ship_To_Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Shipped__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Shipping_Method__c</field>
+        <operation>equals</operation>
+        <value>London Pickup</value>
+    </filters>
+    <filters>
+        <field>Order_Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Canceled</value>
+    </filters>
+    <label>Outstanding Local Pickup</label>
+</ListView>
